@@ -1,0 +1,293 @@
+/* ==========================================================================
+   MARKETPROBLEM — Estilos de Seção
+   ========================================================================== */
+
+.market-problem {
+  position: relative;
+  width: 100%;
+  min-height: 1100px;
+  background-color: var(--color-secondary-mist);
+  overflow: hidden;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Background image decoration layer */
+.market-problem-bg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.market-problem-bg-image {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Content Area wrapper */
+.market-problem-content-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.market-problem-title {
+  font-family: var(--font-title);
+  font-size: clamp(32px, 5vw, 44px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-primary-navy);
+  text-align: center;
+  margin-bottom: clamp(32px, 5vw, 64px);
+  max-width: 800px;
+}
+
+/* Staggered overlapping layout (Desktop only) */
+.market-problem-layout {
+  position: relative;
+  width: 100%;
+  max-width: 1002px;
+  min-height: 826px;
+  margin: 0 auto;
+}
+
+/* Center plant illustration */
+.market-problem-plant {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  width: 100%;
+  max-width: 453px;
+  height: 680px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.market-problem-plant-image {
+  object-fit: contain;
+}
+
+/* Base card styling */
+.market-problem-card {
+  position: absolute;
+  z-index: 3;
+  min-height: 180px;
+  border-radius: 16px;
+  background-color: var(--color-white);
+  box-shadow: 8px 8px 8px 0 rgba(2, 23, 43, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    background-color 0.3s ease;
+}
+
+/* Staggered desktop absolute coordinates */
+.market-problem-card.card-1 {
+  left: 0;
+  top: 160px;
+  width: 293px;
+  padding: 26px 32px;
+}
+
+.market-problem-card.card-2 {
+  right: 0;
+  top: 160px;
+  width: 283px;
+  padding: 36px 35px;
+}
+
+.market-problem-card.card-3 {
+  left: 49px;
+  top: 405px;
+  width: 283px;
+  padding: 24px 35px;
+}
+
+.market-problem-card.card-4 {
+  right: 49px;
+  top: 405px;
+  width: 283px;
+  padding: 24px 35px;
+}
+
+.market-problem-card.card-5 {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 646px;
+  width: 283px;
+  padding: 24px 35px;
+}
+
+/* Premium zoom micro-animations and color changes on hover */
+.market-problem-card:hover {
+  transform: scale(1.03);
+  box-shadow: 12px 16px 24px 0 rgba(2, 23, 43, 0.2);
+  background-color: var(--color-primary-green);
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* To avoid conflict with card-5 transform */
+.market-problem-card.card-5:hover {
+  transform: translateX(-50%) scale(1.03);
+}
+
+/* Card content flow */
+.market-problem-card-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.market-problem-card-icon-wrapper {
+  width: 67px;
+  height: 67px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.market-problem-card-icon {
+  object-fit: contain;
+}
+
+/* Card titles */
+.market-problem-card-title {
+  font-family: var(--t2-font-family);
+  font-size: var(--t2-font-size);
+  font-weight: var(--t2-font-weight);
+  line-height: 1.2;
+  letter-spacing: var(--t2-letter-spacing);
+  color: var(--color-primary-navy);
+  transition: color 0.3s ease;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (Desktop-First Adaptations)
+   ========================================================================== */
+
+/* Tablet (Telas até 1024px) */
+@media (max-width: 1024px) {
+  .market-problem {
+    min-height: auto;
+    padding-bottom: 80px;
+  }
+
+  .market-problem-content-wrapper {
+    padding-top: 64px;
+  }
+
+  /* Mudança para Grid no Tablet */
+  .market-problem-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    align-items: stretch;
+    height: auto;
+    min-height: auto;
+    max-width: 768px;
+  }
+
+  .market-problem-plant {
+    position: relative;
+    grid-column: 1 / -1;
+    left: 0;
+    transform: none;
+    height: 400px;
+    margin-bottom: 16px;
+  }
+
+  .market-problem-card {
+    position: relative;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    height: 100%;
+    padding: 32px 24px !important;
+  }
+
+  /* Reset hover effect to scale only without translation on tablet */
+  .market-problem-card.card-5:hover {
+    transform: scale(1.03) !important;
+  }
+
+  /* Card 5 ocupa duas colunas para não ficar orfão, ou fica centralizado */
+  .market-problem-card.card-5 {
+    grid-column: 1 / -1;
+    max-width: 350px;
+    justify-self: center;
+  }
+}
+
+/* Mobile Large (Telas até 640px) */
+@media (max-width: 640px) {
+  .market-problem-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 400px;
+  }
+
+  .market-problem-plant {
+    height: 320px;
+  }
+
+  .market-problem-card.card-5 {
+    grid-column: auto;
+    max-width: 100%;
+  }
+
+  .market-problem-card {
+    min-height: 140px;
+    padding: 24px 20px !important;
+  }
+}
+
+/* Mobile Small (Telas até 480px) */
+@media (max-width: 480px) {
+  .market-problem {
+    padding-bottom: 60px;
+  }
+
+  .market-problem-content-wrapper {
+    padding-top: 48px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .market-problem-title {
+    margin-bottom: 32px;
+  }
+
+  .market-problem-plant {
+    height: 260px;
+  }
+
+  .market-problem-card-icon-wrapper {
+    width: 56px;
+    height: 56px;
+  }
+
+  .market-problem-card-title {
+    font-size: 16px;
+  }
+}

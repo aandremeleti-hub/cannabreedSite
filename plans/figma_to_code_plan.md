@@ -20,6 +20,7 @@ Para a leitura do Figma: **Rota Híbrida** — estrutura via screenshot (minha v
 - [26/05/2026 12:42]: Categoria 1 executada. Base convertida para JS/CSS puro. Dev server rodando sem erros in 1080ms.
 - [26/05/2026 12:56]: `tsconfig.json` deletado (havia sido esquecido). Plano atualizado como As-Built.
 - [26/05/2026 13:25]: Categoria 3 - Subetapa 3.1.1 executada. Novo workflow '/processar-secao' criado e adotado. HeroSection.jsx e HeroSection.css gerados com sucesso utilizando os textos reais do SVG re-exportado com textos legíveis.
+- [27/05/2026 01:30]: Categoria 3 e 4 executadas. Seção WhatCannabreedDoes e cartões CardGenetica, CardImportation, CardLaudo, CardStructuration implementados com sucesso. Assets organizados e otimizados em src/assets/.
 
 ---
 
@@ -62,8 +63,8 @@ Para a leitura do Figma: **Rota Híbrida** — estrutura via screenshot (minha v
 #### Etapa 3.1: Seção por Seção (a partir do Figma)
 > **🔗 Motivação:** Ler visualmente cada seção do layout aprovado e gerar o JSX/CSS semanticamente correto, ignorando a desorganização do Figma.
   - [x] **Subetapa 3.1.1:** Receber screenshot da primeira seção (Navbar/Hero). Inferir hierarquia e gerar `HeroSection.jsx` + `HeroSection.css` com classes kebab-case. | 🟠 **Dificuldade: 4** | 🤖 **Modelo: Claude Sonnet (Thinking)**
-  - [ ] **Subetapa 3.1.2:** Identificar elementos repetidos (Cards, Botões) e abstraí-los em `src/components/`. | 🟠 **Dificuldade: 4** | 🤖 **Modelo: Claude Sonnet (Thinking)**
-  - [ ] **Subetapa 3.1.3:** Reiterar para cada seção restante do layout. | 🟡 **Dificuldade: 3** | 🤖 **Modelo: Claude Sonnet**
+  - [x] **Subetapa 3.1.2:** Identificar elementos repetidos (Cards, Botões) e abstraí-los em `src/components/`. | 🟠 **Dificuldade: 4** | 🤖 **Modelo: Claude Sonnet (Thinking)**
+  - [x] **Subetapa 3.1.3:** Reiterar para cada seção restante do layout (WhatCannabreedDoes implementada). | 🟡 **Dificuldade: 3** | 🤖 **Modelo: Claude Sonnet**
 
 ---
 
@@ -73,10 +74,10 @@ Para a leitura do Figma: **Rota Híbrida** — estrutura via screenshot (minha v
 
 #### Etapa 4.1: Organização e Referência de Assets
 > **🔗 Motivação:** Imagens e ícones precisam estar nos caminhos corretos antes de serem referenciados no código.
-  - [ ] **Subetapa 4.1.1:** Você exporta imagens do Figma → `src/assets/images/` e ícones SVG → `src/assets/icons/`. Logo → `public/`. | 🔒 **Dificuldade: 2**
+  - [x] **Subetapa 4.1.1:** Você exporta imagens do Figma → `src/assets/images/` e ícones SVG → `src/assets/icons/`. Logo → `public/`. | 🔒 **Dificuldade: 2**
   - [ ] **Subetapa 4.1.2:** Criar componentes SVG reutilizáveis em `src/components/icons/` para ícones dinâmicos (com `fill="currentColor"`). | 🔒 **Dificuldade: 2** | 🤖 **Modelo: Gemini Flash**
 
 ---
 
 ### ⏭️ Próximo Passo
-**Categoria 3, Subetapa 3.1.1** — Aguardando screenshot da primeira seção do Figma para iniciar a geração de código.
+**Próxima Seção do Layout** — Aguardando a definição ou importação do próximo frame do Figma.

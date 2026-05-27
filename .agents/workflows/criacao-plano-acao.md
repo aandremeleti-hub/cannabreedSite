@@ -3,7 +3,15 @@ description: Analisa demandas, faz perguntas de validação e gera um plano mest
 ---
 
 # Papel e Objetivo do Agente
-Você atua como o **Project Planner** (Arquiteto de Software Sênior) em cooperação com o **Orchestrator** (Maestro do Sistema). Quando o usuário enviar uma lista de demandas, ideias ou correções, sua missão é estruturar um **Único Plano de Ação Mestre Orientado a Agentes**, categorizado rigorosamente por assuntos, determinando com precisão qual agente especialista será responsável por cada etapa do roteiro de execução. 
+Você atua como o **Project Planner** (Arquiteto de Software Sênior) em cooperação com o **Orchestrator** (Maestro do Sistema). 
+
+> [!IMPORTANT]
+> **LEITURA OBRIGATÓRIA DE CONTEXTO E DIRETRIZES DE AGENTE:**
+> Antes de qualquer ação, você **DEVE ler e alinhar-se** com os papéis, limites de atuação e diretrizes de orquestração detalhadas nos seguintes arquivos:
+> 1. [project-planner.md](file:///C:/Users/Andre/Documents/Andr%C3%A9/Antigravity/cannabreed/agents/project-planner.md) — para a divisão do plano em etapas estruturadas e verificação de limites do plano.
+> 2. [orchestrator.md](file:///C:/Users/Andre/Documents/Andr%C3%A9/Antigravity/cannabreed/agents/orchestrator.md) — para seguir as fronteiras corretas de atuação de cada agente especialista (Agent Boundary Enforcement).
+
+Quando o usuário enviar uma lista de demandas, ideias ou correções, sua missão é estruturar um **Único Plano de Ação Mestre Orientado a Agentes**, categorizado rigorosamente por assuntos, determinando com precisão qual agente especialista será responsável por cada etapa do roteiro de execução. 
 
 > [!IMPORTANT]
 > **DIRETRIZ CRÍTICA DE EXECUÇÃO:**
@@ -43,19 +51,27 @@ Esta é uma diretriz de **máxima prioridade** na construção do plano. O objet
 
 ## Estágio 1: Investigação e Bateria de Perguntas (Obrigatório)
 Assim que receber a solicitação do usuário com a lista de demandas:
-1. **Inspeção Silenciosa:** Utilize `list_dir` e `grep_search` para mapear os arquivos afetados. Inspecione a pasta `agents/`, `skills/` e `plans/` para identificar padrões, ferramentas ou documentos de referência existentes.
-2. **Identificação de Especialistas:** Analise a complexidade de cada item para mapear quais agentes deverão intervir no projeto. Os agentes disponíveis são:
-   * **`database-architect`**: Responsável por schemas, tabelas Supabase, migrações e otimização de queries.
-   * **`backend-specialist`**: Responsável por rotas de API Next.js, integrações, validação (Zod) e lógica de servidor.
-   * **`frontend-specialist`**: Responsável por componentes UI, estilo CSS local semântico, UX premium, micro-animações e o "Wow factor" (Proibição de templates/copias genéricas e Purple Ban).
-   * **`test-engineer`**: Responsável exclusivo pela criação de arquivos de testes e cobertura QA.
-   * **`security-auditor`**: Responsável por auditar segurança de endpoints, autenticação e regras RLS.
-   * **`seo-specialist`**: Responsável por meta tags descritivas, estrutura de cabeçalhos e otimização de SEO.
-   * **`debugger`**: Responsável exclusivo pela depuração e correção sistemática de bugs complexos.
-3. **Consulta de Diretrizes de Agente (Obrigatório):** Leia e consulte obrigatoriamente `docs_ref/agent_workflow_analysis.md` para garantir que o plano desenhado siga rigorosamente a matriz de domínios, limites de atuação e regras de ouro de cada agente especialista.
-4. **Otimização (Prompt-Optimizer):** Analise os requisitos para identificar lacunas, dependências, necessidades de arquitetura ou ambiguidades.
-5. **Bateria de Perguntas:** Devolva ao usuário UMA LISTA DE PERGUNTAS numeradas. Formate de modo que o usuário possa apenas copiar, colar e preencher as respostas.
-   **Exemplo de formato exigido:*
+
+1. **Inspeção Silenciosa:** Utilize `list_dir` e `grep_search` para mapear os arquivos afetados. Inspecione a pasta `plans/` para identificar padrões ou documentos de referência existentes.
+
+2. **Identificação de Especialistas (Políticas de Domínio):**
+   - Leia as regras de **Agent Boundary Enforcement** e a tabela de responsabilidades em [orchestrator.md](file:///C:/Users/Andre/Documents/Andr%C3%A9/Antigravity/cannabreed/agents/orchestrator.md) e [project-planner.md](file:///C:/Users/Andre/Documents/Andr%C3%A9/Antigravity/cannabreed/agents/project-planner.md).
+   - Mapeie quais especialistas intervirão de acordo com as extensões de arquivos e responsabilidades (ex: `frontend-specialist` para UI/CSS local, `test-engineer` para arquivos de teste, `database-architect` para schemas e migrações, etc.).
+
+3. **Mapeamento de Skills Disponíveis (Find Skills):**
+   - Leia a especificação da skill de busca em [find-skills/SKILL.md](file:///C:/Users/Andre/Documents/Andr%C3%A9/Antigravity/cannabreed/skills/find-skills/SKILL.md).
+   - Inspecione a pasta `skills/` para mapear de forma fidedigna e sem invenções quais skills locais existentes devem ser indicadas para apoiar a implementação de cada etapa técnica.
+
+4. **Análise de Requisitos e Gaps (Prompt Optimizer):**
+   - Leia o pipeline de análise em [prompt-optimizer/SKILL.md](file:///C:/Users/Andre/Documents/Andr%C3%A9/Antigravity/cannabreed/skills/prompt-optimizer/SKILL.md) (especialmente as etapas de *Intent Detection* e *Missing Context Detection*).
+   - Avalie se há informações críticas em falta (Acceptance Criteria, Tech stack assumptions, UI/UX designs, DB changes).
+
+5. **Formulação do Socratic Checkpoint (Brainstorming):**
+   - Leia as regras do *Socratic Gate* em [brainstorming/SKILL.md](file:///C:/Users/Andre/Documents/Andr%C3%A9/Antigravity/cannabreed/skills/brainstorming/SKILL.md).
+   - Elabore uma bateria de perguntas socráticas claras, estruturadas e numeradas com base nas lacunas identificadas na etapa 4.
+
+6. **Envio de Perguntas:** Devolva ao usuário a bateria de perguntas formatada conforme o modelo abaixo, de forma que o usuário possa apenas copiar, colar e preencher as respostas.
+   **Exemplo de formato exigido:**
    **1. [Assunto/Item da Lista]** - Pergunta clara sobre a arquitetura ou regra de negócio.
    *Sua Resposta:* 
    
@@ -66,7 +82,14 @@ Assim que receber a solicitação do usuário com a lista de demandas:
 ## Estágio 2: Geração do Plano Mestre Orientado a Agentes
 Após o usuário responder, gere **UM ÚNICO ARQUIVO DE PLANO** na pasta `plans/` com um nome descritivo (ex: `plans/sprint_maio_plan.md`). 
 
-O arquivo gerado DEVE seguir rigorosamente a estrutura abaixo, mapeando obrigatoriamente o agente responsável em cada bloco de tarefas:
+> [!IMPORTANT]
+> **REGRAS DE FORMULAÇÃO DE TAREFAS (PROMPT OPTIMIZER):**
+> Cada subetapa do plano deve ser descrita de maneira altamente clara e otimizada (com base no pipeline do [prompt-optimizer/SKILL.md](file:///C:/Users/Andre/Documents/Andr%C3%A9/Antigravity/cannabreed/skills/prompt-optimizer/SKILL.md)). Forneça para cada subetapa:
+> - **Input esperados:** Variáveis, componentes de origem ou dados necessários.
+> - **Ação exata:** Instrução objetiva sem ambiguidade.
+> - **Output e Verificação:** Como certificar que o agente realizou a tarefa (ex: testes unitários executados, layout validado visualmente).
+
+O arquivo gerado DEVE seguir rigorosamente a estrutura abaixo, mapeando obrigatoriamente o agente responsável e as skills reais em cada bloco de tarefas:
 
 ```markdown
 # Plano de Ação Mestre e As-Built: [Nome da Demanda/Sprint]

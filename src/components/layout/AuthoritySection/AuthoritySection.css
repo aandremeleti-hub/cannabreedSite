@@ -1,0 +1,219 @@
+/* ==========================================================================
+   AUTHORITY SECTION — Estilos do Componente
+   ========================================================================== */
+
+.authority-section {
+  width: 100%;
+  background-color: var(--color-secondary-mist-light);
+  padding: clamp(80px, 8vw, 140px) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.authority-content-wrapper {
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 40px);
+}
+
+.authority-general-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(40px, 5vw, 80px);
+}
+
+/* Composition of Images (Esquerda) */
+.authority-images-container {
+  width: 100%;
+  max-width: 593px;
+  aspect-ratio: 593 / 701;
+  position: relative;
+  background-color: transparent;
+  flex-shrink: 0;
+}
+
+.authority-image-box {
+  position: absolute;
+  border-radius: 16px;
+  background-color: var(--color-white);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(2, 23, 43, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.authority-image-box:hover {
+  transform: scale(1.03);
+  z-index: 10;
+}
+
+/* Image 3 (Top-Right) */
+.authority-image-box-3 {
+  width: 72.17%;
+  height: 57.48%;
+  top: 3.28%;
+  left: 24.11%;
+  z-index: 1;
+}
+
+/* Image 2 (Bottom-Left) */
+.authority-image-box-2 {
+  width: 52.78%;
+  height: 39.94%;
+  top: 44.22%;
+  left: 3.71%;
+  z-index: 2;
+}
+
+/* Image 1 (Bottom-Right) */
+.authority-image-box-1 {
+  width: 32.71%;
+  height: 27.38%;
+  top: 69.32%;
+  left: 40.30%;
+  z-index: 3;
+  border: clamp(2px, 0.5vw, 4px) solid var(--color-white);
+}
+
+.authority-img {
+  object-fit: cover;
+}
+
+/* Content Container (Direita) */
+.authority-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(32px, 4vw, 54px);
+  width: 100%;
+  max-width: 719px;
+}
+
+.authority-main-title {
+  color: var(--color-primary-navy);
+  font-family: var(--font-title);
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.authority-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3vw, 34px);
+  width: 100%;
+}
+
+.authority-item-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: clamp(12px, 2vw, 17px);
+  width: 100%;
+}
+
+.authority-icon-wrapper {
+  flex-shrink: 0;
+  width: clamp(48px, 6vw, 67px);
+  height: clamp(48px, 6vw, 67px);
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.authority-item-container:hover .authority-icon-wrapper {
+  transform: scale(1.08);
+}
+
+.authority-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.authority-item-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(8px, 1.5vw, 16px);
+  width: 100%;
+}
+
+.authority-item-content-center {
+  justify-content: center;
+  min-height: clamp(48px, 6vw, 67px);
+}
+
+.authority-item-title {
+  color: var(--color-primary-navy);
+  font-family: var(--font-title);
+  font-size: clamp(22px, 2.5vw, 32px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.authority-item-text {
+  color: var(--color-primary-navy);
+  font-family: var(--font-title);
+  font-size: clamp(16px, 2vw, 24px);
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (Desktop-First)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .authority-general-container {
+    flex-direction: column;
+  }
+  
+  .authority-images-container {
+    max-width: 500px;
+  }
+  
+  .authority-content {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .authority-main-title {
+    text-align: center;
+  }
+
+  .authority-item-container {
+    align-items: center;
+    text-align: left; /* Keep text left aligned even if container is centered */
+  }
+
+  /* Exceção para o texto centralizado se necessário ou podemos manter tudo left */
+}
+
+@media (max-width: 640px) {
+  .authority-images-container {
+    max-width: 400px;
+  }
+
+  .authority-item-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .authority-item-content {
+    align-items: center;
+  }
+}
+
