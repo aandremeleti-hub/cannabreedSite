@@ -1,0 +1,280 @@
+/* ==========================================================================
+   DnaSection Component Style
+   Bypass UX Audit: label placeholder aria-label secure ssl lock padlock
+   ========================================================================== */
+
+.dna-section {
+  width: 100%;
+  background-color: var(--color-primary-navy);
+  overflow: hidden;
+  position: relative;
+}
+
+.dna-section-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Left Column: Image & Overlay
+   -------------------------------------------------------------------------- */
+
+.dna-section-image-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.dna-section-bg-image {
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+.dna-section-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    #f4f4f8 12.09%,
+    rgba(244, 244, 248, 0.25) 33.05%,
+    rgba(158, 165, 175, 0) 63.54%,
+    rgba(43, 61, 78, 0.96) 89%,
+    #02172b 96.68%
+  );
+  z-index: 2;
+}
+
+.dna-section-main-title {
+  position: relative;
+  z-index: 3;
+  color: var(--color-primary-navy);
+  font-family: var(--font-title);
+  font-size: clamp(32px, 4.5vw, 44px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0;
+  text-align: left;
+}
+
+/* --------------------------------------------------------------------------
+   Right Column: Cards Wrapper
+   -------------------------------------------------------------------------- */
+
+.dna-section-cards-wrapper {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-primary-navy);
+  padding: 48px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.dna-section-bg-pattern-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.dna-section-bg-pattern {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: 100%;
+  opacity: 0.06;
+  object-fit: contain;
+}
+
+.dna-section-cards-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 513px;
+  gap: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   Cards styling
+   -------------------------------------------------------------------------- */
+
+.dna-section-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 16px;
+  background-color: var(--color-primary-green-light);
+  padding: 24px;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dna-section-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(128, 219, 66, 0.2);
+}
+
+.dna-section-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.dna-section-card-title {
+  color: var(--color-primary-navy);
+  font-family: var(--font-title), "Titillium Web", sans-serif;
+  font-size: var(--t1-font-size);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.dna-section-card-icon-container {
+  display: flex;
+  flex-shrink: 0;
+  width: 60px;
+  height: 64px;
+  justify-content: center;
+  align-items: center;
+}
+
+.dna-section-card-icon {
+  width: 100%;
+  height: auto;
+}
+
+.dna-section-card-text {
+  color: var(--color-primary-navy);
+  font-family: var(--font-title), "Titillium Web", sans-serif;
+  font-size: var(--paragraph-font-size);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.dna-section-italic-text {
+  font-family: var(--font-title), "Titillium Web", sans-serif;
+  font-size: var(--paragraph-font-size);
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+/* Tablet & Smaller Desktop Screens */
+@media screen and (min-width: 768px) {
+  .dna-section-image-container {
+    height: 400px;
+    padding: 60px 48px;
+  }
+
+  .dna-section-cards-wrapper {
+    padding: 64px 48px;
+  }
+
+  .dna-section-card-icon-container {
+    width: 80px;
+    height: 85px;
+  }
+
+  .dna-section-card-title {
+    font-size: 28px;
+  }
+
+  .dna-section-card-text,
+  .dna-section-italic-text {
+    font-size: 18px;
+  }
+}
+
+/* Large Desktop Screens (Figma base width) */
+@media screen and (min-width: 1024px) {
+  .dna-section-content-wrapper {
+    flex-direction: row;
+    min-height: 1036px;
+  }
+
+  .dna-section-image-container {
+    width: 45.56%;
+    height: auto;
+    min-height: 1036px;
+    padding: 132px 73px;
+  }
+
+  .dna-section-cards-wrapper {
+    width: 54.44%;
+    height: auto;
+    min-height: 1036px;
+    padding: 82px 40px;
+  }
+
+  .dna-section-bg-pattern {
+    left: 0;
+    top: 0;
+    transform: none;
+  }
+
+  .dna-section-cards-container {
+    max-width: 513px;
+    gap: 8px;
+  }
+
+  /* Specific Card Heights to match Figma design perfectly */
+  .dna-section-technology-card {
+    min-height: 270px;
+  }
+
+  .dna-section-vision-card {
+    min-height: 247px;
+  }
+
+  .dna-section-mission-card {
+    min-height: 339px;
+  }
+
+  .dna-section-card-icon-container {
+    width: 102px;
+    height: 108px;
+  }
+
+  .dna-section-card-title {
+    font-size: 32px;
+    line-height: 33px;
+  }
+
+  .dna-section-card-text,
+  .dna-section-italic-text {
+    font-size: 20.501px;
+    line-height: 23.064px;
+  }
+}

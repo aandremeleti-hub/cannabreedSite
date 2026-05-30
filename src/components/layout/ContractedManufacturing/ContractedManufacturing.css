@@ -1,0 +1,246 @@
+/* ==========================================================================
+   CANNABREED — Contracted Manufacturing (CDMO) Section Styles
+   ========================================================================== */
+
+.cdmo-section {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-white);
+  background-image: url('../../../assets/images/logo-background.svg');
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  background-position: center;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Background leaf pattern styles (REMOVIDO DO JSX, mas mantemos o CSS vazio ou apagamos. Vamos apagar para limpar) */
+
+/* Container & Grid structures */
+.cdmo-container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .cdmo-container {
+    grid-template-columns: 734px 1fr;
+    gap: 94px;
+  }
+}
+
+/* Content column styling */
+.cdmo-content {
+  display: flex;
+  flex-direction: column;
+  gap: 58px;
+}
+
+.cdmo-header {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+
+.cdmo-title {
+  color: var(--color-primary-navy);
+  font-family: var(--font-title);
+  font-size: clamp(32px, 4.5vw, 44px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.cdmo-description {
+  font-family: var(--font-body);
+  font-size: 24px;
+  /* Figma: 24px */
+  line-height: 1.35;
+  color: var(--color-secondary-gray);
+  font-weight: 400;
+  max-width: 679px;
+}
+
+.cdmo-highlight-italic {
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Cards setup */
+.cdmo-cards-wrapper {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.cdmo-cards-grid {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  max-width: 734px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Individual card layout */
+.cdmo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--color-primary-navy);
+  width: 126px;
+  height: 128px;
+  border-radius: 21px;
+  /* Figma rounded-[20.898px] */
+  box-shadow: 0 8px 16px rgba(2, 23, 43, 0.15);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  user-select: none;
+
+  /* Icon color system */
+  --icon-color-primary: var(--color-primary-green);
+  --icon-color-secondary: var(--color-white);
+  --icon-color-tertiary: #3B4652;
+}
+
+.cdmo-card:hover {
+  transform: translateY(-8px);
+  background-color: var(--color-primary-green);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.18);
+
+  /* Update icon colors so they don't blend with green bg */
+  --icon-color-primary: var(--color-primary-navy);
+  --icon-color-secondary: var(--color-white);
+  --icon-color-tertiary: var(--color-primary-navy);
+}
+
+.cdmo-card-title {
+  font-family: var(--font-title);
+  font-size: 16.5px;
+  /* Figma text-[16.464px] */
+  font-weight: 700;
+  color: var(--color-white);
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.cdmo-card:hover .cdmo-card-title {
+  color: var(--color-primary-navy);
+}
+
+.cdmo-card-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  position: relative;
+}
+
+.cdmo-card-icon {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.cdmo-card:hover .cdmo-card-icon {
+  transform: scale(1.1);
+}
+
+/* Special styling for stacked Escopo icon */
+.cdmo-card-escopo-icon {
+  position: relative;
+  width: 38px;
+  height: 37px;
+}
+
+.cdmo-card-icon-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cdmo-card-icon-fg {
+  position: absolute;
+  top: 6px;
+  left: 9px;
+  width: 10px;
+  height: 8.5px;
+}
+
+/* Image column styling */
+.cdmo-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 382px;
+  height: 100%;
+  background-color: var(--color-primary-navy);
+  border-radius: 8px;
+  /* Figma rounded-[8.432px] */
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(2, 23, 43, 0.15);
+  justify-self: end;
+  isolation: isolate;
+}
+
+.cdmo-image {
+  object-fit: cover;
+}
+
+/* Responsiveness Adaptations */
+@media (max-width: 1023px) {
+  .cdmo-section {
+    padding: 0;
+  }
+
+  .cdmo-title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .cdmo-description {
+    font-size: 18px;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .cdmo-cards-grid {
+    justify-content: center;
+  }
+
+  .cdmo-image-wrapper {
+    width: 100%;
+    max-width: 450px;
+    height: 350px;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .cdmo-cards-grid {
+    gap: 15px;
+  }
+
+  .cdmo-card {
+    width: 110px;
+    height: 115px;
+    border-radius: 16px;
+  }
+
+  .cdmo-card-title {
+    font-size: 14px;
+  }
+}

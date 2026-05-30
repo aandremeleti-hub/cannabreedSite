@@ -5,10 +5,10 @@
 .market-problem {
   position: relative;
   width: 100%;
-  min-height: 1100px;
+  min-height: auto;
   background-color: var(--color-secondary-mist);
   overflow: hidden;
-  padding-bottom: 100px;
+  padding-bottom: 80px;
   display: flex;
   flex-direction: column;
 }
@@ -34,9 +34,9 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1472px;
   margin: 0 auto;
-  padding: 80px 24px 0 24px;
+  padding: 80px 40px 0 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,8 +48,9 @@
   font-weight: 700;
   line-height: 1.1;
   color: var(--color-primary-navy);
-  text-align: center;
-  margin-bottom: clamp(32px, 5vw, 64px);
+  text-align: left;
+  align-self: flex-start;
+  margin-bottom: clamp(48px, 6vw, 93px);
   max-width: 800px;
 }
 
@@ -59,7 +60,7 @@
   width: 100%;
   max-width: 1002px;
   min-height: 826px;
-  margin: 0 auto;
+  margin: -160px auto 0 auto;
 }
 
 /* Center plant illustration */
@@ -191,6 +192,11 @@
     padding-bottom: 80px;
   }
 
+  .market-problem-title {
+    text-align: center;
+    align-self: center;
+  }
+
   .market-problem-content-wrapper {
     padding-top: 64px;
   }
@@ -204,6 +210,7 @@
     height: auto;
     min-height: auto;
     max-width: 768px;
+    margin-top: 0;
   }
 
   .market-problem-plant {

@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import img1 from '@/assets/images/authority-image-1.svg';
-import img2 from '@/assets/images/authority-image-2.svg';
-import img3 from '@/assets/images/authority-image-3.svg';
+import img1 from '@/assets/images/authority-image-1.webp';
+import img2 from '@/assets/images/authority-image-2.webp';
+import img3 from '@/assets/images/authority-image-3.webp';
 import iconParceria from '@/assets/icons/icon-parceria.svg';
 import iconDoutores from '@/assets/icons/icon-doutores.svg';
 import iconGermoplasma from '@/assets/icons/icon-germoplasma.svg';
@@ -10,8 +10,11 @@ import './AuthoritySection.css';
 
 export default function AuthoritySection() {
   return (
-    <section className="authority-section" aria-labelledby="authority-title">
+    <section className="authority-section" id="ped" aria-labelledby="authority-title">
       <div className="authority-content-wrapper">
+        <h2 id="authority-title" className="authority-main-title">
+          AUTORIDADE EM DESTAQUE
+        </h2>
         <div className="authority-general-container">
           
           {/* Collage de Imagens (Esquerda) */}
@@ -47,9 +50,6 @@ export default function AuthoritySection() {
 
           {/* Conteúdo Textual (Direita) */}
           <div className="authority-content">
-            <h2 id="authority-title" className="authority-main-title">
-              AUTORIDADE EM DESTAQUE
-            </h2>
             
             <div className="authority-items-list">
               

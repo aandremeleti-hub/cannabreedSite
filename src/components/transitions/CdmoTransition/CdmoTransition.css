@@ -1,0 +1,13 @@
+.cdmo-transition-container {
+  position: relative;
+  width: 100%;
+  height: clamp(100px, 20vw, 386px); /* Scales relative to viewport up to the original size */
+  background-color: var(--color-background-primary, #ffffff);
+  overflow: hidden;
+  margin-top: -1px; /* Prevents gaps with the preceding section */
+}
+
+.cdmo-transition-image {
+  object-fit: cover;
+  object-position: bottom;
+}

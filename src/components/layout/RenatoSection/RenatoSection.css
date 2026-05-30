@@ -1,0 +1,321 @@
+/* ==========================================================================
+   CANNABREED — RenatoSection Component Styles
+   Follows Strict Brand Guidelines: Fluid containers, responsive typography, 
+   no Tailwind, uses globals.css tokens.
+   ========================================================================== */
+
+.renato-section {
+  width: 100%;
+  min-height: auto;
+  background-color: var(--color-primary-navy);
+  padding: 80px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.renato-section-container {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --------------------------------------------------------------------------
+   LEFT COLUMN: Photo Card
+   -------------------------------------------------------------------------- */
+
+.renato-image-card-wrapper {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.renato-image-card-container {
+  position: relative;
+  width: 536px;
+  height: 650px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.renato-image-card-img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* --------------------------------------------------------------------------
+   RIGHT COLUMN: Content
+   -------------------------------------------------------------------------- */
+
+.renato-content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 720px;
+}
+
+.renato-section-title {
+  font-family: var(--t1-font-family), "Titillium Web", sans-serif;
+  font-size: var(--t1-font-size);
+  font-weight: var(--t1-font-weight);
+  letter-spacing: var(--t1-letter-spacing);
+  line-height: var(--t1-line-height);
+  color: var(--color-white);
+
+  /* Refinements to match Figma specs */
+  font-size: 44px;
+  line-height: 49px;
+  letter-spacing: 0.02em;
+}
+
+/* Milestones List */
+.renato-milestones-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.renato-milestone-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+.renato-milestone-icon-box {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 51px;
+  color: var(--color-primary-green);
+  margin-top: -9px;
+}
+
+.renato-milestone-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.renato-milestone-text-box {
+  flex: 1;
+}
+
+.renato-milestone-text {
+  font-family: var(--t1-font-family), "Titillium Web", sans-serif;
+  font-size: var(--t1-font-size);
+  font-weight: var(--t1-font-weight);
+  letter-spacing: var(--t1-letter-spacing);
+  line-height: var(--t1-line-height);
+  color: var(--color-white);
+
+  /* Refinements to match Figma specs */
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: normal;
+}
+
+/* --------------------------------------------------------------------------
+   TECHNICAL CARDS
+   -------------------------------------------------------------------------- */
+
+.renato-cards-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.renato-section-cards-title {
+  font-family: var(--t1-font-family), "Titillium Web", sans-serif;
+  font-size: var(--t1-font-size);
+  font-weight: var(--t1-font-weight);
+  letter-spacing: var(--t1-letter-spacing);
+  line-height: var(--t1-line-height);
+  color: var(--color-primary-green);
+
+  /* Refinements to match Figma specs */
+  font-size: 32px;
+  line-height: 33px;
+  letter-spacing: 0.05em;
+}
+
+.renato-technical-cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 21px;
+}
+
+.renato-technical-card {
+  display: flex;
+  width: 126.69px;
+  height: 128px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20.898px;
+  background-color: var(--color-white);
+  box-shadow: 8px 8px 8px 0 rgba(255, 255, 255, 0.25);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.renato-technical-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 8px 12px 16px 0 rgba(255, 255, 255, 0.35);
+}
+
+.renato-technical-card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.renato-technical-card-icon-box {
+  width: 48px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.renato-technical-card-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.renato-technical-card-text {
+  font-family: var(--t2-font-family), "Titillium Web", sans-serif;
+  font-size: var(--t2-font-size);
+  font-weight: var(--t2-font-weight);
+  letter-spacing: var(--t2-letter-spacing);
+  line-height: var(--t2-line-height);
+  color: var(--color-primary-navy);
+
+  /* Refinements to match Figma specs */
+  text-align: center;
+  font-size: 16.464px;
+  line-height: 13.238px;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVENESS & ACCESSIBILITY
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+  .renato-section-container {
+    gap: 40px;
+  }
+  
+  .renato-image-card-container {
+    width: 400px;
+    height: 485px;
+  }
+}
+
+@media (max-width: 991px) {
+  .renato-section {
+    padding: 60px 20px;
+  }
+
+  .renato-section-container {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .renato-image-card-container {
+    width: 100%;
+    max-width: 500px;
+    height: 550px;
+  }
+
+  .renato-content-container {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .renato-section-title {
+    text-align: center;
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .renato-milestone-item {
+    text-align: left;
+  }
+
+  .renato-milestone-text {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .renato-cards-section {
+    align-items: center;
+  }
+
+  .renato-section-cards-title {
+    font-size: 26px;
+    line-height: 28px;
+  }
+
+  .renato-technical-cards-grid {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .renato-section {
+    padding: 40px 16px;
+  }
+
+  .renato-image-card-container {
+    height: 400px;
+  }
+
+  .renato-section-title {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .renato-milestone-item {
+    gap: 12px;
+  }
+
+  .renato-milestone-text {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .renato-milestone-icon-box {
+    width: 28px;
+    height: 38px;
+  }
+
+  .renato-technical-cards-grid {
+    gap: 12px;
+  }
+}
+
+/* Reduced Motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .renato-technical-card {
+    transition: none;
+  }
+  .renato-technical-card:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,540 @@
+/* ==========================================================================
+   TIMELINE SECTION — Estilos de Seção e Componentes
+   ========================================================================== */
+
+.timeline-section {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-secondary-mist-light);
+  /* #F4F4F8 gray-mist */
+  padding: 100px 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background DNA Illustration decorative wrapper */
+.timeline-dna-background {
+  position: absolute;
+  top: 59%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1536 / 1024;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.timeline-dna-image {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Main Content Container */
+.timeline-content-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1472px;
+  /* Standard workspace grid width */
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  z-index: 2;
+}
+
+/* Section Title */
+.timeline-main-title {
+  color: var(--color-primary-navy);
+  font-family: var(--font-title);
+  font-size: clamp(32px, 4.5vw, 44px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0;
+  text-align: left;
+}
+
+/* Body wrapper: DNA side panel (esquerda) + events layout (direita) */
+.timeline-body-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+  position: relative;
+  width: 100%;
+}
+
+/* Layout Container for Axis and Grid */
+.timeline-layout-container {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* DNA Side Panel — oculto no desktop, visível a partir de ≤1214px */
+.timeline-dna-side-panel {
+  display: none;
+  position: relative;
+  width: 80px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 0 8px 8px 0;
+}
+
+.timeline-dna-image-rotator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1500px;
+  height: 80px;
+  transform: translate(-50%, -50%) rotate(90deg);
+  pointer-events: none;
+}
+
+.timeline-dna-side-image {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Axis lines (hidden on mobile, shown on desktop) */
+.timeline-horizontal-axis {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary-navy);
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.timeline-vertical-axis {
+  display: none;
+}
+
+/* Events List (Desktop Grid layout) */
+.timeline-events-list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) max-content;
+  grid-template-rows: 240px 240px;
+  /* Precise height spacing for above/below items */
+  row-gap: 160px;
+  /* Space for the DNA image in the middle */
+  column-gap: 15px;
+  /* Compact horizontal gap to fit desktop viewports */
+  position: relative;
+  z-index: 3;
+  width: 100%;
+}
+
+/* Grid alignment rules for alternating layout */
+.timeline-event-item {
+  width: 100%;
+  position: relative;
+  list-style: none;
+}
+
+/* Odd Events: Align to the top of the top row (grid-row 1) */
+.timeline-event-item.item-odd {
+  grid-row: 1;
+  align-self: start;
+}
+
+/* Even Events: Align to the bottom of the bottom row (grid-row 2) */
+.timeline-event-item.item-even {
+  grid-row: 2;
+  align-self: end;
+}
+
+/* Event Container Flex Box (Horizontal side-by-side layout) */
+.timeline-card-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  width: max-content;
+}
+
+/* Photo and Axis Marker wrapper */
+.timeline-card-graphic-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+}
+
+.timeline-event-item.item-odd .timeline-card-graphic-wrapper {
+  align-self: flex-start;
+}
+
+/* Round photo circle */
+.timeline-photo-circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(2, 23, 43, 0.12);
+  background-color: var(--color-white);
+  border: 4px solid var(--color-white);
+  z-index: 5;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-photo-img {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Card Hover effect */
+.timeline-card-container:hover .timeline-photo-circle {
+  transform: scale(1.05);
+  box-shadow: 0 16px 32px rgba(2, 23, 43, 0.22);
+}
+
+.timeline-card-container:hover .timeline-photo-img {
+  transform: scale(1.06);
+}
+
+/* Axis Connection Lines and Dots */
+.timeline-branch-line {
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  background-color: var(--color-primary-navy);
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+/* Line going down from top-row items to the axis */
+.timeline-branch-line.line-down {
+  top: 120px;
+  height: 60px;
+  /* Exact branch height to reach the axis line */
+}
+
+/* Line going up from bottom-row items to the axis */
+.timeline-branch-line.line-up {
+  bottom: 120px;
+  height: 60px;
+  /* Exact branch height to reach the axis line */
+}
+
+/* Small dot exactly positioned on the horizontal axis line */
+.timeline-axis-dot {
+  position: absolute;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--color-primary-navy);
+  border: 3px solid var(--color-secondary-mist-light);
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+
+.item-odd .timeline-axis-dot {
+  top: 180px;
+  /* 120px wrapper height + 60px branch line */
+}
+
+.item-even .timeline-axis-dot {
+  bottom: 180px;
+  /* 120px wrapper height + 60px branch line */
+}
+
+/* Text descriptions next to the cards */
+.timeline-event-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 190px;
+  flex-shrink: 0;
+}
+
+.timeline-event-year-title {
+  color: var(--color-primary-navy);
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+}
+
+.timeline-pin-icon {
+  font-size: 16px;
+}
+
+.timeline-event-description {
+  color: var(--color-primary-navy);
+  font-family: var(--font-title);
+  /* Precise layout typography */
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   RESPONSIVIDADE (Tablets e Mobile)
+   ========================================================================== */
+
+/* Tablets / Medium Screens (Telas até 1200px) */
+@media (max-width: 1200px) {
+  .timeline-events-list {
+    column-gap: 20px;
+  }
+
+  .timeline-event-description {
+    font-size: 13px;
+  }
+}
+
+/* Medium Screens — Column Layout + DNA Side Panel (Telas até 1214px) */
+@media (max-width: 1214px) {
+
+  /* Exibe o painel lateral do DNA à esquerda */
+  .timeline-dna-side-panel {
+    display: block;
+  }
+
+  /* Oculta o DNA horizontal central (desktop-only) */
+  .timeline-dna-background {
+    display: none;
+  }
+
+  /* Converte o grid em lista vertical */
+  .timeline-events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Reseta posicionamento de grid */
+  .timeline-event-item.item-odd,
+  .timeline-event-item.item-even {
+    grid-row: auto !important;
+    grid-column: auto !important;
+    align-self: flex-start;
+    padding: 0;
+  }
+
+  /* Cada card: imagem à esquerda, texto à direita */
+  .timeline-card-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+  }
+
+  /* Wrapper da imagem: tamanho fixo */
+  .timeline-card-graphic-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    align-self: center;
+  }
+
+  .timeline-event-item.item-odd .timeline-card-graphic-wrapper {
+    align-self: center;
+  }
+
+  .timeline-photo-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* Oculta linhas de conexão desktop */
+  .timeline-branch-line,
+  .timeline-axis-dot {
+    display: none;
+  }
+
+  /* Texto: fluido, ao lado da imagem */
+  .timeline-event-text-block {
+    width: 100%;
+    flex-shrink: 1;
+  }
+
+  .timeline-event-year-title {
+    font-size: 18px;
+  }
+
+  .timeline-event-description {
+    font-size: 14px;
+  }
+}
+
+/* Small Screens / Mobile Conversion (Telas até 1024px) */
+@media (max-width: 1024px) {
+  .timeline-section {
+    padding: 80px 0;
+  }
+
+  .timeline-content-wrapper {
+    gap: 48px;
+  }
+
+  /* Hide Desktop Horizontal Elements */
+  .timeline-horizontal-axis {
+    display: none;
+  }
+
+  .timeline-branch-line {
+    display: none;
+  }
+
+  .timeline-axis-dot {
+    display: none;
+  }
+
+  /* Show Mobile Vertical Axis */
+  .timeline-vertical-axis {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 2px;
+    height: 100%;
+    background-color: var(--color-primary-navy);
+    z-index: 2;
+  }
+
+  /* Convert Grid into a single column vertical flow */
+  .timeline-events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Reset grid rows and self alignment */
+  .timeline-event-item.item-odd,
+  .timeline-event-item.item-even {
+    grid-row: auto !important;
+    grid-column: auto !important;
+    align-self: flex-start;
+    padding: 0;
+  }
+
+  .timeline-card-container {
+    padding-left: 50px;
+    /* Offset to clear the vertical line */
+  }
+
+  /* Place axis marker relative to card list on the left */
+  .timeline-card-graphic-wrapper {
+    position: absolute;
+    left: -40px;
+    /* Centered on the vertical axis line */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 120px;
+  }
+
+  .timeline-photo-circle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .timeline-event-text-block {
+    max-width: 100%;
+    /* Fully fluid text box width on mobile */
+  }
+
+  .timeline-event-description {
+    font-size: 15px;
+  }
+}
+
+/* ==========================================================================
+   MOBILE-DEVELOPER AGENT - FIX FOR 481px to 1025px
+   ========================================================================== */
+@media (min-width: 481px) and (max-width: 1025px) {
+  .timeline-body-wrapper {
+    /* Afasta o container principal do painel lateral para a imagem (-40px) não sobrepor o DNA */
+    gap: 40px;
+  }
+
+  .timeline-card-container {
+    /* Evita a sobreposição horizontal entre a imagem e o bloco de texto */
+    padding-left: 100px;
+    /* Evita a sobreposição vertical dos cards quando o texto for curto */
+    min-height: 120px;
+  }
+}
+
+/* Small Mobiles (Telas até 480px) */
+@media (max-width: 480px) {
+  .timeline-section {
+    padding: 60px 0;
+  }
+
+  .timeline-content-wrapper {
+    padding: 0 20px;
+  }
+
+  .timeline-vertical-axis {
+    left: 10px;
+  }
+
+  .timeline-card-container {
+    padding-left: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .timeline-card-graphic-wrapper {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+  }
+
+  .timeline-photo-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* Add simple list dots for small mobile on the vertical axis */
+  .timeline-card-container::before {
+    content: '';
+    position: absolute;
+    left: -19px;
+    /* Centered on vertical line */
+    top: 50px;
+    /* Vertically centered to photo circle */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--color-primary-navy);
+    border: 2px solid var(--color-secondary-mist-light);
+    z-index: 4;
+  }
+}

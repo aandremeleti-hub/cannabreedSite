@@ -1,0 +1,241 @@
+/* ==========================================================================
+   HEADER COMPONENT — Estilos do Componente
+   ========================================================================== */
+
+.header {
+  display: flex;
+  height: 145px;
+  padding: 0 clamp(20px, 6.6vw, 100px);
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-primary-navy);
+  position: relative;
+  z-index: 100;
+  width: 100%;
+}
+
+.header-container {
+  display: flex;
+  width: 100%;
+  max-width: 1312px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo-wrapper {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.header-logo-wrapper:hover {
+  opacity: 0.85;
+}
+
+.header-logo-image {
+  object-fit: contain;
+}
+
+.header-nav-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Nav Item Boxes */
+.header-nav-bar-home-box,
+.header-nav-bar-sobre-box,
+.header-nav-bar-servicos-box,
+.header-nav-bar-ped-box,
+.header-nav-bar-contato-box {
+  display: flex;
+  align-items: center;
+}
+
+/* Nav Link Texts */
+.header-nav-bar-home-text,
+.header-nav-bar-sobre-text,
+.header-nav-bar-servicos-text,
+.header-nav-bar-ped-text,
+.header-nav-bar-contato-text {
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 27px;
+  transition: color 0.2s ease;
+  padding: 8px 12px;
+}
+
+/* Hover & Focus States */
+.header-nav-bar-home-text:hover,
+.header-nav-bar-sobre-text:hover,
+.header-nav-bar-servicos-text:hover,
+.header-nav-bar-ped-text:hover,
+.header-nav-bar-contato-text:hover {
+  color: var(--color-primary-green);
+}
+
+.header-nav-bar-home-text:focus-visible,
+.header-nav-bar-sobre-text:focus-visible,
+.header-nav-bar-servicos-text:focus-visible,
+.header-nav-bar-ped-text:focus-visible,
+.header-nav-bar-contato-text:focus-visible {
+  outline: 2px solid var(--color-primary-green);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Hamburger Menu Button (Escondido no Desktop) */
+.header-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 110;
+}
+
+.header-mobile-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-white);
+  border-radius: 3px;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+/* Active Hamburger Animation */
+.header-mobile-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.header-mobile-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.header-mobile-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile Menu Drawer (Escondido no Desktop) */
+.header-mobile-drawer {
+  display: none;
+}
+
+/* Background Overlay for mobile drawer */
+.header-mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(2, 23, 43, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 101;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.header-mobile-overlay.active {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (Desktop-First)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .header {
+    height: 90px;
+  }
+
+  .header-nav-bar {
+    display: none;
+  }
+
+  .header-mobile-toggle {
+    display: flex;
+  }
+
+  /* Mobile Drawer Styling */
+  .header-mobile-drawer {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--color-primary-navy);
+    box-shadow: -5px 0 25px rgba(2, 23, 43, 0.5);
+    padding: 100px 30px 40px;
+    gap: 30px;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 105;
+  }
+
+  .header-mobile-drawer.active {
+    transform: translateX(0);
+  }
+
+  .header-mobile-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .header-mobile-nav-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-mobile-nav-link {
+    color: var(--color-white);
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    transition: color 0.2s ease;
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  .header-mobile-nav-link:hover {
+    color: var(--color-primary-green);
+  }
+
+  .header-mobile-nav-link:focus-visible {
+    outline: 2px solid var(--color-primary-green);
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header-logo-wrapper,
+  .header-nav-bar-home-text,
+  .header-nav-bar-sobre-text,
+  .header-nav-bar-servicos-text,
+  .header-nav-bar-ped-text,
+  .header-nav-bar-contato-text,
+  .header-mobile-toggle span,
+  .header-mobile-drawer,
+  .header-mobile-overlay,
+  .header-mobile-nav-link {
+    transition: none !important;
+    backdrop-filter: none !important;
+  }
+}

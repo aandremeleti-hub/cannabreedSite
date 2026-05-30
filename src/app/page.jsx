@@ -1,3 +1,4 @@
+import Header from '@/components/layout/Header/Header';
 import Hero from '@/components/layout/Hero/Hero';
 import MarketProblem from '@/components/layout/MarketProblem/MarketProblem';
 import WhatCannabreedDoes from '@/components/layout/WhatCannabreedDoes/WhatCannabreedDoes';
@@ -6,6 +7,7 @@ import AuthoritySection from '@/components/layout/AuthoritySection/AuthoritySect
 export default function Page() {
   return (
     <main className="home-main">
+      <Header />
       <Hero />
       <MarketProblem />
       <WhatCannabreedDoes />

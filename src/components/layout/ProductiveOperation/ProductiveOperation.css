@@ -1,0 +1,247 @@
+/* ==========================================================================
+   PRODUCTIVE OPERATION (OPERAÇÃO PRODUTIVA) SECTION STYLES
+   ========================================================================== */
+
+.po-section {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-white);
+  background-image: url('../../../assets/images/logo-background.svg');
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  background-position: center;
+  color: var(--color-primary-navy);
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container de Conteúdo */
+.po-container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .po-container {
+    grid-template-columns: 734px 1fr;
+    gap: 94px;
+  }
+}
+
+/* Lado Esquerdo */
+.po-content-left {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Header da Seção */
+.po-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.po-title {
+  color: var(--color-primary-navy);
+  font-family: var(--font-title);
+  font-size: clamp(32px, 4.5vw, 44px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  max-width: 600px;
+}
+
+.po-description-subtitle {
+  font-family: var(--font-body);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--color-primary-navy-mid);
+}
+
+.po-description {
+  font-family: var(--paragraph-font-family);
+  font-size: 16px;
+  font-weight: var(--paragraph-font-weight);
+  line-height: 1.5;
+  color: var(--color-secondary-gray);
+  max-width: 520px;
+}
+
+/* Grade de Cards */
+.po-cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  max-width: 734px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Card Individual (Fundo Escuro / Texto Claro) */
+.po-card {
+  --icon-color-primary: var(--color-primary-green);
+  --icon-color-secondary: var(--color-white);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 126px;
+  height: 128px;
+  background-color: var(--color-primary-navy);
+  border-radius: 21px;
+  box-shadow: 0 8px 16px rgba(2, 23, 43, 0.15);
+  cursor: pointer;
+  outline: 2px solid transparent;
+  outline-offset: 4px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.po-card-title {
+  font-family: var(--t3-font-family);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-white);
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.po-card-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+/* Hover e Estados Ativos */
+.po-card:hover {
+  transform: translateY(-8px);
+  background-color: var(--color-primary-green);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.18);
+
+  --icon-color-primary: var(--color-primary-navy);
+  --icon-color-secondary: var(--color-white);
+}
+
+.po-card:hover .po-card-title {
+  color: var(--color-primary-navy);
+}
+
+.po-card:hover .po-card-icon-wrapper {
+  transform: scale(1.1);
+}
+
+/* Foco Acessível (:focus-visible) */
+.po-card:focus-visible {
+  outline-color: var(--color-primary-green);
+  transform: translateY(-3px);
+}
+
+/* Lado Direito: Imagem Premium */
+.po-content-right {
+  position: relative;
+  width: 100%;
+  max-width: 382px;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 20px 40px rgba(2, 23, 43, 0.2);
+  background-color: var(--color-primary-navy-mid);
+  transition: transform 0.5s ease;
+  justify-self: end;
+  isolation: isolate;
+}
+
+.po-content-right:hover {
+  transform: scale(1.02);
+}
+
+.po-image {
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (DECKSTOP-FIRST)
+   ========================================================================== */
+
+@media (max-width: 1023px) {
+  .po-content-left {
+    align-items: center;
+    text-align: center;
+  }
+
+  .po-header {
+    align-items: center;
+  }
+
+  .po-title {
+    max-width: 100%;
+  }
+
+  .po-cards-grid {
+    justify-content: center;
+  }
+
+  .po-card {
+    width: 126px;
+    height: 128px;
+  }
+}
+
+@media (max-width: 768px) {
+  .po-section {
+    padding: 0;
+  }
+
+  /* No padding override to keep width: 90% centered */
+
+  .po-card {
+    width: 126px;
+    height: 128px;
+  }
+
+  .po-content-right {
+    width: 100%;
+    max-width: 382px;
+    height: auto;
+    aspect-ratio: 382 / 459;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .po-card {
+    width: 110px;
+    height: 115px;
+    border-radius: 16px;
+    min-width: 110px;
+  }
+
+  .po-title {
+    font-size: 26px;
+  }
+
+  .po-description-subtitle {
+    font-size: 20px;
+  }
+
+  .po-description {
+    font-size: 14px;
+  }
+}

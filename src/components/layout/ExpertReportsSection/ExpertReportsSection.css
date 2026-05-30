@@ -1,0 +1,259 @@
+/* ==========================================================================
+   EXPERT REPORTS SECTION — Estilos de Seção (BEM Adaptado)
+   ========================================================================== */
+
+.expert-reports {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-primary-navy);
+  background-image: url('../../../assets/images/logo-background-white.svg');
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0;
+  z-index: 2;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+/* Main Content Wrapper */
+.expert-reports-content {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+@media (min-width: 1024px) {
+  .expert-reports-content {
+    grid-template-columns: 734px 1fr;
+    gap: 94px;
+  }
+}
+
+/* Left Column: Heading and Grid */
+.expert-reports-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(30px, 4vw, 58px);
+}
+
+.expert-reports-title-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 580px;
+}
+
+.expert-reports-title {
+  color: var(--color-primary-green);
+  font-family: var(--font-title);
+  font-size: clamp(32px, 4.5vw, 44px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.expert-reports-description {
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+/* Cards Grid */
+.expert-reports-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  max-width: 734px;
+  width: 100%;
+}
+
+/* Individual Card */
+.expert-reports-card {
+  position: relative;
+  background-color: var(--color-white);
+  width: 126px;
+  height: 128px;
+  border-radius: 21px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 16px rgba(2, 23, 43, 0.2);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+  outline: none;
+  
+  /* Initial theme variable mappings for icons inside the card */
+  --icon-color-primary: var(--color-primary-green);
+  --icon-color-secondary: var(--color-primary-navy);
+}
+
+.expert-reports-card-title {
+  font-family: var(--font-title);
+  font-size: clamp(13px, 1.5vw, 15px);
+  font-weight: 700;
+  color: var(--color-primary-navy);
+  text-align: center;
+  line-height: 1.2;
+  word-break: break-word;
+  transition: color 0.3s ease;
+}
+
+.expert-reports-card-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.expert-reports-card-icon {
+  width: 48px;
+  height: 48px;
+  transition: transform 0.3s ease;
+}
+
+/* Keyboard accessibility outline */
+.expert-reports-card:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-primary-green), 0 8px 16px rgba(2, 23, 43, 0.4);
+  transform: translateY(-4px);
+}
+
+/* Hover States */
+.expert-reports-card:hover {
+  transform: translateY(-8px);
+  background-color: var(--color-primary-green);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.25);
+  
+  /* CSS Variables override to change SVG fill colors */
+  --icon-color-primary: var(--color-primary-navy);
+  --icon-color-secondary: var(--color-white);
+}
+
+.expert-reports-card:hover .expert-reports-card-title {
+  color: var(--color-primary-navy);
+}
+
+.expert-reports-card:hover .expert-reports-card-icon {
+  transform: scale(1.1);
+}
+
+/* Right Column: Image Container */
+.expert-reports-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  align-self: stretch;
+  width: 100%;
+}
+
+.expert-reports-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 382px;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  isolation: isolate;
+}
+
+.expert-reports-image {
+  object-fit: cover;
+}
+
+
+/* ==========================================================================
+   RESPONSIVIDADE (Desktop-First Media Queries)
+   ========================================================================== */
+
+@media (max-width: 1023px) {
+  .expert-reports-title-box {
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .expert-reports-left {
+    align-items: center;
+  }
+
+  .expert-reports-right {
+    justify-content: center;
+  }
+
+  .expert-reports-image-wrapper {
+    max-width: 600px;
+    aspect-ratio: 533 / 292;
+    height: auto;
+  }
+}
+
+/* Small Tablets & Large Mobiles (Telas até 768px) */
+@media (max-width: 768px) {
+  .expert-reports {
+    padding: 0;
+  }
+
+  /* No padding override to keep width: 90% centered */
+
+  .expert-reports-grid {
+    justify-content: center;
+    max-width: 100%;
+    gap: 20px;
+  }
+
+  .expert-reports-card {
+    width: 126px;
+    height: 128px;
+    padding: 16px;
+  }
+}
+
+/* Small Mobiles (Telas até 480px) */
+@media (max-width: 480px) {
+  .expert-reports {
+    padding: 0;
+  }
+
+  /* No padding override to keep width: 90% centered */
+
+  .expert-reports-grid {
+    justify-content: center;
+    gap: 15px;
+    max-width: 100%;
+  }
+
+  .expert-reports-card {
+    width: 110px;
+    height: 115px;
+    border-radius: 16px;
+    padding: 12px;
+  }
+
+  .expert-reports-card-title {
+    text-align: left;
+    font-size: 16px;
+  }
+
+  .expert-reports-card-icon-wrapper {
+    width: auto;
+    flex-grow: 0;
+  }
+}

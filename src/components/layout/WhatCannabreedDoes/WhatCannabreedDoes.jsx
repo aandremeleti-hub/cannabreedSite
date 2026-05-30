@@ -15,7 +15,7 @@ export default function WhatCannabreedDoes() {
   };
 
   return (
-    <section className="what-cannabreed-does">
+    <section className="what-cannabreed-does" id="servicos">
       {/* Background Decor Layer */}
       <div className="what-cannabreed-does-bg-container">
         <Image

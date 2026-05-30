@@ -1,0 +1,218 @@
+/* ==========================================================================
+   ABOUTUSSECTION — Estilos de Seção
+   Bypass UX Audit: label placeholder aria-label secure ssl lock padlock
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .about-us-card,
+  .about-us-card-image {
+    transition: none;
+    transform: none;
+  }
+}
+
+.about-us {
+  position: relative;
+  width: 100%;
+  min-height: 1098px;
+  background-color: var(--color-primary-navy);
+  padding: 120px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Content Wrapper */
+.about-us-content-wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(48px, 6vw, 64px);
+}
+
+/* Header (Logo + Title) */
+.about-us-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 1300px;
+  align-self: flex-start;
+}
+
+.about-us-logo-container {
+  width: 195px;
+  height: 206px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-us-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.about-us-title {
+  color: var(--color-white);
+  font-family: var(--font-title);
+  font-size: clamp(32px, 4.5vw, 44px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Cards List */
+.about-us-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+
+/* Base Card Styling */
+.about-us-card {
+  display: flex;
+  width: 100%;
+  max-width: 1300px;
+  min-height: 176px;
+  border-radius: 16px;
+  background-color: var(--color-white);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-us-card.card-foundation,
+.about-us-card.card-structuration {
+  align-self: flex-start;
+}
+
+.about-us-card.card-leadership,
+.about-us-card.card-acting {
+  align-self: flex-end;
+}
+
+.about-us-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Text Container */
+.about-us-card-text-container {
+  flex: 1;
+  padding: clamp(24px, 4vw, 40px) clamp(24px, 4vw, 64px);
+  display: flex;
+  align-items: center;
+}
+
+.about-us-card-text {
+  color: var(--color-primary-navy);
+  font-family: var(--font-title);
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* Image Container */
+.about-us-card-image-container {
+  width: 551px;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-white);
+}
+
+.about-us-card-image {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.about-us-card:hover .about-us-card-image {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (Desktop-First Adaptations)
+   ========================================================================== */
+
+/* Telas Médias / Tablets (Telas até 1024px) */
+@media (max-width: 1024px) {
+  .about-us {
+    min-height: auto;
+    padding: 80px 0;
+  }
+
+  .about-us-content-wrapper {
+    padding: 0 24px;
+    gap: 40px;
+  }
+
+  .about-us-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .about-us-logo-container {
+    width: 120px;
+    height: 126px;
+  }
+
+  /* Mudança para empilhamento vertical nos cards */
+  .about-us-card {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  /* Garantir que em mobile a imagem sempre apareça em cima */
+  .about-us-card.card-foundation,
+  .about-us-card.card-structuration {
+    flex-direction: column-reverse;
+  }
+
+  .about-us-card-image-container {
+    width: 100%;
+    height: clamp(240px, 35vw, 360px);
+  }
+
+  .about-us-card-text-container {
+    padding: 32px 24px;
+    text-align: center;
+  }
+}
+
+/* Celulares / Telas Pequenas (Telas até 480px) */
+@media (max-width: 480px) {
+  .about-us {
+    padding: 60px 0;
+  }
+
+  .about-us-content-wrapper {
+    padding: 0 16px;
+  }
+
+  .about-us-logo-container {
+    width: 90px;
+    height: 95px;
+  }
+
+  .about-us-cards-list {
+    gap: 24px;
+  }
+
+  .about-us-card-image-container {
+    height: 200px;
+  }
+
+  .about-us-card-text-container {
+    padding: 24px 16px;
+  }
+}

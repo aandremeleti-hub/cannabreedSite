@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import heroBg from '@/assets/images/hero-illustration.svg';
+import heroBg from '@/assets/images/hero-illustration.webp';
 import rectDecor from '@/assets/icons/rectangle-decor.svg';
 import './Hero.css';
 

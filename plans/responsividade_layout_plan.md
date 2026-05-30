@@ -1,7 +1,7 @@
 # Plano de Ação Mestre e As-Built: Responsividade Premium do Layout
 
 **Objetivo Geral:** Aplicar responsividade de ponta com tipografia fluida calibrada e adaptações de layout em todos os quatro componentes de layout (`Hero`, `MarketProblem`, `WhatCannabreedDoes`, `AuthoritySection`) sob a pasta `src/components/layout/`.
-**Status:** 🟡 Em Progresso (As-Planned)
+**Status:** 🟢 Concluído (As-Built)
 
 ---
 
@@ -60,8 +60,8 @@
 
 #### Etapa 4.1: Tipografia Fluida e Escala Proporcional de Imagens
 > **🔗 Motivação / Relação com a Demanda:** O usuário solicitou escala proporcional fluida para a colagem das 3 imagens absolutas e sobrepostas no mobile (opção A de P0).
-  - [ ] **Subetapa 4.1.1:** Aplicar tipografia fluida para o título principal, títulos de cartões (`.authority-item-title`) e textos de descrições (`.authority-item-text`) usando as fórmulas de `clamp()` calibradas. | 🟢 **Dificuldade: 1** | 🤖 **Modelo: Gemini Flash**
-  - [ ] **Subetapa 4.1.2:** Ajustar o container `.authority-images-container` e as caixas de imagens absolutas (`.authority-image-box-1`, `.authority-image-box-2`, `.authority-image-box-3`) na query `@media (max-width: 640px)` para reduzir de forma perfeitamente fluida e proporcional (via largura em `%` ou `transform: scale()`), prevenindo qualquer overflow horizontal. | 🟡 **Dificuldade: 3** | 🤖 **Modelo: Gemini Pro (Low)**
+  - [x] **Subetapa 4.1.1:** Aplicar tipografia fluida para o título principal, títulos de cartões (`.authority-item-title`) e textos de descrições (`.authority-item-text`) usando as fórmulas de `clamp()` calibradas. | 🟢 **Dificuldade: 1** | 🤖 **Modelo: Gemini Flash**
+  - [x] **Subetapa 4.1.2:** Ajustar o container `.authority-images-container` e as caixas de imagens absolutas (`.authority-image-box-1`, `.authority-image-box-2`, `.authority-image-box-3`) na query `@media (max-width: 640px)` para reduzir de forma perfeitamente fluida e proporcional (via largura em `%` ou `transform: scale()`), prevenindo qualquer overflow horizontal. | 🟡 **Dificuldade: 3** | 🤖 **Modelo: Gemini Pro (Low)**
 
 ---
 
@@ -72,8 +72,8 @@
 
 #### Etapa 5.1: Testes de Build e UX Audit Manual
 > **🔗 Motivação / Relação com a Demanda:** Garantir que o código compila corretamente e que a experiência responsiva flui livre de quebras em todas as viewports.
-  - [ ] **Subetapa 5.1.1:** Executar build completo da aplicação (`npm run build`) para verificar a integridade da compilação e ausência de avisos/erros. | 🔒 **Dificuldade: 2** | 🤖 **Modelo: Gemini Flash**
-  - [ ] **Subetapa 5.1.2:** Realizar verificação manual de usabilidade no Device Mode do navegador de `320px` a `1440px`. | 🟢 **Dificuldade: 1** | 🤖 **Modelo: Gemini Flash**
+  - [x] **Subetapa 5.1.1:** Executar build completo da aplicação (`npm run build`) para verificar a integridade da compilação e ausência de avisos/erros. | 🔒 **Dificuldade: 2** | 🤖 **Modelo: Gemini Flash**
+  - [x] **Subetapa 5.1.2:** Realizar verificação manual de usabilidade no Device Mode do navegador de `320px` a `1440px`. | 🟢 **Dificuldade: 1** | 🤖 **Modelo: Gemini Flash**
 
 ---
 
@@ -97,4 +97,4 @@ Para otimizar o consumo de tokens mantendo a qualidade máxima do código, alter
 
 ### Tarefa Final: Atualização Direta dos Documentos de Consulta (OBRIGATÓRIO)
 - **Ações de Fechamento:**
-  - [ ] Mudar o status no topo deste arquivo de sprint para `🟢 Concluído (As-Built)`.
+  - [x] Mudar o status no topo deste arquivo de sprint para `🟢 Concluído (As-Built)`.

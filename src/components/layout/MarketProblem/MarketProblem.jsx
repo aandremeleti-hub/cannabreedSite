@@ -4,8 +4,8 @@ import iconTable from '@/assets/icons/icon-table.svg';
 import iconSyringe from '@/assets/icons/icon-syringe.svg';
 import iconLetterLocker from '@/assets/icons/icon-letter-locker.svg';
 import iconToolsCross from '@/assets/icons/icon-tools-cross.svg';
-import plantImage from '@/assets/images/market-problem-plant.svg';
-import bgImage from '@/assets/images/market-problem-bg.svg';
+import plantImage from '@/assets/images/market-problem-plant.webp';
+import bgImage from '@/assets/images/market-problem-bg.webp';
 import './MarketProblem.css';
 
 const PROBLEMS = [

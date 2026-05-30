@@ -1,0 +1,13 @@
+.pd-transition-container {
+  position: relative;
+  width: 100%;
+  height: clamp(80px, 19.1vw, 289px); /* Scales relative to viewport based on original aspect ratio */
+  background-color: var(--color-primary-navy, #02172b);
+  overflow: hidden;
+  margin-top: -1px; /* Prevents gaps with the preceding section */
+}
+
+.pd-transition-image {
+  object-fit: cover;
+  object-position: bottom;
+}

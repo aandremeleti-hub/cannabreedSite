@@ -17,7 +17,7 @@ description: Processa uma seção do Figma exportada manualmente, organizando as
 
 ## Objetivo
 
-Processar uma seção específica do Figma exportada manualmente na pasta `figma_imports/[nome-secao]`, validando sua integridade, organizando seus assets nos caminhos corretos do projeto, planejando a estrutura semântica e gerando o código JSX + CSS com fidelidade, seguindo as diretrizes de `global_cannabreed.md` e as decisões arquiteturais do projeto.
+Processar uma seção específica do Figma exportada manualmente [nome-secao]`, validando sua integridade, organizando seus assets nos caminhos corretos do projeto, planejando a estrutura semântica e gerando o código JSX + CSS com fidelidade, seguindo as diretrizes de `global_cannabreed.md` e as decisões arquiteturais do projeto.
 
 ---
 
@@ -25,7 +25,7 @@ Processar uma seção específica do Figma exportada manualmente na pasta `figma
 
 **Agente Responsável:** `explorer-agent` (conforme [explorer-agent.md](file:///C:/Users/Andre/Documents/Andr%C3%A9/Antigravity/cannabreed/agents/explorer-agent.md))
 
-Antes de gerar qualquer linha de código, o agente deve auditar o conteúdo da pasta `figma_imports/[nome-secao]/` para verificar se todos os elementos necessários estão presentes:
+Antes de gerar qualquer linha de código, o agente deve auditar o conteúdo da pasta `[nome-secao]/` para verificar se todos os elementos necessários estão presentes:
 
 1. **Screenshot de Layout Geral / SVG de Referência:**
    - Deve existir um arquivo SVG (`Main.svg` ou `[nome-secao]-layout.svg`) que represente o layout visual completo da seção.
@@ -102,7 +102,7 @@ Mover e tratar os assets de `figma_imports/[nome-secao]/` seguindo a arquitetura
   - As imagens exportadas como SVG do Figma já vêm pré-cropadas e pré-posicionadas por sua matriz interna de escala e translação no XML.
   - **NÃO** declare propriedades de background-position e background-size de crop estrito do DevMode (como `-90px -110px / 163% 208%`) em cima do arquivo SVG pré-cropado, pois isso duplicará o efeito de corte. Em vez disso, use `background-position: center; background-size: cover;`.
 - **Limitação de Grid Interno:**
-  - Apenas o wrapper de conteúdo (`.nome-secao-content-wrapper`) deve ter largura máxima restringida (`max-width: 1200px` ou `1280px` etc.) e ser centralizado com `margin: 0 auto;`.
+  - O wrapper de conteúdo (`.nome-secao-content-wrapper`) deve ter sua largura e alinhamento adaptados ao design do Figma. Se o layout exigir alinhamento centralizado padrão, restrinja a largura máxima (ex: `max-width: 1200px` ou `1280px` etc.) e centralize com `margin: 0 auto;`. Se o design exigir que os elementos toquem ou se alinhem perto dos limites laterais da tela (como desalinhamentos em zig-zag ou grids nas extremidades), o wrapper deve permanecer fluido (`width: 100%; max-width: 100%;`) usando margens ou paddings mínimos de segurança.
 - **Fluidez dos Textos:**
   - Containers de texto (`.nome-secao-text-container-description`) devem ter `max-width` com `width: 100%` em vez de larguras fixas.
 

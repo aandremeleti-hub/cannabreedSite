@@ -1,0 +1,272 @@
+/* ==========================================================================
+   REGULATORY COMPLIANCE SECTION — Estilos de Seção (BEM Adaptado)
+   ========================================================================== */
+
+.regulatory-compliance {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-white);
+  background-image: url('../../../assets/images/logo-background.svg');
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  z-index: 2;
+}
+
+/* Main Content Wrapper */
+.regulatory-compliance-content {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .regulatory-compliance-content {
+    grid-template-columns: 734px 1fr;
+    gap: 94px;
+  }
+}
+
+/* Left Column: Heading and Grid */
+.regulatory-compliance-left {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(30px, 4vw, 58px);
+}
+
+.regulatory-compliance-title-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 580px;
+}
+
+.regulatory-compliance-title {
+  color: var(--color-primary-navy);
+  font-family: var(--font-title);
+  font-size: clamp(32px, 4.5vw, 44px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.regulatory-compliance-description {
+  color: var(--color-secondary-gray);
+  font-family: var(--font-body);
+  font-size: clamp(15px, 2vw, 18px);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.regulatory-compliance-description-first-line {
+  font-family: var(--font-body);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--color-secondary-gray);
+}
+
+.regulatory-compliance-description p {
+  margin-bottom: 4px;
+}
+
+.regulatory-compliance-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* Cards Grid */
+.regulatory-compliance-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  max-width: 734px;
+  width: 100%;
+}
+
+/* Individual Card (Dark Navy Base) */
+.regulatory-compliance-card {
+  position: relative;
+  background-color: var(--color-primary-navy);
+  width: 126px;
+  height: 128px;
+  border-radius: 21px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 16px rgba(2, 23, 43, 0.15);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+  outline: none;
+  
+  /* Initial theme variables for nested SVG icons */
+  --icon-color-primary: var(--color-primary-green);
+  --icon-color-secondary: var(--color-white);
+}
+
+.regulatory-compliance-card-title {
+  font-family: var(--font-title);
+  font-size: clamp(13px, 1.5vw, 15px);
+  font-weight: 700;
+  color: var(--color-white);
+  text-align: center;
+  line-height: 1.2;
+  word-break: break-word;
+  transition: color 0.3s ease;
+}
+
+.regulatory-compliance-card-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.regulatory-compliance-card-icon {
+  width: 48px;
+  height: 48px;
+  transition: transform 0.3s ease;
+}
+
+/* Keyboard accessibility focus outline */
+.regulatory-compliance-card:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-primary-green), 0 8px 16px rgba(2, 23, 43, 0.3);
+  transform: translateY(-4px);
+}
+
+/* Card Hover States (Inverse Design) */
+.regulatory-compliance-card:hover {
+  transform: translateY(-8px);
+  background-color: var(--color-primary-green);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.18);
+  
+  /* Colors variables override on hover */
+  --icon-color-primary: var(--color-primary-navy);
+  --icon-color-secondary: var(--color-white);
+}
+
+.regulatory-compliance-card:hover .regulatory-compliance-card-title {
+  color: var(--color-primary-navy);
+}
+
+.regulatory-compliance-card:hover .regulatory-compliance-card-icon {
+  transform: scale(1.1);
+}
+
+/* Right Column: Image Container */
+.regulatory-compliance-right {
+  display: flex;
+  justify-content: flex-end;
+  align-self: stretch;
+  width: 100%;
+}
+
+.regulatory-compliance-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 382px;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(2, 23, 43, 0.15);
+}
+
+.regulatory-compliance-image {
+  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+/* ==========================================================================
+   RESPONSIVIDADE (Desktop-First Media Queries)
+   ========================================================================== */
+
+@media (max-width: 1023px) {
+  .regulatory-compliance-title-box {
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .regulatory-compliance-left {
+    align-items: center;
+  }
+
+  .regulatory-compliance-right {
+    justify-content: center;
+  }
+
+  .regulatory-compliance-image-wrapper {
+    max-width: 450px;
+    aspect-ratio: 4 / 3;
+    height: auto;
+  }
+}
+
+/* Small Tablets & Large Mobiles (Telas até 768px) */
+@media (max-width: 768px) {
+  .regulatory-compliance {
+    padding: 0;
+  }
+
+  /* No padding override to keep width: 90% centered */
+
+  .regulatory-compliance-grid {
+    justify-content: center;
+    max-width: 100%;
+    gap: 20px;
+  }
+
+  .regulatory-compliance-card {
+    width: 126px;
+    height: 128px;
+    padding: 16px;
+  }
+}
+
+/* Small Mobiles (Telas até 480px) */
+@media (max-width: 480px) {
+  .regulatory-compliance {
+    padding: 0;
+  }
+
+  /* No padding override to keep width: 90% centered */
+
+  .regulatory-compliance-grid {
+    justify-content: center;
+    gap: 15px;
+    max-width: 100%;
+  }
+
+  .regulatory-compliance-card {
+    width: 110px;
+    height: 115px;
+    border-radius: 16px;
+    padding: 12px;
+  }
+
+  .regulatory-compliance-card-title {
+    text-align: left;
+    font-size: 16px;
+  }
+
+  .regulatory-compliance-card-icon-wrapper {
+    width: auto;
+    flex-grow: 0;
+  }
+}

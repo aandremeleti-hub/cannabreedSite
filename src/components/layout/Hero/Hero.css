@@ -5,9 +5,9 @@
 .hero {
   position: relative;
   width: 100%;
-  height: auto;
-  min-height: 789px;
-  padding: 120px 0;
+  height: calc(100vh - 145px);
+  min-height: 600px;
+  padding: 0;
   background: var(--color-primary-navy);
   overflow: hidden;
   display: flex;
@@ -29,6 +29,14 @@
   object-position: center;
 }
 
+@media (max-width: 760px) {
+  .hero-bg-image {
+    /* Desloca linear e gradativamente de 50% (em 760px) até 80% (em 320px) */
+    object-position: calc(65% - (100vw - 320px) * 0.068) center;
+  }
+}
+
+
 /* Linear gradient overlay image layer (Rectangle 96) */
 .hero-bg-overlay {
   object-fit: cover;
@@ -42,6 +50,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 40px;
+  height: 100%;
   display: flex;
   align-items: center;
 }
@@ -119,8 +128,9 @@
 
 @media (max-width: 1024px) {
   .hero {
-    min-height: auto;
-    padding: 100px 0 80px;
+    height: calc(100vh - 90px);
+    min-height: 550px;
+    padding: 0;
   }
 
   .hero-content-wrapper {
@@ -148,10 +158,11 @@
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 100vh;
-    min-height: 100svh;
-    padding: 100px 0 60px;
-    align-items: center; /* O card ficará centralizado elegantemente */
+    height: calc(100vh - 90px);
+    min-height: 550px;
+    padding: 0;
+    align-items: center;
+    /* O card ficará centralizado elegantemente */
   }
 
   .hero-content-wrapper {
@@ -186,19 +197,21 @@
 
 @media (max-width: 480px) {
   .hero {
-    min-height: 100vh;
-    min-height: 100svh;
-    padding: 80px 0 40px;
+    height: calc(100vh - 90px);
+    min-height: 500px;
+    padding: 0;
   }
 
   .hero-content-wrapper {
     padding: 0 16px;
     box-sizing: border-box;
+    height: 100%;
   }
 
   .hero-container {
     box-sizing: border-box;
-    padding: 32px 16px; /* Reduzido o padding lateral para dar mais espaço ao texto */
+    padding: 32px 16px;
+    /* Reduzido o padding lateral para dar mais espaço ao texto */
     border-radius: 20px;
     gap: 24px;
     width: 100%;
