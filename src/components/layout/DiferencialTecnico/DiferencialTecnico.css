@@ -1,0 +1,202 @@
+/* ==========================================================================
+   DIFERENCIAL TECNICO — Estilos de Seção (Totalmente Isolados)
+   ========================================================================== */
+
+.dt-section {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-primary-navy);
+  padding: 100px 0 120px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dt-container {
+  width: 100%;
+  max-width: 1308px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header da Seção */
+.dt-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.dt-title {
+  color: var(--color-white);
+  font-family: var(--font-title);
+  font-size: clamp(32px, 4.5vw, 44px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Grid de Cartões (Layout de 3 Colunas) */
+.dt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+/* Cartão Individual */
+.dt-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  outline: none;
+  cursor: default;
+  /* Cores padrão do ícone (sem hover) */
+  --icon-color-primary: var(--color-primary-green);
+  --icon-color-secondary: var(--color-white);
+}
+
+/* Efeitos de Hover e Foco Acessível */
+.dt-card:hover {
+  transform: translateY(-6px);
+  background-color: rgba(255, 255, 255, 0.04);
+  border-color: var(--color-primary-green);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25), 0 0 15px rgba(128, 219, 66, 0.1);
+  /* Cores do ícone no hover */
+  --icon-color-primary: var(--color-primary-navy);
+  --icon-color-secondary: var(--color-white);
+}
+
+.dt-card:focus-visible {
+  outline: 2px solid var(--color-primary-green);
+  outline-offset: 4px;
+  background-color: rgba(255, 255, 255, 0.05);
+  /* Cores do ícone no foco acessível */
+  --icon-color-primary: var(--color-primary-navy);
+  --icon-color-secondary: var(--color-white);
+}
+
+/* Wrapper do Ícone */
+.dt-card-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(128, 219, 66, 0.08);
+  border-radius: 8px;
+  color: var(--color-primary-green);
+  transition: all 0.3s ease;
+}
+
+.dt-card:hover .dt-card-icon-wrapper {
+  background-color: var(--color-primary-green);
+  color: var(--color-primary-navy);
+}
+
+/* Ícone */
+.dt-card-icon {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+/* Conteúdo de Texto do Card */
+.dt-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dt-card-title {
+  color: var(--color-white);
+  font-family: var(--font-title);
+  font-size: var(--t2-font-size);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+.dt-card-description {
+  color: var(--color-secondary-lavender);
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.dt-card:hover .dt-card-description {
+  color: var(--color-secondary-mist-mid);
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (Desktop-First Adaptations)
+   ========================================================================== */
+
+/* Notebooks e Telas Médias (Até 1200px) */
+@media (max-width: 1200px) {
+  .dt-container {
+    gap: 48px;
+  }
+
+  .dt-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .dt-card {
+    padding: 32px 24px;
+  }
+}
+
+/* Tablets (Até 768px) */
+@media (max-width: 768px) {
+  .dt-section {
+    padding: 80px 0;
+  }
+
+  .dt-header {
+    align-items: center;
+    text-align: center;
+  }
+
+  .dt-title {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .dt-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .dt-card {
+    padding: 28px 20px;
+    gap: 20px;
+  }
+}
+
+/* Mobile (Até 480px) */
+@media (max-width: 480px) {
+  .dt-section {
+    padding: 60px 0;
+  }
+
+  .dt-container {
+    padding: 0 16px;
+  }
+}

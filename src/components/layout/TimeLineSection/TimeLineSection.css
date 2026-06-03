@@ -5,8 +5,7 @@
 .timeline-section {
   position: relative;
   width: 100%;
-  background-color: var(--color-secondary-mist-light);
-  /* #F4F4F8 gray-mist */
+  background-color: var(--color-secondary-gray-light);
   padding: 100px 0;
   overflow: hidden;
   display: flex;
@@ -239,7 +238,7 @@
   height: 16px;
   border-radius: 50%;
   background-color: var(--color-primary-navy);
-  border: 3px solid var(--color-secondary-mist-light);
+  border: 3px solid var(--color-secondary-gray-light);
   transform: translate(-50%, -50%);
   z-index: 4;
 }
@@ -534,7 +533,7 @@
     height: 12px;
     border-radius: 50%;
     background-color: var(--color-primary-navy);
-    border: 2px solid var(--color-secondary-mist-light);
+    border: 2px solid var(--color-secondary-gray-light);
     z-index: 4;
   }
 }

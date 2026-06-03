@@ -261,12 +261,7 @@
   }
 
   .regulatory-compliance-card-title {
-    text-align: left;
-    font-size: 16px;
-  }
-
-  .regulatory-compliance-card-icon-wrapper {
-    width: auto;
-    flex-grow: 0;
+    text-align: center;
+    font-size: 13px;
   }
 }

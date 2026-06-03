@@ -17,7 +17,7 @@ export default function ContractedManufacturing() {
     { id: 'projeto', title: 'Projeto', Icon: IconProjeto },
     { id: 'execucao', title: 'Execução', Icon: IconExecucao },
     { id: 'controle', title: 'Controle', Icon: IconControle },
-    { id: 'colheita', title: 'Colheita', Icon: IconControle },
+    { id: 'colheita', title: 'Colheita', Icon: IconColheita },
     { id: 'preparo', title: 'Preparo', Icon: IconPreparo },
     { id: 'embalagem', title: 'Embalagem', Icon: IconEmbalagem },
     { id: 'expedicao', title: 'Expedição', Icon: IconExpedicao },
@@ -26,7 +26,7 @@ export default function ContractedManufacturing() {
   return (
     <section className="cdmo-section" id="manufatura-contratada" aria-labelledby="cdmo-section-title">
       <div className="cdmo-container">
-        
+
         {/* Content Side */}
         <div className="cdmo-content">
           <div className="cdmo-header">
@@ -43,7 +43,6 @@ export default function ContractedManufacturing() {
               {cards.map((card) => (
                 <li className="cdmo-card-item" key={card.id}>
                   <article className="cdmo-card">
-                    <h3 className="cdmo-card-title">{card.title}</h3>
                     <div className="cdmo-card-icon-container">
                       {card.id === 'escopo' ? (
                         <div className="cdmo-card-escopo-icon" aria-hidden="true">
@@ -57,6 +56,7 @@ export default function ContractedManufacturing() {
                         />
                       )}
                     </div>
+                    <h3 className="cdmo-card-title">{card.title}</h3>
                   </article>
                 </li>
               ))}

@@ -17,7 +17,7 @@ description: Processa uma seção do Figma exportada manualmente, organizando as
 
 ## Objetivo
 
-Processar uma seção específica do Figma exportada manualmente [nome-secao]`, validando sua integridade, organizando seus assets nos caminhos corretos do projeto, planejando a estrutura semântica e gerando o código JSX + CSS com fidelidade, seguindo as diretrizes de `global_cannabreed.md` e as decisões arquiteturais do projeto.
+Processar uma seção específica do Figma exportada manualmente [nome-secao]`, validando sua integridade, organizando seus assets nos caminhos corretos do projeto, planejando a estrutura semântica e gerando o código JSX + CSS com exatidão em relação ao Design apresentado, seguindo as diretrizes de `global_cannabreed.md` e as decisões arquiteturais do projeto.
 
 ---
 

@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import renatoImage from '@/assets/images/renato-image.jpg';
-import iconInterface from '@/assets/icons/icon-interface.svg';
-import iconTrajetoria from '@/assets/icons/icon-trajetoria.svg';
-import iconIntegracao from '@/assets/icons/icon-integracao.svg';
+import IconInterface from '@/components/icons/IconInterface';
+import IconTrajetoria from '@/components/icons/IconTrajetoria';
+import IconIntegracao from '@/components/icons/IconIntegracao';
 import IconLogoMark from '@/components/icons/IconLogoMark';
 import './RenatoSection.css';
 
@@ -30,17 +30,17 @@ export default function RenatoSection() {
     {
       id: 'interface',
       title: 'Interface',
-      icon: iconInterface,
+      Icon: IconInterface,
     },
     {
       id: 'trajetoria',
       title: 'Trajetória',
-      icon: iconTrajetoria,
+      Icon: IconTrajetoria,
     },
     {
       id: 'integracao',
       title: 'Integração',
-      icon: iconIntegracao,
+      Icon: IconIntegracao,
     },
   ];
 
@@ -84,22 +84,22 @@ export default function RenatoSection() {
           <div className="renato-cards-section">
             <h3 className="renato-section-cards-title">ATUAÇÃO TÉCNICA:</h3>
             <div className="renato-technical-cards-grid">
-              {cards.map((card) => (
-                <article key={card.id} className="renato-technical-card">
-                  <div className="renato-technical-card-inner">
-                    <div className="renato-technical-card-icon-box" aria-hidden="true">
-                      <Image
-                        src={card.icon}
-                        alt=""
-                        width={48}
-                        height={42}
-                        className="renato-technical-card-icon"
-                      />
+              {cards.map((card) => {
+                const IconComponent = card.Icon;
+                return (
+                  <article key={card.id} className="renato-technical-card">
+                    <div className="renato-technical-card-inner">
+                      <div className="renato-technical-card-icon-box" aria-hidden="true">
+                        <IconComponent
+                          className="renato-technical-card-icon"
+                          size={42}
+                        />
+                      </div>
+                      <h4 className="renato-technical-card-text">{card.title}</h4>
                     </div>
-                    <h4 className="renato-technical-card-text">{card.title}</h4>
-                  </div>
-                </article>
-              ))}
+                  </article>
+                );
+              })}
             </div>
           </div>
         </div>

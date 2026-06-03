@@ -79,7 +79,6 @@
   top: 69.32%;
   left: 40.30%;
   z-index: 3;
-  border: clamp(2px, 0.5vw, 4px) solid var(--color-white);
 }
 
 .authority-img {

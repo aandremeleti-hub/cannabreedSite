@@ -8,7 +8,8 @@ description: Workflow para extração e geração de código JSX+CSS diretamente
 > **DIRETRIZ DE DESENVOLVIMENTO DE FRONTEND & INTEGRAÇÃO MCP:**
 > Durante este workflow, você atuará de forma coordenada com os agentes **explorer-agent**, **frontend-specialist** e **test-engineer**.
 > 
-> Diferente de processos manuais, aqui leremos diretamente do Figma usando o **figma-dev-mode-mcp-server**. Sabemos que a construção no Figma pode estar imperfeita (falta de Auto Layout, agrupamentos errados, textos não componentizados). Seu dever é **interpretar a intenção visual** e gerar um código React/CSS impecável, seguindo o `guia_manual_figma_5abr.md` e as best practices do projeto (ex: nada de Tailwind, inline styles, etc).
+> > Diferente de processos manuais, aqui leremos diretamente do Figma usando o **figma-dev-mode-mcp-server**. O design no Figma será construído estritamente com Auto-Layout. Seu dever é atuar como um **COMPILADOR ESTRITO**. Você DEVE transcrever a estrutura, gaps, margins e paddings do Figma para HTML/CSS de forma matemática 1:1. NÃO tente "interpretar", "corrigir" ou arredondar valores para se adequar a padrões semânticos se isso comprometer a fidelidade visual.
+
 
 ---
 
@@ -24,7 +25,7 @@ O seu prompt mestre (que ativa agentes e skills) é o coração da etapa de exec
 
 ### Etapa 1 — Conexão, Coleta e Planejamento (Ação do Usuário: Prompt Inicial)
 **O que você (usuário) deve fazer:** 
-Envie apenas: *"Vamos gerar a seção [Nome] usando o link/Node do Figma XYZ. Execute o /gerar-codigo-mcp."*
+Envie apenas: *"Vamos gerar a seção [Nome] selecionada no Figma-dev-mode. Execute o /gerar-codigo-mcp."*
 
 **O que o agente fará:**
 1. Conecta no `figma-dev-mode-mcp-server` (`get_design_context`, `get_variable_defs`, `get_screenshot`).
@@ -60,5 +61,5 @@ Aprove o plano e envie o seu **Prompt Mestre** (Ativando `explorer-agent`, `fron
 ## 🛠 Resumo: Quando usar o quê?
 
 1. **MCP (Figma):** No começo de tudo, para ler os dados crus.
-2. **Guia Manual (`guia_manual_figma_5abr.md`):** Durante a leitura dos dados do MCP, para saber ignorar as marcações ruins do Figma (ex: backgrounds mal feitos, falta de auto-layout) e estruturar mentalmente o DOM correto.
+2. **Guia Manual (`guia_manual_figma_5abr.md`):** Para estruturar a arquitetura dos componentes React e regras de nomeação, garantindo sempre que a tradução visual para CSS seja literal e cega.
 3. **O seu Prompt (Skills + Agentes):** Na hora de gerar os arquivos finais. Ele garante que o código saia limpo, semântico, acessível (Focus-visible, Aria), com ícones reutilizáveis e responsivo, e que o relatório de UX seja gerado.

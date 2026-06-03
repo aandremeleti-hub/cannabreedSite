@@ -1,0 +1,334 @@
+/* --------------------------------------------------------------------------
+   FOOTER COMPONENT
+   Visual Clássico, Robusto e Premium de Rodapé (CTA Integrado Horizontal)
+   -------------------------------------------------------------------------- */
+
+.footer-wrapper {
+  background-color: var(--color-primary-navy);
+  color: var(--color-white);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  z-index: 10;
+}
+
+/* =========================================
+   CONTEÚDO PRINCIPAL (GRID)
+   ========================================= */
+.footer-main-content {
+  width: 100%;
+  max-width: 1200px;
+  padding: 80px 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+}
+
+/* Colunas Padrão */
+.footer-col-brand,
+.footer-col-links,
+.footer-col-contact,
+.footer-col-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Grupo de Colunas (Navegação + Contato + Títulos) */
+.footer-columns-group {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Marca */
+.footer-logo-image {
+  width: auto;
+  height: 48px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.footer-brand-description {
+  font-family: var(--paragraph-font-family);
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--color-secondary-lavender-mid);
+  max-width: 320px;
+}
+
+/* Títulos das Colunas (Links/Contato) */
+.footer-col-title {
+  font-family: var(--t2-font-family);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-white);
+  position: relative;
+  padding-bottom: 12px;
+  margin: 0;
+}
+
+.footer-col-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-primary-green);
+}
+
+/* Links e Contatos */
+.footer-links-list,
+.footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-link-item {
+  font-family: var(--paragraph-font-family);
+  font-size: 15px;
+  color: var(--color-secondary-lavender-mid);
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-link-item:hover {
+  color: var(--color-primary-green);
+  transform: translateX(4px);
+}
+
+.footer-contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-contact-label {
+  font-family: var(--t4-font-family);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-primary-navy-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-contact-text {
+  font-family: var(--paragraph-font-family);
+  font-size: 15px;
+  color: var(--color-secondary-lavender-mid);
+}
+
+/* =========================================
+   CTA INTEGRADO HORIZONTAL (CARD)
+   ========================================= */
+.footer-col-cta {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  /* Leve respiro em relação às colunas de cima no mobile */
+}
+
+.footer-cta-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-cta-title {
+  font-family: var(--t1-font-family);
+  font-size: 18px;
+  /* Tamanho consideravelmente menor e mais contido */
+  font-weight: var(--t1-font-weight);
+  line-height: 1.3;
+  color: var(--color-white);
+  margin: 0;
+}
+
+.footer-cta-description {
+  font-family: var(--paragraph-font-family);
+  font-size: 12px;
+  /* Super compacto */
+  line-height: 1.6;
+  color: var(--color-secondary-mist-mid);
+  margin: 0;
+}
+
+.footer-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary-green);
+  color: var(--color-primary-navy);
+  font-family: var(--t3-font-family);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  padding: 14px 32px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(128, 219, 66, 0.15);
+  white-space: nowrap;
+}
+
+.footer-cta-button:hover {
+  background-color: var(--color-primary-green-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(128, 219, 66, 0.25);
+}
+
+/* =========================================
+   RODAPÉ INFERIOR (LEGAL / COPYRIGHT)
+   ========================================= */
+.footer-bottom-bar {
+  width: 100%;
+  background-color: #011120;
+  padding: 24px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-bottom-inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.footer-copyright {
+  font-family: var(--paragraph-font-family);
+  font-size: 13px;
+  color: var(--color-primary-navy-light);
+  margin: 0;
+}
+
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-legal-link {
+  font-family: var(--paragraph-font-family);
+  font-size: 13px;
+  color: var(--color-secondary-gray-mid);
+  transition: color 0.2s ease;
+}
+
+.footer-legal-link:hover {
+  color: var(--color-white);
+}
+
+.footer-legal-separator {
+  color: var(--color-primary-navy-light);
+  font-size: 12px;
+}
+
+@media (max-width: 767px) {
+  .hidden-mobile {
+    display: none;
+  }
+}
+
+/* =========================================
+   RESPONSIVIDADE E ARQUITETURA DO GRID
+   ========================================= */
+@media (min-width: 768px) {
+  .footer-main-content {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "group"
+      "cta";
+    justify-items: center;
+    align-items: start;
+  }
+
+  .footer-columns-group {
+    grid-area: group;
+    display: flex;
+    flex-direction: row;
+    gap: 70px; /* Gap de 70px solicitado */
+    justify-content: center;
+    width: 100%;
+  }
+
+  .footer-col-cta {
+    grid-area: cta;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-main-content {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "group"
+      "cta";
+    padding: 100px 40px;
+    gap: 60px;
+    justify-items: center;
+  }
+
+  .footer-columns-group {
+    grid-area: group;
+    display: flex;
+    flex-direction: row;
+    gap: 70px; /* Gap de 70px solicitado */
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  /* Transforma o CTA em uma barra horizontal elegante e enxuta */
+  .footer-col-cta {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 40px;
+    margin-top: 20px;
+    justify-self: center;
+    /* Centraliza o card na grade inferior */
+    width: fit-content;
+    /* O card assume o tamanho exato do conteúdo */
+    gap: 40px;
+    /* Reduzido levemente para um design mais compacto */
+  }
+
+  .footer-cta-text-group {
+    width: max-content;
+    /* Trava rigidamente na linha mais longa */
+  }
+
+  .footer-cta-title {
+    font-size: 20px;
+    /* Reduzido no desktop também */
+    width: max-content;
+  }
+
+  .footer-cta-description {
+    font-size: 13px;
+    /* Reduzido no desktop também */
+    width: max-content;
+  }
+}

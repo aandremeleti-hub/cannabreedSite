@@ -2,10 +2,10 @@
 
 import Image from 'next/image';
 import logoImg from '@/assets/images/about-us-logo.webp';
-import foundationImg from '@/assets/images/about-us-foundation-image.webp';
-import leadershipImg from '@/assets/images/about-us-leadership-image.webp';
-import structurationImg from '@/assets/images/about-us-structuration-image.webp';
-import actingImg from '@/assets/images/about-us-acting-image.webp';
+import foundationImg from '@/assets/images/AboutUsSection-foundation-image.png';
+import leadershipImg from '@/assets/images/AboutUsSection-leadership-image.png';
+import actingImg from '@/assets/images/AboutUsSection-acting-image.png';
+import structurationImg from '@/assets/images/AboutUsSection-structuration-image.png';
 import './AboutUsSection.css';
 
 export default function AboutUsSection() {
@@ -79,7 +79,7 @@ export default function AboutUsSection() {
             </div>
             <div className="about-us-card-image-container">
               <Image
-                src={structurationImg}
+                src={actingImg}
                 alt="Infraestrutura de pesquisa da Cannabreed no tecnoPARQ"
                 fill
                 sizes="(max-width: 1024px) 100vw, 551px"
@@ -92,7 +92,7 @@ export default function AboutUsSection() {
           <li className="about-us-card card-acting">
             <div className="about-us-card-image-container">
               <Image
-                src={actingImg}
+                src={structurationImg}
                 alt="Equipe técnica em laboratório demonstrando as áreas de atuação"
                 fill
                 sizes="(max-width: 1024px) 100vw, 551px"

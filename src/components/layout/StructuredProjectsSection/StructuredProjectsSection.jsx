@@ -2,8 +2,8 @@ import Image from 'next/image';
 import logoMark from '@/assets/icons/structured-projects-logomark.svg';
 import titleBg from '@/assets/images/structured-projects-title.jpg';
 import bottomBg from '@/assets/images/structured-projects-bottom.jpg';
-import whoActingIcon from '@/assets/icons/structured-projects-who-acting.svg';
-import modelIcon from '@/assets/icons/structured-projects-model.svg';
+import IconStructuredWho from '@/components/icons/IconStructuredWho';
+import IconStructuredModel from '@/components/icons/IconStructuredModel';
 import './StructuredProjectsSection.css';
 
 export default function StructuredProjectsSection() {
@@ -58,12 +58,9 @@ export default function StructuredProjectsSection() {
           <article className="structured-projects-card who-acting-card">
             <div className="structured-projects-card-content">
               <div className="structured-projects-card-icon-box">
-                <Image
-                  src={whoActingIcon}
-                  alt=""
-                  width={67}
-                  height={67}
+                <IconStructuredWho
                   className="structured-projects-card-icon"
+                  size={67}
                 />
               </div>
               <h3 className="structured-projects-card-title">
@@ -76,12 +73,9 @@ export default function StructuredProjectsSection() {
           <article className="structured-projects-card model-card">
             <div className="structured-projects-card-content">
               <div className="structured-projects-card-icon-box">
-                <Image
-                  src={modelIcon}
-                  alt=""
-                  width={67}
-                  height={67}
+                <IconStructuredModel
                   className="structured-projects-card-icon"
+                  size={67}
                 />
               </div>
               <h3 className="structured-projects-card-title">

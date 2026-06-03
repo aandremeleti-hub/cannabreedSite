@@ -1,0 +1,147 @@
+/* ==========================================================================
+   CARDBASECIENTIFICA — Estilos do Componente (Fiel ao Figma 1:1)
+   ========================================================================== */
+
+:root {
+  --card-bc-width: 312px;
+  --card-bc-height: 400px;
+  --card-bc-img-height: 219px;
+  --card-bc-content-height: 181px;
+  --card-bc-radius: 15px;
+  --card-bc-shadow: 7.5px 7.5px 7.5px 0px rgba(2, 23, 43, 0.25);
+  
+  /* Tipografia do Card */
+  --card-bc-title-size: 22.48px;
+  --card-bc-title-line: 25.29px;
+  --card-bc-btn-size: 19.07px;
+  --card-bc-btn-line: 40px;
+}
+
+.card-bc-container {
+  position: relative;
+  width: var(--card-bc-width);
+  height: var(--card-bc-height);
+  background-color: var(--color-white);
+  border-radius: var(--card-bc-radius);
+  box-shadow: var(--card-bc-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.card-bc-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 12px 12px 20px 0px rgba(2, 23, 43, 0.35);
+}
+
+/* Badge flutuante (master-icon) */
+.card-bc-badge-wrapper {
+  position: absolute;
+  right: 22px;
+  top: calc(var(--card-bc-img-height) - 25px);
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  pointer-events: none;
+  filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+.card-bc-badge {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+/* Área da Imagem */
+.card-bc-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: var(--card-bc-img-height);
+  overflow: hidden;
+}
+
+.card-bc-img {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card-bc-container:hover .card-bc-img {
+  transform: scale(1.05);
+}
+
+/* Área do Conteúdo */
+.card-bc-content {
+  width: 100%;
+  height: var(--card-bc-content-height);
+  background-color: var(--color-primary-green-light);
+  box-shadow: inset 0px 4px 18px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 22px 20px;
+}
+
+.card-bc-content-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 12px;
+}
+
+/* Título */
+.card-bc-title {
+  color: var(--color-primary-navy);
+  font-family: var(--font-title);
+  font-size: var(--card-bc-title-size);
+  font-weight: 600;
+  line-height: var(--card-bc-title-line);
+  text-align: left;
+  word-wrap: break-word;
+  margin: 0;
+  padding: 0;
+}
+
+/* Botão Saiba mais */
+.card-bc-btn {
+  width: 100%;
+  height: 44px;
+  background-color: var(--color-primary-green);
+  color: var(--color-primary-navy);
+  font-family: var(--font-body);
+  font-size: var(--card-bc-btn-size);
+  font-weight: 900;
+  line-height: var(--card-bc-btn-line);
+  text-align: center;
+  border-radius: 16px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  outline: none;
+}
+
+.card-bc-btn:hover {
+  background-color: #92e656;
+}
+
+.card-bc-btn:active {
+  transform: scale(0.98);
+}
+
+/* Acessibilidade - Focus visible */
+.card-bc-btn:focus-visible {
+  outline: 3px solid var(--color-primary-navy);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (Desktop-First Adaptations)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .card-bc-container {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 312 / 400;
+  }
+}

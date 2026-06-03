@@ -94,10 +94,10 @@ export default function ExpertReportsSection() {
                 role="button"
                 aria-label={`Ver mais sobre ${title}`}
               >
-                <span className="expert-reports-card-title">{title}</span>
                 <div className="expert-reports-card-icon-wrapper">
                   <Icon className="expert-reports-card-icon" size={48} />
                 </div>
+                <span className="expert-reports-card-title">{title}</span>
               </div>
             ))}
           </div>

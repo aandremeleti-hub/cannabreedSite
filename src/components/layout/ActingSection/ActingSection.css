@@ -80,17 +80,27 @@
   background-color: var(--color-primary-navy);
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(2, 23, 43, 0.12);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   flex-shrink: 0;
   cursor: pointer;
+  
+  /* Color tokens for SVGs */
+  --icon-color-primary: var(--color-primary-green);
+  --icon-color-secondary: var(--color-white);
 }
 
 .acting-card-container:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(2, 23, 43, 0.32);
-  background-color: #08213b; /* Sophisticated navy hover background */
+  transform: translateY(-8px);
+  background-color: var(--color-primary-green);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.18);
+  
+  /* Color overrides to keep icon visible on green hover */
+  --icon-color-primary: var(--color-primary-navy);
+  --icon-color-secondary: var(--color-white);
+}
+
+.acting-card-container:hover .acting-card-title {
+  color: var(--color-primary-navy);
 }
 
 /* Text Box Wrapper (Top portion) */
@@ -111,6 +121,7 @@
   font-weight: 700;
   line-height: 1.25;
   text-align: center;
+  transition: color 0.3s ease;
 }
 
 /* Icon Wrapper (Bottom portion) */
@@ -125,11 +136,11 @@
 
 .acting-card-icon {
   object-fit: contain;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .acting-card-container:hover .acting-card-icon {
-  transform: scale(1.08); /* Premium micro-interaction icon zoom */
+  transform: scale(1.1); /* Premium micro-interaction icon zoom */
 }
 
 /* Description Text */

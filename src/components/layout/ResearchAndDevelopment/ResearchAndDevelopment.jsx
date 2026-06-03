@@ -50,7 +50,7 @@ export default function ResearchAndDevelopment() {
                 role="listitem"
               >
                 <div className="rd-card-icon-wrapper">
-                  <card.Icon className="rd-card-icon" size={42} />
+                  <card.Icon className="rd-card-icon" size={48} />
                 </div>
                 <span className="rd-card-title">{card.title}</span>
               </button>

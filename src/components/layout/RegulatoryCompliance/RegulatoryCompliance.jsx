@@ -78,10 +78,10 @@ export default function RegulatoryCompliance() {
                 role="button"
                 aria-label={`Ver mais sobre ${title}`}
               >
-                <span className="regulatory-compliance-card-title">{title}</span>
                 <div className="regulatory-compliance-card-icon-wrapper">
                   <Icon className="regulatory-compliance-card-icon" size={48} />
                 </div>
+                <span className="regulatory-compliance-card-title">{title}</span>
               </div>
             ))}
           </div>

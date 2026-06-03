@@ -49,7 +49,7 @@ export default function ProductiveOperation() {
                 role="listitem"
               >
                 <div className="po-card-icon-wrapper">
-                  <card.Icon className="po-card-icon" size={42} />
+                  <card.Icon className="po-card-icon" size={48} />
                 </div>
                 <span className="po-card-title">{card.title}</span>
               </button>
