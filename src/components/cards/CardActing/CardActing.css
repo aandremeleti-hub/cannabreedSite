@@ -1,0 +1,84 @@
+/* ==========================================================================
+   CARDACTING — Estilos do Componente (Isolado)
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .acting-card-container {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+.acting-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 136px; /* Premium adjusted square size */
+  height: 136px;
+  padding: 16px 12px; /* Balanced visual padding */
+  background-color: var(--color-primary-navy);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(2, 23, 43, 0.12);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  flex-shrink: 0;
+  cursor: pointer;
+  
+  /* Color tokens for SVGs */
+  --icon-color-primary: var(--color-primary-green);
+  --icon-color-secondary: var(--color-white);
+}
+
+.acting-card-container:hover {
+  transform: translateY(-8px);
+  background-color: var(--color-primary-green);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.18);
+  
+  /* Color overrides to keep icon visible on green hover */
+  --icon-color-primary: var(--color-primary-navy);
+  --icon-color-secondary: var(--color-white);
+}
+
+.acting-card-container:hover .acting-card-title {
+  color: var(--color-primary-navy);
+}
+
+/* Text Box Wrapper (Top portion) */
+.acting-card-text-wrapper {
+  display: flex;
+  align-items: center; /* Vertically centers title if < 4 lines */
+  justify-content: center;
+  width: 112px;
+  height: 52px;
+  text-align: center;
+}
+
+/* Card Title */
+.acting-card-title {
+  color: var(--color-white);
+  font-family: var(--font-title);
+  font-size: 14px; /* Sophisticated premium size */
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+/* Icon Wrapper (Bottom portion) */
+.acting-card-icon-wrapper {
+  width: 48px;
+  height: 40px; /* Aligned height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.acting-card-icon {
+  object-fit: contain;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.acting-card-container:hover .acting-card-icon {
+  transform: scale(1.1); /* Premium micro-interaction icon zoom */
+}

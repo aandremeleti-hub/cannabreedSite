@@ -10,6 +10,7 @@ import IconCustody from '@/components/icons/IconCustody';
 import IconSandbox from '@/components/icons/IconSandbox';
 import IconAudit from '@/components/icons/IconAudit';
 import regulatoryCrop from '@/assets/images/regulatory-crop.png';
+import CardRegulatoryCompliance from '../../cards/CardRegulatoryCompliance/CardRegulatoryCompliance';
 import './RegulatoryCompliance.css';
 
 export default function RegulatoryCompliance() {
@@ -71,18 +72,11 @@ export default function RegulatoryCompliance() {
 
           <div className="regulatory-compliance-grid">
             {cards.map(({ title, Icon, id }) => (
-              <div 
-                key={id} 
-                className="regulatory-compliance-card" 
-                tabIndex="0"
-                role="button"
-                aria-label={`Ver mais sobre ${title}`}
-              >
-                <div className="regulatory-compliance-card-icon-wrapper">
-                  <Icon className="regulatory-compliance-card-icon" size={48} />
-                </div>
-                <span className="regulatory-compliance-card-title">{title}</span>
-              </div>
+              <CardRegulatoryCompliance
+                key={id}
+                title={title}
+                iconNode={<Icon className="regulatory-compliance-card-icon" size={48} />}
+              />
             ))}
           </div>
         </div>

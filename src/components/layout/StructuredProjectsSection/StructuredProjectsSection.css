@@ -117,7 +117,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   MIDDLE PART: Cards
+   MIDDLE PART: Cards (Internal styling moved to CardStructuredProjects)
    -------------------------------------------------------------------------- */
 
 .structured-projects-cards-wrapper {
@@ -135,85 +135,6 @@
   gap: 26px;
   width: 100%;
   max-width: 1280px;
-}
-
-.structured-projects-card {
-  display: flex;
-  width: 100%;
-  max-width: 417px;
-  height: 169px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20.898px;
-  background-color: var(--color-primary-navy);
-  box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.25);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  cursor: pointer;
-
-  /* Color tokens for SVGs */
-  --icon-bg: var(--color-white);
-  --icon-color-primary: var(--color-primary-green);
-  --icon-color-secondary: var(--color-primary-navy);
-}
-
-.structured-projects-card:hover {
-  transform: translateY(-8px);
-  background-color: var(--color-primary-green);
-  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.18);
-
-  /* Color overrides: inside paths invert/contrast on Green background */
-  --icon-bg: var(--color-primary-navy);
-  --icon-color-primary: var(--color-primary-green);
-  --icon-color-secondary: var(--color-white);
-}
-
-.structured-projects-card:hover .structured-projects-card-title {
-  color: var(--color-primary-navy);
-}
-
-.structured-projects-card-content {
-  display: flex;
-  width: 299px;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  flex-shrink: 0;
-}
-
-.structured-projects-card-icon-box {
-  width: 67px;
-  height: 67px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.structured-projects-card-icon {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.structured-projects-card:hover .structured-projects-card-icon {
-  transform: scale(1.1);
-}
-
-.structured-projects-card-title {
-  font-family: var(--t1-font-family), "Titillium Web", sans-serif;
-  font-size: var(--t1-font-size);
-  font-weight: var(--t1-font-weight);
-  letter-spacing: var(--t1-letter-spacing);
-  line-height: var(--t1-line-height);
-  color: var(--color-white);
-  align-self: stretch;
-  text-align: center;
-  transition: color 0.3s ease;
-
-  /* Refinements to match Figma specs */
-  font-size: clamp(24px, 2.5vw, 32px);
-  line-height: 1.1;
-  font-weight: 700;
 }
 
 /* --------------------------------------------------------------------------
@@ -354,10 +275,6 @@
     flex-direction: column;
     gap: 20px;
   }
-
-  .structured-projects-card {
-    max-width: 100%;
-  }
 }
 
 @media (max-width: 480px) {
@@ -370,36 +287,7 @@
     height: 158px;
   }
 
-  .structured-projects-cards-wrapper {
-    padding: 40px 16px;
-  }
-
-  .structured-projects-card {
-    height: 140px;
-  }
-
-  .structured-projects-card-content {
-    width: 100%;
-    padding: 0 20px;
-  }
-
-  .structured-projects-card-icon-box {
-    width: 50px;
-    height: 50px;
-  }
-
   .structured-projects-bottom-container {
     padding: 40px 16px;
-  }
-}
-
-/* Reduced Motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  .structured-projects-card {
-    transition: none;
-  }
-
-  .structured-projects-card:hover {
-    transform: none;
   }
 }

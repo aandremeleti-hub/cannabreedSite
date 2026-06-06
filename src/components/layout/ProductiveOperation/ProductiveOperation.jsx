@@ -10,6 +10,7 @@ import IconAnalysis from '../../icons/IconAnalysis';
 import IconReview from '../../icons/IconReview';
 
 import cultivoExternoImg from '@/assets/images/po-cultivo-externo.png';
+import CardProductiveOperation from '../../cards/CardProductiveOperation/CardProductiveOperation';
 import './ProductiveOperation.css';
 
 const cardsData = [
@@ -41,18 +42,12 @@ export default function ProductiveOperation() {
 
           <div className="po-cards-grid" role="list">
             {cardsData.map((card) => (
-              <button
+              <CardProductiveOperation
                 key={card.id}
-                type="button"
-                className={`po-card po-card-${card.id}`}
-                aria-label={`Ver detalhes sobre ${card.title}`}
-                role="listitem"
-              >
-                <div className="po-card-icon-wrapper">
-                  <card.Icon className="po-card-icon" size={48} />
-                </div>
-                <span className="po-card-title">{card.title}</span>
-              </button>
+                title={card.title}
+                cardId={card.id}
+                iconNode={<card.Icon className="po-card-icon" size={48} />}
+              />
             ))}
           </div>
         </div>

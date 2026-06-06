@@ -38,48 +38,10 @@
   width: 195px;
   height: 206px;
   flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Grade de folhas responsiva */
-.pd-leaf-grid {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.pd-leaf {
-  position: absolute;
-  width: 33.27%;
-  height: 50%;
-  color: var(--color-primary-navy);
-}
-
-.leaf-1 {
-  left: 0;
-  top: 0;
-}
-
-.leaf-2 {
-  left: 33.27%;
-  top: 0;
-}
-
-.leaf-3 {
-  left: 66.54%;
-  top: 0;
-}
-
-.leaf-4 {
-  left: 0;
-  top: 50%;
-}
-
-.leaf-5 {
-  left: 33.27%;
-  top: 50%;
+  background-image: url('../../../assets/images/logo-PD.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Conteúdo Textual */

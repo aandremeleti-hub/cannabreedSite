@@ -8,6 +8,7 @@ import expansionImg from '@/assets/images/timeline-expansion.png';
 import secondImg from '@/assets/images/timeline-second.png';
 import implementationImg from '@/assets/images/timeline-implementation.png';
 import dnaImg from '@/assets/images/timeline-dna-image.png';
+import CardTimeLine from '../../cards/CardTimeLine/CardTimeLine';
 import './TimeLineSection.css';
 
 export default function TimeLineSection() {
@@ -105,39 +106,15 @@ export default function TimeLineSection() {
               {events.map((event, index) => {
                 const isOdd = event.type === 'odd';
                 return (
-                  <li
+                  <CardTimeLine
                     key={event.year}
-                    className={`timeline-event-item item-${event.type} timeline-event-${event.year}`}
-                    style={{ gridColumn: index + 1 }}
-                  >
-                    <div className="timeline-card-container">
-
-                      <div className="timeline-card-graphic-wrapper">
-                        {isOdd && <div className="timeline-branch-line line-down" aria-hidden="true" />}
-                        {!isOdd && <div className="timeline-branch-line line-up" aria-hidden="true" />}
-                        <div className="timeline-axis-dot" aria-hidden="true" />
-                        <div className="timeline-photo-circle">
-                          <Image
-                            src={event.image}
-                            alt={event.alt}
-                            width={140}
-                            height={140}
-                            className="timeline-photo-img"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="timeline-event-text-block">
-                        <h3 className="timeline-event-year-title">
-                          <span className="timeline-pin-icon" aria-hidden="true">📍</span> {event.year}
-                        </h3>
-                        <p className="timeline-event-description">
-                          {event.text}
-                        </p>
-                      </div>
-
-                    </div>
-                  </li>
+                    year={event.year}
+                    text={event.text}
+                    image={event.image}
+                    alt={event.alt}
+                    type={event.type}
+                    index={index}
+                  />
                 );
               })}
             </ul>

@@ -39,6 +39,11 @@ export default function IconArrow({ className }) {
 - Deixar `<path fill="#FF0000" />` chumbado no JSX.
 - Esquecer o `xmlns="http://www.w3.org/2000/svg"`.
 
-## 4. Caminhos de Imagens do Figma MCP
+## 4. Fundos Dinâmicos e Anti-Poluição de DOM
+**CRÍTICO:** SVGs usados estritamente como *background shapes* de componentes não devem existir no HTML.
+- 🔴 **PROIBIDO:** Importar um componente `<IconFundoBg />` no JSX apenas para ser uma forma de fundo colorida. Isso polui o DOM desnecessariamente.
+- 🟢 **OBRIGATÓRIO:** Transfira a diretiva de renderização do SVG para o CSS do componente utilizando `mask-image` (com url encoding) atrelado a um pseudo-elemento (`::before`/`::after`). Utilize `background-color: var(--color-variavel)` para que a cor da máscara continue responsiva às variáveis dinâmicas do CSS no hover.
+
+## 5. Caminhos de Imagens do Figma MCP
 **CRÍTICO:** **NUNCA** faça commits ou deixe no código de produção URLs temporárias do MCP (ex: `http://localhost:3845/...`).
 Sempre faça download do asset e referencie localmente.

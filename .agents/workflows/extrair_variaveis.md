@@ -1,3 +1,7 @@
+---
+description: Extrai cores e tipografia dos frames de style guide do Figma e gera as CSS Custom Properties.
+---
+
 # Comando: /extrair-variaveis
 
 ## Objetivo

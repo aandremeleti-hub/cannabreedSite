@@ -60,3 +60,8 @@ Sempre use `max-width` combinado com `width: 100%`.
   width: 100%;
 }
 ```
+
+## 4. Pareamento Visual de Alturas (Equal Heights)
+**CRÍTICO:** É estritamente proibido utilizar JavaScript para resolver problemas de layout que podem ser resolvidos nativamente.
+- 🔴 **PROIBIDO:** Usar `document.querySelector`, `getBoundingClientRect()`, `ResizeObserver` ou `useEffect` para forçar componentes a terem a mesma altura dinamicamente.
+- 🟢 **OBRIGATÓRIO:** Utilizar CSS nativo: aplique `display: flex` ou `display: grid` no container pai com `align-items: stretch` e declare `height: 100%` nos filhos flexíveis. Isso garante performance e pureza de renderização.

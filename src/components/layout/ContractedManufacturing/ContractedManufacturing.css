@@ -93,95 +93,6 @@
   list-style: none;
 }
 
-/* Individual card layout */
-.cdmo-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--color-primary-navy);
-  width: 126px;
-  height: 128px;
-  padding: 16px;
-  border-radius: 21px;
-  /* Figma rounded-[20.898px] */
-  box-shadow: 0 8px 16px rgba(2, 23, 43, 0.15);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  user-select: none;
-  cursor: pointer;
-
-  /* Icon color system */
-  --icon-color-primary: var(--color-primary-green);
-  --icon-color-secondary: var(--color-white);
-  --icon-color-tertiary: #3B4652;
-}
-
-.cdmo-card:hover {
-  transform: translateY(-8px);
-  background-color: var(--color-primary-green);
-  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.18);
-
-  /* Update icon colors so they don't blend with green bg */
-  --icon-color-primary: var(--color-primary-navy);
-  --icon-color-secondary: var(--color-white);
-  --icon-color-tertiary: var(--color-primary-navy);
-}
-
-.cdmo-card-title {
-  font-family: var(--font-title);
-  font-size: clamp(13px, 1.5vw, 15px);
-  font-weight: 700;
-  color: var(--color-white);
-  text-align: center;
-  line-height: 1.2;
-  word-break: break-word;
-  transition: color 0.3s ease;
-}
-
-.cdmo-card:hover .cdmo-card-title {
-  color: var(--color-primary-navy);
-}
-
-.cdmo-card-icon-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-  width: 100%;
-}
-
-.cdmo-card-icon {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.cdmo-card:hover .cdmo-card-icon {
-  transform: scale(1.1);
-}
-
-/* Special styling for stacked Escopo icon */
-.cdmo-card-escopo-icon {
-  position: relative;
-  width: 38px;
-  height: 37px;
-}
-
-.cdmo-card-icon-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.cdmo-card-icon-fg {
-  position: absolute;
-  top: 6px;
-  left: 9px;
-  width: 10px;
-  height: 8.5px;
-}
 
 /* Image column styling */
 .cdmo-image-wrapper {
@@ -234,17 +145,5 @@
 @media (max-width: 480px) {
   .cdmo-cards-grid {
     gap: 15px;
-  }
-
-  .cdmo-card {
-    width: 110px;
-    height: 115px;
-    border-radius: 16px;
-    padding: 12px;
-  }
-
-  .cdmo-card-title {
-    text-align: center;
-    font-size: 13px;
   }
 }

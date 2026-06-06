@@ -82,77 +82,6 @@
   width: 100%;
 }
 
-/* Individual Card */
-.expert-reports-card {
-  position: relative;
-  background-color: var(--color-white);
-  width: 126px;
-  height: 128px;
-  border-radius: 21px;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 8px 16px rgba(2, 23, 43, 0.2);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  cursor: pointer;
-  outline: none;
-  
-  /* Initial theme variable mappings for icons inside the card */
-  --icon-color-primary: var(--color-primary-green);
-  --icon-color-secondary: var(--color-primary-navy);
-}
-
-.expert-reports-card-title {
-  font-family: var(--font-title);
-  font-size: clamp(13px, 1.5vw, 15px);
-  font-weight: 700;
-  color: var(--color-primary-navy);
-  text-align: center;
-  line-height: 1.2;
-  word-break: break-word;
-  transition: color 0.3s ease;
-}
-
-.expert-reports-card-icon-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  flex-grow: 1;
-}
-
-.expert-reports-card-icon {
-  width: 48px;
-  height: 48px;
-  transition: transform 0.3s ease;
-}
-
-/* Keyboard accessibility outline */
-.expert-reports-card:focus-visible {
-  box-shadow: 0 0 0 3px var(--color-primary-green), 0 8px 16px rgba(2, 23, 43, 0.4);
-  transform: translateY(-4px);
-}
-
-/* Hover States */
-.expert-reports-card:hover {
-  transform: translateY(-8px);
-  background-color: var(--color-primary-green);
-  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.25);
-  
-  /* CSS Variables override to change SVG fill colors */
-  --icon-color-primary: var(--color-primary-navy);
-  --icon-color-secondary: var(--color-white);
-}
-
-.expert-reports-card:hover .expert-reports-card-title {
-  color: var(--color-primary-navy);
-}
-
-.expert-reports-card:hover .expert-reports-card-icon {
-  transform: scale(1.1);
-}
 
 /* Right Column: Image Container */
 .expert-reports-right {
@@ -218,12 +147,6 @@
     max-width: 100%;
     gap: 20px;
   }
-
-  .expert-reports-card {
-    width: 126px;
-    height: 128px;
-    padding: 16px;
-  }
 }
 
 /* Small Mobiles (Telas até 480px) */
@@ -238,17 +161,5 @@
     justify-content: center;
     gap: 15px;
     max-width: 100%;
-  }
-
-  .expert-reports-card {
-    width: 110px;
-    height: 115px;
-    border-radius: 16px;
-    padding: 12px;
-  }
-
-  .expert-reports-card-title {
-    text-align: center;
-    font-size: 13px;
   }
 }

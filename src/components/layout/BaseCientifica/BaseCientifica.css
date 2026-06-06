@@ -57,43 +57,11 @@
   height: 100%;
   z-index: 1;
   pointer-events: none;
-  overflow: hidden;
-  display: flex;
-  justify-content: space-between;
+  background-image: url('../../../assets/images/logo-background.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-.bc-bg-leaf-grid {
-  position: relative;
-  width: 571.5px;
-  height: 604px;
-  opacity: 0.25;
-  flex-shrink: 0;
-}
-
-.grid-left {
-  margin-left: -204px; /* Mantém o recuo clássico do Figma */
-}
-
-.grid-center {
-  transform: scaleY(-1); /* Flipped como no Figma */
-}
-
-.grid-right {
-  margin-right: -204px; /* Espelha o recuo à direita para cobrir as pontas */
-}
-
-.bc-bg-leaf {
-  position: absolute;
-  width: 33.27%;
-  height: 50%;
-  color: var(--color-primary-green-light);
-}
-
-.leaf-1 { left: 0; top: 0; }
-.leaf-2 { left: 33.27%; top: 0; }
-.leaf-3 { left: 66.54%; top: 0; }
-.leaf-4 { left: 0; top: 50%; }
-.leaf-5 { left: 33.27%; top: 50%; }
 
 /* ==========================================================================
    RESPONSIVIDADE (Desktop-First Adaptations)

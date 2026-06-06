@@ -4,9 +4,21 @@ import titleBg from '@/assets/images/structured-projects-title.jpg';
 import bottomBg from '@/assets/images/structured-projects-bottom.jpg';
 import IconStructuredWho from '@/components/icons/IconStructuredWho';
 import IconStructuredModel from '@/components/icons/IconStructuredModel';
+import CardStructuredProjects from '@/components/cards/CardStructuredProjects/CardStructuredProjects';
 import './StructuredProjectsSection.css';
 
 export default function StructuredProjectsSection() {
+  const cardsData = [
+    {
+      title: "Para quem atuamos",
+      iconNode: <IconStructuredWho className="structured-projects-card-icon" size={67} />
+    },
+    {
+      title: "Modelo de atuação",
+      iconNode: <IconStructuredModel className="structured-projects-card-icon" size={67} />
+    }
+  ];
+
   return (
     <section className="structured-projects" id="projetos-estruturados" aria-labelledby="structured-projects-main-title">
       
@@ -53,37 +65,13 @@ export default function StructuredProjectsSection() {
       {/* Middle Part: Cards Container */}
       <div className="structured-projects-cards-wrapper">
         <div className="structured-projects-cards-container">
-          
-          {/* Card 1: Para quem atuamos */}
-          <article className="structured-projects-card who-acting-card">
-            <div className="structured-projects-card-content">
-              <div className="structured-projects-card-icon-box">
-                <IconStructuredWho
-                  className="structured-projects-card-icon"
-                  size={67}
-                />
-              </div>
-              <h3 className="structured-projects-card-title">
-                Para quem atuamos
-              </h3>
-            </div>
-          </article>
-
-          {/* Card 2: Modelo de atuação */}
-          <article className="structured-projects-card model-card">
-            <div className="structured-projects-card-content">
-              <div className="structured-projects-card-icon-box">
-                <IconStructuredModel
-                  className="structured-projects-card-icon"
-                  size={67}
-                />
-              </div>
-              <h3 className="structured-projects-card-title">
-                Modelo de atuação
-              </h3>
-            </div>
-          </article>
-
+          {cardsData.map((data, index) => (
+            <CardStructuredProjects 
+              key={index} 
+              title={data.title} 
+              iconNode={data.iconNode} 
+            />
+          ))}
         </div>
       </div>
 

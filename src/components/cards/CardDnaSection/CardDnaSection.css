@@ -1,0 +1,109 @@
+/* ==========================================================================
+   CardDnaSection Component Style (Internal aesthetic styles only)
+   ========================================================================== */
+
+.dna-section-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 16px;
+  background-color: var(--color-primary-green-light);
+  padding: 24px;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dna-section-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(128, 219, 66, 0.2);
+}
+
+.dna-section-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.dna-section-card-title {
+  color: var(--color-primary-navy);
+  font-family: var(--font-title), "Titillium Web", sans-serif;
+  font-size: var(--t1-font-size);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.dna-section-card-icon-container {
+  display: flex;
+  flex-shrink: 0;
+  width: 60px;
+  height: 64px;
+  justify-content: center;
+  align-items: center;
+}
+
+.dna-section-card-icon {
+  width: 100%;
+  height: auto;
+}
+
+.dna-section-card-text {
+  color: var(--color-primary-navy);
+  font-family: var(--font-title), "Titillium Web", sans-serif;
+  font-size: var(--paragraph-font-size);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.dna-section-italic-text {
+  font-family: var(--font-title), "Titillium Web", sans-serif;
+  font-size: var(--paragraph-font-size);
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   Responsive Typography Breakpoints (Internal elements)
+   ========================================================================== */
+
+@media screen and (min-width: 768px) {
+  .dna-section-card-icon-container {
+    width: 80px;
+    height: 85px;
+  }
+
+  .dna-section-card-title {
+    font-size: 28px;
+  }
+
+  .dna-section-card-text,
+  .dna-section-italic-text {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .dna-section-card-icon-container {
+    width: 102px;
+    height: 108px;
+  }
+
+  .dna-section-card-title {
+    font-size: 32px;
+    line-height: 33px;
+  }
+
+  .dna-section-card-text,
+  .dna-section-italic-text {
+    font-size: 20.501px;
+    line-height: 23.064px;
+  }
+}

@@ -3,7 +3,10 @@
 Este projeto utiliza documentação modularizada, otimizada para contexto de IA (Agentes). 
 **OBRIGATÓRIO:** O Agente deve consultar apenas o arquivo correspondente à sua tarefa atual, localizado na pasta `docs/rules/`.
 
-## Módulos de Regras
+## Diretivas de Comportamento Global
+**CRÍTICO:** As regras fundamentais de postura da IA (LLM) estão localizadas em [**cannabreed-rules.md**](.agents/rules/cannabreed-rules.md). Qualquer regra contida nessa pasta é injetada automaticamente pela IDE no System Prompt e DEVE ser obedecida rigorosamente e incondicionalmente pelo Agente em todas as interações.
+
+## Módulos de Regras Técnicas
 
 1. **Arquitetura, Roteamento e Nomes:** [01-core-architecture.md](docs/rules/01-core-architecture.md)
    - *Uso:* Ao criar arquivos `.jsx`, componentes novos ou trabalhar nas rotas do App Router do Next.js.

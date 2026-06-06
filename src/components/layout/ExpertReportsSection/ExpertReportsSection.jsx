@@ -7,6 +7,7 @@ import IconForensics from '@/components/icons/IconForensics';
 import IconOpinions from '@/components/icons/IconOpinions';
 import IconTechnicalAssistance from '@/components/icons/IconTechnicalAssistance';
 import forensicMortar from '@/assets/images/forensic-mortar.png';
+import CardExpertReports from '../../cards/CardExpertReports/CardExpertReports';
 import './ExpertReportsSection.css';
 
 export default function ExpertReportsSection() {
@@ -33,42 +34,6 @@ export default function ExpertReportsSection() {
     }
   ];
 
-  React.useEffect(() => {
-    const sourceContent = document.querySelector('.regulatory-compliance-content');
-    const targetContent = document.querySelector('.expert-reports-content');
-    const sourceSection = document.querySelector('.regulatory-compliance');
-    const targetSection = document.querySelector('.expert-reports');
-
-    if (!sourceContent || !targetContent) return;
-
-    const syncHeights = () => {
-      if (window.innerWidth > 1024) {
-        if (sourceSection && targetSection) {
-          const sectionHeight = sourceSection.getBoundingClientRect().height;
-          targetSection.style.height = `${sectionHeight}px`;
-        }
-      } else {
-        if (targetSection) {
-          targetSection.style.height = 'auto';
-        }
-      }
-    };
-
-    // Initial run
-    syncHeights();
-
-    // Event listener for resize
-    window.addEventListener('resize', syncHeights);
-
-    // ResizeObserver to detect layout shifts and dynamic height changes of the source component
-    const resizeObserver = new ResizeObserver(syncHeights);
-    resizeObserver.observe(sourceContent);
-
-    return () => {
-      window.removeEventListener('resize', syncHeights);
-      resizeObserver.disconnect();
-    };
-  }, []);
 
   return (
     <section className="expert-reports" aria-labelledby="expert-reports-headline">
@@ -87,18 +52,11 @@ export default function ExpertReportsSection() {
 
           <div className="expert-reports-grid">
             {cards.map(({ title, Icon, id }) => (
-              <div 
-                key={id} 
-                className="expert-reports-card" 
-                tabIndex="0"
-                role="button"
-                aria-label={`Ver mais sobre ${title}`}
-              >
-                <div className="expert-reports-card-icon-wrapper">
-                  <Icon className="expert-reports-card-icon" size={48} />
-                </div>
-                <span className="expert-reports-card-title">{title}</span>
-              </div>
+              <CardExpertReports
+                key={id}
+                title={title}
+                iconNode={<Icon className="expert-reports-card-icon" size={48} />}
+              />
             ))}
           </div>
         </div>

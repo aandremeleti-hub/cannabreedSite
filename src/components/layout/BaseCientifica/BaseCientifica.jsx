@@ -1,8 +1,6 @@
 "use client";
 
 import React from 'react';
-import IconLeafFilled from '../../icons/IconLeafFilled';
-import IconLeafOutline from '../../icons/IconLeafOutline';
 import CardBaseCientifica from '../../cards/CardBaseCientifica/CardBaseCientifica';
 
 import pdOrigem from '@/assets/images/pd-origem.png';
@@ -22,32 +20,41 @@ export default function BaseCientifica() {
     console.log(`Card clicado: ${cardTitle}`);
   };
 
+  const cardsData = [
+    {
+      title: "Origem Acadêmica e Método Científico",
+      imageSrc: pdOrigem,
+      imageAlt: "Foto de Renato Tonini em frente ao Departamento de Agronomia da UFV",
+      iconSrc: iconDoutores,
+      onClickValue: "Origem Acadêmica e Método Científico"
+    },
+    {
+      title: "Parcerias Acadêmicas Estratégicas",
+      imageSrc: pdParcerias,
+      imageAlt: "Foto de apresentação acadêmica sobre melhoramento genético no Brasil",
+      iconSrc: iconParceria,
+      onClickValue: "Parcerias Acadêmicas Estratégicas"
+    },
+    {
+      title: "Pesquisa e Desenvolvimento Aplicado",
+      imageSrc: pdPesquisa,
+      imageAlt: "Foto de pesquisadores em laboratório analisando amostras de Cannabis",
+      iconSrc: iconMicroscope,
+      onClickValue: "Pesquisa e Desenvolvimento Aplicado"
+    },
+    {
+      title: "Compromisso Estrutural de Longo Prazo",
+      imageSrc: pdCompromisso,
+      imageAlt: "Foto de tubo de ensaio com extrato vegetal em laboratório",
+      iconSrc: iconLetterLocker,
+      onClickValue: "Compromisso Estrutural de Longo Prazo"
+    }
+  ];
+
   return (
     <section className="bc-section" aria-labelledby="bc-section-title">
       {/* Grafismos decorativos de fundo isolados nesta seção */}
-      <div className="bc-bg-graphics" aria-hidden="true">
-        <div className="bc-bg-leaf-grid grid-left">
-          <IconLeafFilled className="bc-bg-leaf leaf-1" />
-          <IconLeafOutline className="bc-bg-leaf leaf-2" />
-          <IconLeafFilled className="bc-bg-leaf leaf-3" />
-          <IconLeafOutline className="bc-bg-leaf leaf-4" />
-          <IconLeafFilled className="bc-bg-leaf leaf-5" />
-        </div>
-        <div className="bc-bg-leaf-grid grid-center">
-          <IconLeafFilled className="bc-bg-leaf leaf-1" />
-          <IconLeafOutline className="bc-bg-leaf leaf-2" />
-          <IconLeafFilled className="bc-bg-leaf leaf-3" />
-          <IconLeafOutline className="bc-bg-leaf leaf-4" />
-          <IconLeafFilled className="bc-bg-leaf leaf-5" />
-        </div>
-        <div className="bc-bg-leaf-grid grid-right">
-          <IconLeafFilled className="bc-bg-leaf leaf-1" />
-          <IconLeafOutline className="bc-bg-leaf leaf-2" />
-          <IconLeafFilled className="bc-bg-leaf leaf-3" />
-          <IconLeafOutline className="bc-bg-leaf leaf-4" />
-          <IconLeafFilled className="bc-bg-leaf leaf-5" />
-        </div>
-      </div>
+      <div className="bc-bg-graphics" aria-hidden="true"></div>
 
       <div className="bc-container">
         <h2 id="bc-section-title" className="bc-title">
@@ -55,42 +62,17 @@ export default function BaseCientifica() {
         </h2>
         
         <div className="bc-grid" role="list">
-          <div role="listitem">
-            <CardBaseCientifica
-              title="Origem Acadêmica e Método Científico"
-              imageSrc={pdOrigem}
-              imageAlt="Foto de Renato Tonini em frente ao Departamento de Agronomia da UFV"
-              iconSrc={iconDoutores}
-              onClick={() => handleCardClick("Origem Acadêmica e Método Científico")}
-            />
-          </div>
-          <div role="listitem">
-            <CardBaseCientifica
-              title="Parcerias Acadêmicas Estratégicas"
-              imageSrc={pdParcerias}
-              imageAlt="Foto de apresentação acadêmica sobre melhoramento genético no Brasil"
-              iconSrc={iconParceria}
-              onClick={() => handleCardClick("Parcerias Acadêmicas Estratégicas")}
-            />
-          </div>
-          <div role="listitem">
-            <CardBaseCientifica
-              title="Pesquisa e Desenvolvimento Aplicado"
-              imageSrc={pdPesquisa}
-              imageAlt="Foto de pesquisadores em laboratório analisando amostras de Cannabis"
-              iconSrc={iconMicroscope}
-              onClick={() => handleCardClick("Pesquisa e Desenvolvimento Aplicado")}
-            />
-          </div>
-          <div role="listitem">
-            <CardBaseCientifica
-              title="Compromisso Estrutural de Longo Prazo"
-              imageSrc={pdCompromisso}
-              imageAlt="Foto de tubo de ensaio com extrato vegetal em laboratório"
-              iconSrc={iconLetterLocker}
-              onClick={() => handleCardClick("Compromisso Estrutural de Longo Prazo")}
-            />
-          </div>
+          {cardsData.map((data, index) => (
+            <div role="listitem" key={index}>
+              <CardBaseCientifica
+                title={data.title}
+                imageSrc={data.imageSrc}
+                imageAlt={data.imageAlt}
+                iconSrc={data.iconSrc}
+                onClick={() => handleCardClick(data.onClickValue)}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

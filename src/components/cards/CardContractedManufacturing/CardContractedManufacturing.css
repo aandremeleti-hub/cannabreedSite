@@ -1,0 +1,123 @@
+.cdmo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-primary-navy);
+  width: 126px;
+  height: 128px;
+  padding: 16px;
+  border-radius: 21px;
+  /* Figma rounded-[20.898px] */
+  box-shadow: 0 8px 16px rgba(2, 23, 43, 0.15);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  user-select: none;
+  cursor: pointer;
+
+  /* Icon color system */
+  --icon-color-primary: var(--color-primary-green);
+  --icon-color-secondary: var(--color-white);
+  --icon-color-tertiary: #3B4652;
+}
+
+.cdmo-card:hover {
+  transform: translateY(-8px);
+  background-color: var(--color-primary-green);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.18);
+
+  /* Update icon colors so they don't blend with green bg */
+  --icon-color-primary: var(--color-primary-navy);
+  --icon-color-secondary: var(--color-white);
+  --icon-color-tertiary: var(--color-primary-navy);
+}
+
+.cdmo-card-title {
+  font-family: var(--font-title);
+  font-size: clamp(13px, 1.5vw, 15px);
+  font-weight: 700;
+  color: var(--color-white);
+  text-align: center;
+  line-height: 1.2;
+  word-break: break-word;
+  transition: color 0.3s ease;
+}
+
+.cdmo-card:hover .cdmo-card-title {
+  color: var(--color-primary-navy);
+}
+
+.cdmo-card-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.cdmo-card-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.cdmo-card:hover .cdmo-card-icon {
+  transform: scale(1.1);
+}
+
+/* Special styling for stacked Escopo icon */
+.cdmo-card-escopo-icon {
+  position: relative;
+  width: 38px;
+  height: 37px;
+}
+
+.cdmo-card-escopo-icon::before,
+.cdmo-card-escopo-icon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  transition: background-color 0.3s ease;
+}
+
+.cdmo-card-escopo-icon::before {
+  background-color: var(--icon-color-primary, var(--color-primary-green));
+  mask-image: url('data:image/svg+xml;utf8,%3Csvg%20viewBox%3D%220%200%2038.3346%2036.879%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M28.3476%2010.8028V28.9003C28.3476%2028.9441%2028.3476%2028.9792%2028.3476%2029.0231C28.4002%2031.9429%2030.3029%2034.4856%2033.0912%2035.3537L34.424%2035.7658C36.7212%2034.398%2038.282%2031.9078%2038.3346%2029.0494C38.3346%2028.9968%2038.3346%2028.9529%2038.3346%2028.9003V10.8028H28.3476Z%22%2F%3E%3C%2Fsvg%3E');
+  -webkit-mask-image: url('data:image/svg+xml;utf8,%3Csvg%20viewBox%3D%220%200%2038.3346%2036.879%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M28.3476%2010.8028V28.9003C28.3476%2028.9441%2028.3476%2028.9792%2028.3476%2029.0231C28.4002%2031.9429%2030.3029%2034.4856%2033.0912%2035.3537L34.424%2035.7658C36.7212%2034.398%2038.282%2031.9078%2038.3346%2029.0494C38.3346%2028.9968%2038.3346%2028.9529%2038.3346%2028.9003V10.8028H28.3476Z%22%2F%3E%3C%2Fsvg%3E');
+}
+
+.cdmo-card-escopo-icon::after {
+  background-color: var(--icon-color-secondary, white);
+  mask-image: url('data:image/svg+xml;utf8,%3Csvg%20viewBox%3D%220%200%2038.3346%2036.879%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M27.12%2029.049C27.12%2028.9964%2027.12%2028.9525%2027.12%2028.8999V0H0V28.8999C0%2033.3103%203.57742%2036.879%207.97905%2036.879H30.3467C31.1709%2036.879%2031.9688%2036.7562%2032.7229%2036.5195C29.5225%2035.5287%2027.1814%2032.565%2027.12%2029.049ZM3.8843%204.62083H23.2357V16.7472H3.8843V4.62083ZM23.2357%2030.3554H7.59325C7.25129%2030.3554%206.97947%2030.0836%206.97947%2029.7417C6.97947%2029.3997%207.25129%2029.1279%207.59325%2029.1279H23.2357C23.5776%2029.1279%2023.8495%2029.3997%2023.8495%2029.7417C23.8495%2030.0836%2023.5776%2030.3554%2023.2357%2030.3554ZM23.2357%2026.024H7.59325C7.25129%2026.024%206.97947%2025.7522%206.97947%2025.4102C6.97947%2025.0682%207.25129%2024.7964%207.59325%2024.7964H23.2357C23.5776%2024.7964%2023.8495%2025.0682%2023.8495%2025.4102C23.8495%2025.7522%2023.5776%2026.024%2023.2357%2026.024ZM23.2357%2021.7013H3.8843C3.54235%2021.7013%203.27053%2021.4294%203.27053%2021.0875C3.27053%2020.7455%203.54235%2020.4737%203.8843%2020.4737H23.2357C23.5776%2020.4737%2023.8495%2020.7455%2023.8495%2021.0875C23.8495%2021.4294%2023.5776%2021.7013%2023.2357%2021.7013Z%22%2F%3E%3C%2Fsvg%3E');
+  -webkit-mask-image: url('data:image/svg+xml;utf8,%3Csvg%20viewBox%3D%220%200%2038.3346%2036.879%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M27.12%2029.049C27.12%2028.9964%2027.12%2028.9525%2027.12%2028.8999V0H0V28.8999C0%2033.3103%203.57742%2036.879%207.97905%2036.879H30.3467C31.1709%2036.879%2031.9688%2036.7562%2032.7229%2036.5195C29.5225%2035.5287%2027.1814%2032.565%2027.12%2029.049ZM3.8843%204.62083H23.2357V16.7472H3.8843V4.62083ZM23.2357%2030.3554H7.59325C7.25129%2030.3554%206.97947%2030.0836%206.97947%2029.7417C6.97947%2029.3997%207.25129%2029.1279%207.59325%2029.1279H23.2357C23.5776%2029.1279%2023.8495%2029.3997%2023.8495%2029.7417C23.8495%2030.0836%2023.5776%2030.3554%2023.2357%2030.3554ZM23.2357%2026.024H7.59325C7.25129%2026.024%206.97947%2025.7522%206.97947%2025.4102C6.97947%2025.0682%207.25129%2024.7964%207.59325%2024.7964H23.2357C23.5776%2024.7964%2023.8495%2025.0682%2023.8495%2025.4102C23.8495%2025.7522%2023.5776%2026.024%2023.2357%2026.024ZM23.2357%2021.7013H3.8843C3.54235%2021.7013%203.27053%2021.4294%203.27053%2021.0875C3.27053%2020.7455%203.54235%2020.4737%203.8843%2020.4737H23.2357C23.5776%2020.4737%2023.8495%2020.7455%2023.8495%2021.0875C23.8495%2021.4294%2023.5776%2021.7013%2023.2357%2021.7013Z%22%2F%3E%3C%2Fsvg%3E');
+}
+
+.cdmo-card-icon-fg {
+  position: absolute;
+  top: 6px;
+  left: 9px;
+  width: 10px;
+  height: 8.5px;
+}
+
+@media (max-width: 480px) {
+  .cdmo-card {
+    width: 110px;
+    height: 115px;
+    border-radius: 16px;
+    padding: 12px;
+  }
+
+  .cdmo-card-title {
+    text-align: center;
+    font-size: 13px;
+  }
+}

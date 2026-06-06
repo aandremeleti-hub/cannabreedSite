@@ -1,8 +1,6 @@
 "use client";
 
 import React from 'react';
-import IconLeafFilled from '../../icons/IconLeafFilled';
-import IconLeafOutline from '../../icons/IconLeafOutline';
 import './PDSection.css';
 
 export default function PDSection() {
@@ -11,15 +9,7 @@ export default function PDSection() {
       <div className="pd-content-wrapper">
         <header className="pd-header">
           {/* Grafismo decorativo de folhas à esquerda */}
-          <div className="pd-graphic-container" aria-hidden="true">
-            <div className="pd-leaf-grid">
-              <IconLeafFilled className="pd-leaf leaf-1" />
-              <IconLeafOutline className="pd-leaf leaf-2" />
-              <IconLeafFilled className="pd-leaf leaf-3" />
-              <IconLeafOutline className="pd-leaf leaf-4" />
-              <IconLeafFilled className="pd-leaf leaf-5" />
-            </div>
-          </div>
+          <div className="pd-graphic-container" aria-hidden="true"></div>
 
           {/* Conteúdo textual à direita */}
           <div className="pd-text-container">

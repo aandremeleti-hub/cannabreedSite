@@ -80,22 +80,6 @@
   object-fit: contain;
 }
 
-/* Base card styling */
-.market-problem-card {
-  position: absolute;
-  z-index: 3;
-  min-height: 180px;
-  border-radius: 16px;
-  background-color: var(--color-white);
-  box-shadow: 8px 8px 8px 0 rgba(2, 23, 43, 0.25);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
-    box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
-    background-color 0.3s ease;
-}
-
 /* Staggered desktop absolute coordinates */
 .market-problem-card.card-1 {
   left: 0;
@@ -133,53 +117,12 @@
   padding: 24px 35px;
 }
 
-/* Premium zoom micro-animations and color changes on hover */
-.market-problem-card:hover {
-  transform: scale(1.03);
-  box-shadow: 12px 16px 24px 0 rgba(2, 23, 43, 0.2);
-  background-color: var(--color-primary-green);
-  z-index: 10;
-  cursor: pointer;
-}
-
 /* To avoid conflict with card-5 transform */
 .market-problem-card.card-5:hover {
   transform: translateX(-50%) scale(1.03);
 }
 
-/* Card content flow */
-.market-problem-card-content {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 16px;
-}
 
-.market-problem-card-icon-wrapper {
-  width: 67px;
-  height: 67px;
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.market-problem-card-icon {
-  object-fit: contain;
-}
-
-/* Card titles */
-.market-problem-card-title {
-  font-family: var(--t2-font-family);
-  font-size: var(--t2-font-size);
-  font-weight: var(--t2-font-weight);
-  line-height: 1.2;
-  letter-spacing: var(--t2-letter-spacing);
-  color: var(--color-primary-navy);
-  transition: color 0.3s ease;
-}
 
 /* ==========================================================================
    RESPONSIVIDADE (Desktop-First Adaptations)
@@ -287,14 +230,5 @@
 
   .market-problem-plant {
     height: 260px;
-  }
-
-  .market-problem-card-icon-wrapper {
-    width: 56px;
-    height: 56px;
-  }
-
-  .market-problem-card-title {
-    font-size: 16px;
   }
 }

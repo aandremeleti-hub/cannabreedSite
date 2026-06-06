@@ -1,3 +1,7 @@
+---
+description: Audita uma seção selecionada no Figma em busca de valores hardcoded e divergências em relação ao src/index.css.
+---
+
 # Comando: /auditar-secao
 
 ## Objetivo

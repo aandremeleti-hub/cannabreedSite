@@ -4,6 +4,7 @@ import IconInterface from '@/components/icons/IconInterface';
 import IconTrajetoria from '@/components/icons/IconTrajetoria';
 import IconIntegracao from '@/components/icons/IconIntegracao';
 import IconLogoMark from '@/components/icons/IconLogoMark';
+import CardTechnicalActing from '../../cards/CardTechnicalActing/CardTechnicalActing';
 import './RenatoSection.css';
 
 export default function RenatoSection() {
@@ -87,17 +88,16 @@ export default function RenatoSection() {
               {cards.map((card) => {
                 const IconComponent = card.Icon;
                 return (
-                  <article key={card.id} className="renato-technical-card">
-                    <div className="renato-technical-card-inner">
-                      <div className="renato-technical-card-icon-box" aria-hidden="true">
-                        <IconComponent
-                          className="renato-technical-card-icon"
-                          size={42}
-                        />
-                      </div>
-                      <h4 className="renato-technical-card-text">{card.title}</h4>
-                    </div>
-                  </article>
+                  <CardTechnicalActing
+                    key={card.id}
+                    title={card.title}
+                    iconNode={
+                      <IconComponent
+                        className="renato-technical-card-icon"
+                        size={42}
+                      />
+                    }
+                  />
                 );
               })}
             </div>

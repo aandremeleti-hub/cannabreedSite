@@ -1,11 +1,22 @@
 "use client";
 
 import Image from 'next/image';
-import CardGenetica from '@/components/cards/CardGenetica/CardGenetica';
-import CardImportation from '@/components/cards/CardImportation/CardImportation';
-import CardLaudo from '@/components/cards/CardLaudo/CardLaudo';
-import CardStructuration from '@/components/cards/CardStructuration/CardStructuration';
+import CardWhatCannabreedDoes from '@/components/cards/CardWhatCannabreedDoes/CardWhatCannabreedDoes';
 import bgImage from '@/assets/images/what-cannabreed-does-bg.jpeg';
+
+// Import Assets for Cards
+import imgGenetica from '@/assets/images/card-genetica.png';
+import iconGenetica from '@/assets/icons/icon-diagnosis.svg';
+
+import imgImportation from '@/assets/images/card-importation.jpeg';
+import iconImportation from '@/assets/icons/icon-truck.svg';
+
+import imgLaudo from '@/assets/images/card-laudo.png';
+import iconLaudo from '@/assets/icons/icon-premium.svg';
+
+import imgStructuration from '@/assets/images/card-structuration.jpeg';
+import iconStructuration from '@/assets/icons/icon-table-dolar.svg';
+
 import './WhatCannabreedDoes.css';
 
 export default function WhatCannabreedDoes() {
@@ -13,6 +24,37 @@ export default function WhatCannabreedDoes() {
     console.log(`Card clicked: ${cardName}`);
     // Adicionar lógica de clique futura (ex: abrir modal, âncora)
   };
+
+  const cardsData = [
+    {
+      title: "Genética e Melhoramento",
+      description: "Avaliação, desenvolvimento e adaptação de materiais genéticos. Foco em estabilidade, previsibilidade e desempenho em ambiente tropical.",
+      imageSrc: imgGenetica,
+      iconSrc: iconGenetica,
+      onClickValue: "Genética e Melhoramento"
+    },
+    {
+      title: "Importação de Sementes",
+      description: "Organização técnica e documental para introdução, regularização e proteção de materiais genéticos e Cultivares.",
+      imageSrc: imgImportation,
+      iconSrc: iconImportation,
+      onClickValue: "Importação de Sementes"
+    },
+    {
+      title: "Laudos e Perícias Técnicas",
+      description: "Laudos agronômicos, perícias em cultivo e material vegetal, pareceres técnicos e assistência especializada em demandas produtivas e regulatórias.",
+      imageSrc: imgLaudo,
+      iconSrc: iconLaudo,
+      onClickValue: "Laudos e Perícias"
+    },
+    {
+      title: "Estruturação Regulatória",
+      description: "Enquadramento estratégico, documentação e implementação de sistemas de conformidade para viabilizar operações seguras. (RDCs 2026 / Sandbox).",
+      imageSrc: imgStructuration,
+      iconSrc: iconStructuration,
+      onClickValue: "Estruturação Regulatória"
+    }
+  ];
 
   return (
     <section className="what-cannabreed-does" id="servicos">
@@ -43,10 +85,16 @@ export default function WhatCannabreedDoes() {
 
         {/* Cards Container */}
         <div className="what-cannabreed-does-cards-container">
-          <CardGenetica onClick={() => handleCardClick('Genética e Melhoramento')} />
-          <CardImportation onClick={() => handleCardClick('Importação de Sementes')} />
-          <CardLaudo onClick={() => handleCardClick('Laudos e Perícias')} />
-          <CardStructuration onClick={() => handleCardClick('Estruturação Regulatória')} />
+          {cardsData.map((data, index) => (
+            <CardWhatCannabreedDoes 
+              key={index} 
+              title={data.title}
+              description={data.description}
+              imageSrc={data.imageSrc}
+              iconSrc={data.iconSrc}
+              onClick={() => handleCardClick(data.onClickValue)} 
+            />
+          ))}
         </div>
       </div>
     </section>

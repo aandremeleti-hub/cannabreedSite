@@ -7,8 +7,8 @@ import IconColheita from '@/components/icons/IconColheita';
 import IconPreparo from '@/components/icons/IconPreparo';
 import IconEmbalagem from '@/components/icons/IconEmbalagem';
 import IconExpedicao from '@/components/icons/IconExpedicao';
-import IconEscopoBg from '@/components/icons/IconEscopoBg';
 import IconEscopoSmall from '@/components/icons/IconEscopoSmall';
+import CardContractedManufacturing from '../../cards/CardContractedManufacturing/CardContractedManufacturing';
 import './ContractedManufacturing.css';
 
 export default function ContractedManufacturing() {
@@ -42,11 +42,11 @@ export default function ContractedManufacturing() {
             <ul className="cdmo-cards-grid" aria-label="Etapas modulares da manufatura contratada">
               {cards.map((card) => (
                 <li className="cdmo-card-item" key={card.id}>
-                  <article className="cdmo-card">
-                    <div className="cdmo-card-icon-container">
-                      {card.id === 'escopo' ? (
+                  <CardContractedManufacturing
+                    title={card.title}
+                    iconNode={
+                      card.id === 'escopo' ? (
                         <div className="cdmo-card-escopo-icon" aria-hidden="true">
-                          <IconEscopoBg className="cdmo-card-icon-bg" />
                           <IconEscopoSmall className="cdmo-card-icon-fg" />
                         </div>
                       ) : (
@@ -54,10 +54,9 @@ export default function ContractedManufacturing() {
                           className="cdmo-card-icon"
                           aria-hidden="true"
                         />
-                      )}
-                    </div>
-                    <h3 className="cdmo-card-title">{card.title}</h3>
-                  </article>
+                      )
+                    }
+                  />
                 </li>
               ))}
             </ul>

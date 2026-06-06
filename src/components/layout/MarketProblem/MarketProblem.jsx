@@ -6,6 +6,7 @@ import iconLetterLocker from '@/assets/icons/icon-letter-locker.svg';
 import iconToolsCross from '@/assets/icons/icon-tools-cross.svg';
 import plantImage from '@/assets/images/market-problem-plant.webp';
 import bgImage from '@/assets/images/market-problem-bg.webp';
+import CardMarketProblem from '../../cards/CardMarketProblem/CardMarketProblem';
 import './MarketProblem.css';
 
 const PROBLEMS = [
@@ -80,25 +81,13 @@ export default function MarketProblem() {
 
           {/* Staggered cards */}
           {PROBLEMS.map((problem) => (
-            <article
+            <CardMarketProblem
               key={problem.id}
-              className={`market-problem-card ${problem.className}`}
-            >
-              <div className={`market-problem-card-content ${problem.gapClass}`}>
-                <div className="market-problem-card-icon-wrapper">
-                  <Image
-                    src={problem.icon}
-                    alt=""
-                    width={67}
-                    height={67}
-                    className="market-problem-card-icon"
-                  />
-                </div>
-                <h3 className="market-problem-card-title">
-                  {problem.title}
-                </h3>
-              </div>
-            </article>
+              title={problem.title}
+              iconSrc={problem.icon}
+              className={problem.className}
+              gapClass={problem.gapClass}
+            />
           ))}
         </div>
       </div>

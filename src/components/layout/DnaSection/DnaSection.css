@@ -83,26 +83,19 @@
   z-index: 3;
 }
 
-.dna-section-bg-pattern-container {
+.dna-section-cards-wrapper::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  background-image: url('../../../assets/images/dna-bg-pattern.svg');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
   pointer-events: none;
   z-index: 1;
-}
-
-.dna-section-bg-pattern {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: auto;
-  height: 100%;
-  opacity: 0.06;
-  object-fit: contain;
 }
 
 .dna-section-cards-container {
@@ -116,76 +109,8 @@
 }
 
 /* --------------------------------------------------------------------------
-   Cards styling
+   Cards styling (Internal styles moved to CardDnaSection.css)
    -------------------------------------------------------------------------- */
-
-.dna-section-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  border-radius: 16px;
-  background-color: var(--color-primary-green-light);
-  padding: 24px;
-  width: 100%;
-  height: auto;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.dna-section-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(128, 219, 66, 0.2);
-}
-
-.dna-section-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-  gap: 16px;
-}
-
-.dna-section-card-title {
-  color: var(--color-primary-navy);
-  font-family: var(--font-title), "Titillium Web", sans-serif;
-  font-size: var(--t1-font-size);
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-
-.dna-section-card-icon-container {
-  display: flex;
-  flex-shrink: 0;
-  width: 60px;
-  height: 64px;
-  justify-content: center;
-  align-items: center;
-}
-
-.dna-section-card-icon {
-  width: 100%;
-  height: auto;
-}
-
-.dna-section-card-text {
-  color: var(--color-primary-navy);
-  font-family: var(--font-title), "Titillium Web", sans-serif;
-  font-size: var(--paragraph-font-size);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.4;
-}
-
-.dna-section-italic-text {
-  font-family: var(--font-title), "Titillium Web", sans-serif;
-  font-size: var(--paragraph-font-size);
-  font-size: 16px;
-  font-style: italic;
-  font-weight: 600;
-  line-height: 1.4;
-}
 
 /* ==========================================================================
    Responsive Breakpoints
@@ -200,20 +125,6 @@
 
   .dna-section-cards-wrapper {
     padding: 64px 48px;
-  }
-
-  .dna-section-card-icon-container {
-    width: 80px;
-    height: 85px;
-  }
-
-  .dna-section-card-title {
-    font-size: 28px;
-  }
-
-  .dna-section-card-text,
-  .dna-section-italic-text {
-    font-size: 18px;
   }
 }
 
@@ -238,10 +149,8 @@
     padding: 82px 40px;
   }
 
-  .dna-section-bg-pattern {
-    left: 0;
-    top: 0;
-    transform: none;
+  .dna-section-cards-wrapper::before {
+    background-position: left top;
   }
 
   .dna-section-cards-container {
@@ -260,21 +169,5 @@
 
   .dna-section-mission-card {
     min-height: 339px;
-  }
-
-  .dna-section-card-icon-container {
-    width: 102px;
-    height: 108px;
-  }
-
-  .dna-section-card-title {
-    font-size: 32px;
-    line-height: 33px;
-  }
-
-  .dna-section-card-text,
-  .dna-section-italic-text {
-    font-size: 20.501px;
-    line-height: 23.064px;
   }
 }
