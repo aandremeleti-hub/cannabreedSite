@@ -55,7 +55,7 @@ export default function Header() {
             </Link>
           </div>
           <div className="header-nav-bar-contato-box">
-            <Link href="/#contato" className="header-nav-bar-contato-text">
+            <Link href="/contato" className="header-nav-bar-contato-text">
               Contato
             </Link>
           </div>
@@ -102,7 +102,7 @@ export default function Header() {
               </Link>
             </li>
             <li className="header-mobile-nav-item">
-              <Link href="/#contato" className="header-mobile-nav-link" onClick={closeMobileMenu}>
+              <Link href="/contato" className="header-mobile-nav-link" onClick={closeMobileMenu}>
                 Contato
               </Link>
             </li>
