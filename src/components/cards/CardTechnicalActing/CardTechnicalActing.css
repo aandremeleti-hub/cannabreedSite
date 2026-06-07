@@ -9,10 +9,17 @@
   background-color: var(--color-white);
   box-shadow: 8px 8px 8px 0 rgba(255, 255, 255, 0.25);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: none;
+  font-family: inherit;
   
   /* Color tokens for SVGs */
   --icon-color-primary: var(--color-primary-green);
   --icon-color-secondary: var(--color-primary-navy);
+}
+
+.renato-technical-card:focus-visible {
+  outline: 3px solid var(--color-primary-green);
+  outline-offset: 4px;
 }
 
 .renato-technical-card:hover {

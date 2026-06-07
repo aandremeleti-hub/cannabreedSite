@@ -24,7 +24,7 @@ Lembre-se de respeitar os design tokens de globals.css e não utilizar Tailwind 
 
 # PROMPT-gerar-código-mcp
 
-/processar-secao [NOME_DA_SECAO]
+/gerar-codigo-mcp [NOME_DA_SECAO]
 
 Plano aprovado. Ative os agentes frontend-specialist (para codificação fiel do JSX/CSS e organização de assets) e test-engineer (para auditoria final).
 

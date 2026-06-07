@@ -1,0 +1,94 @@
+/* ==========================================================================
+   MODAL LIGHT — Reusable Light Modal Backdrop & Shell
+   ========================================================================== */
+
+.modal-light-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(2, 23, 43, 0.8); /* Navy overlay */
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: modalLightFadeIn 0.25s ease-out;
+}
+
+.modal-light-content {
+  position: relative;
+  max-width: 95vw;
+  max-height: 95vh;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+  animation: modalLightScaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.modal-light-close-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: var(--color-primary-navy);
+  font-size: 36px;
+  font-weight: 300;
+  cursor: pointer;
+  line-height: 0.8;
+  z-index: 10002;
+  transition: color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+  padding: 4px;
+  opacity: 0.7;
+}
+
+.modal-light-close-button:hover {
+  color: var(--color-primary-navy);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.modal-light-close-button:focus-visible {
+  outline: 2px solid var(--color-primary-navy);
+  border-radius: 4px;
+}
+
+/* Animations */
+@keyframes modalLightFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalLightScaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .modal-light-close-button {
+    top: 16px;
+    right: 16px;
+    font-size: 30px;
+    /* On mobile, make sure button stands out on top of green background or image */
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}

@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import renatoImage from '@/assets/images/renato-image.jpg';
 import IconInterface from '@/components/icons/IconInterface';
@@ -5,9 +8,14 @@ import IconTrajetoria from '@/components/icons/IconTrajetoria';
 import IconIntegracao from '@/components/icons/IconIntegracao';
 import IconLogoMark from '@/components/icons/IconLogoMark';
 import CardTechnicalActing from '../../cards/CardTechnicalActing/CardTechnicalActing';
+import ModalLight from '@/components/layout/Modal/ModalLight';
+import RenatoTechnicalActingModalContent from '@/components/layout/RenatoTechnicalActingModalContent/RenatoTechnicalActingModalContent';
+import { RENATO_TECHNICAL_ACTING_DATA } from '@/data/renatoTechnicalActingData';
 import './RenatoSection.css';
 
 export default function RenatoSection() {
+  const [activeCardId, setActiveCardId] = useState(null);
+
   const milestones = [
     {
       id: 'doctor',
@@ -91,6 +99,7 @@ export default function RenatoSection() {
                   <CardTechnicalActing
                     key={card.id}
                     title={card.title}
+                    onClick={() => setActiveCardId(card.id)}
                     iconNode={
                       <IconComponent
                         className="renato-technical-card-icon"
@@ -105,6 +114,23 @@ export default function RenatoSection() {
         </div>
 
       </div>
+
+      {/* Dynamic Modal for Technical Acting Cards */}
+      <ModalLight
+        isOpen={activeCardId !== null}
+        onClose={() => setActiveCardId(null)}
+      >
+        {activeCardId && (
+          <RenatoTechnicalActingModalContent
+            data={RENATO_TECHNICAL_ACTING_DATA[activeCardId]}
+            iconNode={
+              activeCardId === 'interface' ? <IconInterface /> :
+              activeCardId === 'trajetoria' ? <IconTrajetoria /> :
+              <IconIntegracao />
+            }
+          />
+        )}
+      </ModalLight>
     </section>
   );
 }

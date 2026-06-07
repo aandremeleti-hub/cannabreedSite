@@ -1,14 +1,19 @@
 "use client";
 
+import React, { useState } from 'react';
 import Image from 'next/image';
 import CardWhatCannabreedDoes from '@/components/cards/CardWhatCannabreedDoes/CardWhatCannabreedDoes';
+import ModalLight from '@/components/layout/Modal/ModalLight';
+import WhatCannabreedDoesModalContent from '@/components/layout/WhatCannabreedDoesModalContent/WhatCannabreedDoesModalContent';
+import { WHAT_CANNABREED_DOES_DATA } from '@/data/whatCannabreedDoesData';
 import bgImage from '@/assets/images/what-cannabreed-does-bg.jpeg';
+
 
 // Import Assets for Cards
 import imgGenetica from '@/assets/images/card-genetica.png';
 import iconGenetica from '@/assets/icons/icon-diagnosis.svg';
 
-import imgImportation from '@/assets/images/card-importation.jpeg';
+import imgImportation from '@/assets/images/card-importation.png';
 import iconImportation from '@/assets/icons/icon-truck.svg';
 
 import imgLaudo from '@/assets/images/card-laudo.png';
@@ -20,9 +25,14 @@ import iconStructuration from '@/assets/icons/icon-table-dolar.svg';
 import './WhatCannabreedDoes.css';
 
 export default function WhatCannabreedDoes() {
+  const [activeServiceKey, setActiveServiceKey] = useState(null);
+
   const handleCardClick = (cardName) => {
-    console.log(`Card clicked: ${cardName}`);
-    // Adicionar lógica de clique futura (ex: abrir modal, âncora)
+    if (WHAT_CANNABREED_DOES_DATA[cardName]) {
+      setActiveServiceKey(cardName);
+    } else {
+      console.log(`Card clicked: ${cardName}`);
+    }
   };
 
   const cardsData = [
@@ -35,7 +45,7 @@ export default function WhatCannabreedDoes() {
     },
     {
       title: "Importação de Sementes",
-      description: "Organização técnica e documental para introdução, regularização e proteção de materiais genéticos e Cultivares.",
+      description: "Organização técnica e documental para introdução, regularização e proteção de materiais genéticos and Cultivares.",
       imageSrc: imgImportation,
       iconSrc: iconImportation,
       onClickValue: "Importação de Sementes"
@@ -78,7 +88,7 @@ export default function WhatCannabreedDoes() {
             O QUE A CANNABREED FAZ
           </h2>
           <p className="what-cannabreed-does-subtitle">
-            Estrutura técnica completa para transformar projetos 
+            Estrutura técnica completa para transformar projetos
             em operações produtivas, conformes e sustentáveis.
           </p>
         </div>
@@ -86,17 +96,32 @@ export default function WhatCannabreedDoes() {
         {/* Cards Container */}
         <div className="what-cannabreed-does-cards-container">
           {cardsData.map((data, index) => (
-            <CardWhatCannabreedDoes 
-              key={index} 
+            <CardWhatCannabreedDoes
+              key={index}
               title={data.title}
               description={data.description}
               imageSrc={data.imageSrc}
               iconSrc={data.iconSrc}
-              onClick={() => handleCardClick(data.onClickValue)} 
+              onClick={() => handleCardClick(data.onClickValue)}
             />
           ))}
         </div>
       </div>
+
+      {/* Reusable Modal Rendering the newly generated ExpertReportsSection */}
+      <ModalLight
+        isOpen={activeServiceKey !== null}
+        onClose={() => setActiveServiceKey(null)}
+      >
+        {activeServiceKey && (
+          <WhatCannabreedDoesModalContent
+            data={WHAT_CANNABREED_DOES_DATA[activeServiceKey]}
+          />
+        )}
+      </ModalLight>
+
+
     </section>
   );
 }
+

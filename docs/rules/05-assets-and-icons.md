@@ -47,3 +47,12 @@ export default function IconArrow({ className }) {
 ## 5. Caminhos de Imagens do Figma MCP
 **CRÍTICO:** **NUNCA** faça commits ou deixe no código de produção URLs temporárias do MCP (ex: `http://localhost:3845/...`).
 Sempre faça download do asset e referencie localmente.
+
+## 6. Padronização, Contraste e Segurança em Ícones
+- 🔴 **PROIBIDO:** Deixar componentes de ícones React com tamanhos internos variáveis (ex: misturando defaults de `size={24}` e `size={48}`) sem normalização.
+- 🟢 **OBRIGATÓRIO:** Forçar explicitamente a prop `size` ao clonar (`React.cloneElement(iconNode, { size: 48 })`) ou instanciar ícones, limitando as dimensões físicas no container CSS (`max-width: 38px; max-height: 38px`) para manter escala perfeitamente uniforme de 1:1.
+- 🔴 **PROIBIDO:** Clonar elementos lendo propriedades diretamente sem tratamento (ex: `iconNode.props.className`), gerando quebras de runtime TypeError.
+- 🟢 **OBRIGATÓRIO:** Usar optional chaining (`iconNode.props?.className || ''`) ao mesclar classes do elemento clonado.
+- 🔴 **PROIBIDO:** Chubar cores absolutas e estáticas em SVGs dinâmicos de ícones estruturais.
+- 🟢 **OBRIGATÓRIO:** Projetar e estender ícones para aceitarem duas cores configuráveis via variáveis locais (`var(--icon-color-primary)` e `var(--icon-color-secondary)`), permitindo inversão de contraste imediata no hover ou modal de acordo com o fundo.
+

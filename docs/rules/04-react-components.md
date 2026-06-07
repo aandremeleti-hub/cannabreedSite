@@ -64,3 +64,15 @@ export default function RootLayout({ children }) {
   );
 }
 ```
+
+## 6. Arquitetura de Modais Reutilizáveis (Princípio DRY)
+- 🔴 **PROIBIDO:** Criar componentes de modais específicos duplicados para cada variação de conteúdo estruturalmente similar (ex: `ModalGenetica.jsx`, `ModalRegulatorio.jsx`).
+- 🟢 **OBRIGATÓRIO:** Isolar o **Envelope Genérico (`Modal.jsx`)** para lidar puramente com comportamento (controle de `isOpen`, bloqueio de scroll de fundo, fechamento via clique fora/Escape e efeitos visuais) recebendo conteúdos dinâmicos através de `children`.
+- 🟢 **OBRIGATÓRIO:** Utilizar um **Renderizador Dinâmico de Conteúdo (`ProblemDetailSection.jsx`)** que recebe um identificador (`problemId`) e mapeia dinamicamente textos e ícones a partir de uma fonte de dados centralizada (`problemsDetailData.js`).
+- 🟢 **OBRIGATÓRIO:** Controlar a renderização no componente pai através de estado numérico ou nulo (ex: `const [activeProblemId, setActiveProblemId] = useState(null)`) e injetar condicionalmente o conteúdo para evitar montagem prematura do DOM:
+```jsx
+<Modal isOpen={activeProblemId !== null} onClose={() => setActiveProblemId(null)}>
+  {activeProblemId && <ProblemDetailSection problemId={activeProblemId} />}
+</Modal>
+```
+

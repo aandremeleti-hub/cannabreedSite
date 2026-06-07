@@ -27,6 +27,12 @@
   cursor: pointer;
 }
 
+.market-problem-card:focus-visible {
+  outline: 3px solid var(--color-primary-green);
+  outline-offset: 4px;
+}
+
+
 /* Card content flow */
 .market-problem-card-content {
   display: flex;

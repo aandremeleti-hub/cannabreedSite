@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from 'react';
 import Image from 'next/image';
 import iconMicroscope from '@/assets/icons/icon-microscope.svg';
 import iconTable from '@/assets/icons/icon-table.svg';
@@ -7,6 +10,8 @@ import iconToolsCross from '@/assets/icons/icon-tools-cross.svg';
 import plantImage from '@/assets/images/market-problem-plant.webp';
 import bgImage from '@/assets/images/market-problem-bg.webp';
 import CardMarketProblem from '../../cards/CardMarketProblem/CardMarketProblem';
+import Modal from '../Modal/Modal';
+import ProblemDetailSection from '../ProblemDetailSection/ProblemDetailSection';
 import './MarketProblem.css';
 
 const PROBLEMS = [
@@ -48,6 +53,8 @@ const PROBLEMS = [
 ];
 
 export default function MarketProblem() {
+  const [activeProblemId, setActiveProblemId] = useState(null);
+
   return (
     <section className="market-problem">
       {/* Background SVG vector layer */}
@@ -87,10 +94,26 @@ export default function MarketProblem() {
               iconSrc={problem.icon}
               className={problem.className}
               gapClass={problem.gapClass}
+              onClick={
+                problem.id === 1 ||
+                problem.id === 2 ||
+                problem.id === 3 ||
+                problem.id === 4 ||
+                problem.id === 5
+                  ? () => setActiveProblemId(problem.id)
+                  : undefined
+              }
             />
           ))}
         </div>
       </div>
+
+      {/* Modal for Market Problems Details */}
+      <Modal isOpen={activeProblemId !== null} onClose={() => setActiveProblemId(null)}>
+        {activeProblemId && <ProblemDetailSection problemId={activeProblemId} />}
+      </Modal>
     </section>
   );
 }
+
+

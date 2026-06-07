@@ -1,0 +1,76 @@
+/* ==========================================================================
+   CARDINADEQUATEGENETICS — Estilos do Componente (Isolado)
+   Fidelidade 1:1 com o Figma usando variáveis locais
+   ========================================================================== */
+
+.inadequate-genetics-card {
+  /* Declaração literal das propriedades do Figma */
+  --local-card-width: 126.694px;
+  --local-card-height: 128px;
+  --local-card-radius: 20.898px;
+  --local-card-bg: var(--color-white);
+  --local-card-title-size: 16.464px;
+  --local-card-title-lh: 13.238px;
+  --local-card-title-width: 117.818px;
+  
+  width: var(--local-card-width);
+  height: var(--local-card-height);
+  border-radius: var(--local-card-radius);
+  background-color: var(--local-card-bg);
+  box-sizing: border-box;
+  padding: 13px 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inadequate-genetics-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
+}
+
+.inadequate-genetics-card-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.inadequate-genetics-card-title {
+  font-family: var(--font-title), sans-serif;
+  font-size: var(--local-card-title-size);
+  line-height: var(--local-card-title-lh);
+  font-weight: 700;
+  color: var(--color-primary-navy);
+  text-align: center;
+  max-width: var(--local-card-title-width);
+  width: 100%;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+.inadequate-genetics-card-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+}
+
+.inadequate-genetics-card-icon {
+  object-fit: contain;
+  --icon-color-primary: var(--color-primary-green);
+  --icon-color-secondary: var(--color-primary-navy);
+  --fill-0: var(--color-primary-navy);
+  --color-white: var(--color-primary-navy);
+  max-width: 38px;
+  max-height: 38px;
+  width: 100%;
+  height: 100%;
+}

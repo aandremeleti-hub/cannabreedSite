@@ -4,7 +4,6 @@ import ProductiveOperation from '@/components/layout/ProductiveOperation/Product
 import CdmoTransition from '@/components/transitions/CdmoTransition/CdmoTransition';
 import ContractedManufacturing from '@/components/layout/ContractedManufacturing/ContractedManufacturing';
 import PdTransition from '@/components/transitions/PdTransition/PdTransition';
-import ExpertReportsSection from '@/components/layout/ExpertReportsSection/ExpertReportsSection';
 import RegulatoryCompliance from '@/components/layout/RegulatoryCompliance/RegulatoryCompliance';
 
 export const metadata = {
@@ -19,7 +18,6 @@ export default function ServicosPage() {
             <CdmoTransition/>
             <RegulatoryCompliance />
             <PdTransition />
-            <ExpertReportsSection />
             <CdmoTransition />
             <ProductiveOperation />
             <PdTransition />

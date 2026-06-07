@@ -2,9 +2,23 @@ import React from 'react';
 import Image from 'next/image';
 import './CardMarketProblem.css';
 
-export default function CardMarketProblem({ title, iconSrc, className, gapClass }) {
+export default function CardMarketProblem({ title, iconSrc, className, gapClass, onClick }) {
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      if (onClick) onClick();
+    }
+  };
+
   return (
-    <article className={`market-problem-card ${className || ''}`}>
+    <article 
+      className={`market-problem-card ${className || ''}`}
+      onClick={onClick}
+      onKeyDown={handleKeyDown}
+      role="button"
+      tabIndex={0}
+      aria-label={`Mais informações sobre: ${title}`}
+    >
       <div className={`market-problem-card-content ${gapClass || ''}`}>
         <div className="market-problem-card-icon-wrapper">
           <Image
@@ -22,3 +36,4 @@ export default function CardMarketProblem({ title, iconSrc, className, gapClass 
     </article>
   );
 }
+
