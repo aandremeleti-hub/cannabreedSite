@@ -143,6 +143,69 @@
   color: var(--color-secondary-mist-mid);
 }
 
+/* CTA Banner */
+.dt-cta-banner {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 48px 56px;
+  box-sizing: border-box;
+}
+
+.dt-cta-banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.dt-cta-banner-text {
+  color: var(--color-white);
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  max-width: 620px;
+}
+
+.dt-cta-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: var(--btn-secondary-padding);
+  border-radius: var(--btn-secondary-border-radius);
+  border: var(--btn-secondary-border);
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.dt-cta-banner-btn:hover {
+  background-color: var(--btn-secondary-bg-hover);
+  color: var(--btn-secondary-text-hover);
+  transform: translateY(-2px);
+}
+
+.dt-cta-banner-btn:active {
+  transform: translateY(0);
+}
+
+.dt-cta-banner-btn:focus-visible {
+  outline: 2px solid var(--btn-secondary-focus-ring);
+  outline-offset: 4px;
+  border-radius: var(--btn-secondary-border-radius);
+}
+
 /* ==========================================================================
    RESPONSIVIDADE (Desktop-First Adaptations)
    ========================================================================== */
@@ -188,6 +251,27 @@
     padding: 28px 20px;
     gap: 20px;
   }
+
+  .dt-cta-banner {
+    padding: 32px 24px;
+  }
+
+  .dt-cta-banner-content {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .dt-cta-banner-text {
+    font-size: 18px;
+    max-width: 100%;
+  }
+
+  .dt-cta-banner-btn {
+    width: 100%;
+    height: 48px;
+    font-size: 14px;
+  }
 }
 
 /* Mobile (Até 480px) */
@@ -198,5 +282,13 @@
 
   .dt-container {
     padding: 0 16px;
+  }
+
+  .dt-cta-banner {
+    padding: 24px 16px;
+  }
+
+  .dt-cta-banner-text {
+    font-size: 16px;
   }
 }

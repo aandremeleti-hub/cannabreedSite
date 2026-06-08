@@ -92,6 +92,47 @@
   list-style: none;
 }
 
+/* CTA Button Styling */
+.po-cta-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.po-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: var(--btn-primary-padding);
+  border-radius: var(--btn-primary-border-radius);
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.po-cta-btn:hover {
+  background-color: var(--btn-primary-bg-hover);
+  transform: translateY(-2px);
+}
+
+.po-cta-btn:active {
+  transform: translateY(0);
+}
+
+.po-cta-btn:focus-visible {
+  outline: 2px solid var(--btn-primary-focus-ring);
+  outline-offset: 4px;
+  border-radius: var(--btn-primary-border-radius);
+}
+
 
 /* Lado Direito: Imagem Premium */
 .po-content-right {
@@ -99,6 +140,7 @@
   width: 100%;
   max-width: 382px;
   height: 100%;
+  align-self: stretch;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0px 20px 40px rgba(2, 23, 43, 0.2);
@@ -114,6 +156,8 @@
 
 .po-image {
   object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 /* ==========================================================================
@@ -124,6 +168,10 @@
   .po-content-left {
     align-items: center;
     text-align: center;
+  }
+
+  .po-cta-wrapper {
+    justify-content: center;
   }
 
   .po-header {
@@ -152,6 +200,12 @@
     height: auto;
     aspect-ratio: 382 / 459;
     justify-self: center;
+  }
+
+  .po-cta-btn {
+    width: 100%;
+    height: 48px;
+    font-size: 14px;
   }
 }
 

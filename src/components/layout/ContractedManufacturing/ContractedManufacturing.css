@@ -94,12 +94,54 @@
 }
 
 
+/* CTA Button Styling */
+.cdmo-cta-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.cdmo-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: var(--btn-primary-padding);
+  border-radius: var(--btn-primary-border-radius);
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.cdmo-cta-btn:hover {
+  background-color: var(--btn-primary-bg-hover);
+  transform: translateY(-2px);
+}
+
+.cdmo-cta-btn:active {
+  transform: translateY(0);
+}
+
+.cdmo-cta-btn:focus-visible {
+  outline: 2px solid var(--btn-primary-focus-ring);
+  outline-offset: 4px;
+  border-radius: var(--btn-primary-border-radius);
+}
+
 /* Image column styling */
 .cdmo-image-wrapper {
   position: relative;
   width: 100%;
   max-width: 382px;
   height: 100%;
+  align-self: stretch;
   background-color: var(--color-primary-navy);
   border-radius: 8px;
   /* Figma rounded-[8.432px] */
@@ -111,12 +153,21 @@
 
 .cdmo-image {
   object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
 }
 
-/* Responsiveness Adaptations */
 @media (max-width: 1023px) {
   .cdmo-section {
     padding: 0;
+  }
+
+  .cdmo-content {
+    align-items: center;
+  }
+
+  .cdmo-cta-wrapper {
+    justify-content: center;
   }
 
   .cdmo-title {
@@ -139,6 +190,14 @@
     max-width: 450px;
     height: 350px;
     justify-self: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .cdmo-cta-btn {
+    width: 100%;
+    height: 48px;
+    font-size: 14px;
   }
 }
 

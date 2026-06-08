@@ -1,23 +1,35 @@
+"use client";
+
+import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import logoMark from '@/assets/icons/structured-projects-logomark.svg';
 import titleBg from '@/assets/images/structured-projects-title.jpg';
 import bottomBg from '@/assets/images/structured-projects-bottom.jpg';
 import IconStructuredWho from '@/components/icons/IconStructuredWho';
 import IconStructuredModel from '@/components/icons/IconStructuredModel';
 import CardStructuredProjects from '@/components/cards/CardStructuredProjects/CardStructuredProjects';
+import ModalLight from '@/components/layout/Modal/ModalLight';
+import StructuredWhoWeActForModalContent from '@/components/layout/StructuredWhoWeActForModalContent';
+import StructuredModelOfActingModalContent from '@/components/layout/StructuredModelOfActingModalContent';
 import './StructuredProjectsSection.css';
 
 export default function StructuredProjectsSection() {
+  const [activeModal, setActiveModal] = useState(null);
+
   const cardsData = [
     {
       title: "Para quem atuamos",
-      iconNode: <IconStructuredWho className="structured-projects-card-icon" size={67} />
+      iconNode: <IconStructuredWho className="structured-projects-card-icon" size={67} />,
+      onClick: () => setActiveModal('who')
     },
     {
       title: "Modelo de atuação",
-      iconNode: <IconStructuredModel className="structured-projects-card-icon" size={67} />
+      iconNode: <IconStructuredModel className="structured-projects-card-icon" size={67} />,
+      onClick: () => setActiveModal('model')
     }
   ];
+
 
   return (
     <section className="structured-projects" id="projetos-estruturados" aria-labelledby="structured-projects-main-title">
@@ -70,6 +82,7 @@ export default function StructuredProjectsSection() {
               key={index} 
               title={data.title} 
               iconNode={data.iconNode} 
+              onClick={data.onClick}
             />
           ))}
         </div>
@@ -99,13 +112,30 @@ export default function StructuredProjectsSection() {
           </div>
           <div className="structured-projects-bottom-right-text">
             <p>
-              Operamos exclusivamente dentro dos parâmetros legais e institucionais, com compromisso explícito com responsabilidade técnica, segurança regulatória e desenvolvimento sustentável do setor no Brasil.
+              Operamos exclusivamente dentro dos parâmetros legais and institucionais, com compromisso explícito com responsabilidade técnica, segurança regulatória e desenvolvimento sustentável do setor no Brasil.
             </p>
           </div>
         </div>
 
+        {/* CTA Button Wrapper */}
+        <div className="structured-projects-cta-wrapper">
+          <Link
+            href="/contato?assunto=Projetos Estruturados"
+            className="structured-projects-cta-btn"
+          >
+            Iniciar Projeto Estruturado
+          </Link>
+        </div>
+
       </div>
+
+      {/* Light Overlay Modals */}
+      <ModalLight isOpen={activeModal !== null} onClose={() => setActiveModal(null)}>
+        {activeModal === 'who' && <StructuredWhoWeActForModalContent />}
+        {activeModal === 'model' && <StructuredModelOfActingModalContent />}
+      </ModalLight>
 
     </section>
   );
 }
+

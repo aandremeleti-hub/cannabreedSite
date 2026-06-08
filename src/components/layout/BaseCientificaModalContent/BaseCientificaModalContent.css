@@ -1,0 +1,224 @@
+/* ==========================================================================
+   BASE CIENTIFICA MODAL CONTENT — Estilos do Componente (Fiel ao Figma 1:1)
+   ========================================================================== */
+
+:root {
+  /* Valores locais extraídos do Figma */
+  --bc-modal-width: 1121px;
+  --bc-modal-height: 420px;
+  --bc-modal-img-width: 545px;
+  --bc-modal-text-col-width: 576px;
+  
+  --bc-modal-inner-w: 487px;
+  --bc-modal-inner-gap: 29px;
+  
+  --bc-modal-title-size: 32px;
+  --bc-modal-title-lh: 33px;
+  
+  --bc-modal-desc-size: 24px;
+  --bc-modal-desc-lh: 27px;
+  
+  --bc-modal-padding-top: 52px;
+  --bc-modal-padding-left: 62px;
+  
+  --bc-modal-border-radius: 16px;
+}
+
+.bc-modal-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: var(--bc-modal-width);
+  height: auto;
+  background-color: var(--color-white);
+  border-radius: var(--bc-modal-border-radius);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Coluna Esquerda: Imagem */
+.bc-modal-image-col {
+  position: relative;
+  width: var(--bc-modal-img-width);
+  align-self: stretch;
+}
+
+.bc-modal-image {
+  object-fit: cover;
+}
+
+/* Coluna Direita: Textos */
+.bc-modal-text-col {
+  width: var(--bc-modal-text-col-width);
+  height: auto;
+  background-color: var(--color-primary-green-light); /* Verde claro: #d5f3c0 */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 40px;
+}
+
+.bc-modal-text-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--bc-modal-inner-gap);
+  box-sizing: border-box;
+}
+
+/* CTA Button */
+.bc-modal-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: var(--btn-primary-padding);
+  border-radius: var(--btn-primary-border-radius);
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  align-self: flex-start;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.bc-modal-cta-btn:hover {
+  background-color: var(--btn-primary-bg-hover);
+  transform: translateY(-2px);
+}
+
+.bc-modal-cta-btn:active {
+  transform: translateY(0);
+}
+
+.bc-modal-cta-btn:focus-visible {
+  outline: 2px solid var(--btn-primary-focus-ring);
+  outline-offset: 4px;
+  border-radius: var(--btn-primary-border-radius);
+}
+
+/* Elementos de Texto */
+.bc-modal-title {
+  font-family: var(--font-title, 'Titillium Web', sans-serif);
+  font-size: var(--bc-modal-title-size);
+  font-weight: 700;
+  line-height: var(--bc-modal-title-lh);
+  color: var(--color-primary-navy); /* Preto / Azul escuro */
+  margin: 0;
+}
+
+.bc-modal-description {
+  font-family: var(--font-title, 'Titillium Web', sans-serif);
+  font-size: var(--bc-modal-desc-size);
+  font-weight: 400;
+  line-height: var(--bc-modal-desc-lh);
+  color: var(--color-primary-navy);
+  margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (Desktop-First / Adaptações Mobile e Tablet)
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .bc-modal-content-wrapper {
+    width: 900px;
+    height: auto;
+  }
+  
+  .bc-modal-image-col {
+    width: 420px;
+  }
+  
+  .bc-modal-text-col {
+    width: 480px;
+    padding: 40px;
+  }
+
+  .bc-modal-text-inner {
+    width: 100%;
+    gap: var(--bc-modal-inner-gap);
+  }
+}
+
+@media (max-width: 992px) {
+  .bc-modal-content-wrapper {
+    width: 700px;
+    height: auto;
+  }
+  
+  .bc-modal-image-col {
+    width: 320px;
+  }
+  
+  .bc-modal-text-col {
+    width: 380px;
+    padding: 40px;
+  }
+
+  .bc-modal-text-inner {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .bc-modal-title {
+    font-size: 26px;
+    line-height: 30px;
+  }
+
+  .bc-modal-description {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .bc-modal-cta-btn {
+    height: 48px;
+    font-size: 14px;
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bc-modal-content-wrapper {
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    min-height: auto;
+  }
+
+  .bc-modal-image-col {
+    width: 100%;
+    height: 220px;
+  }
+
+  .bc-modal-text-col {
+    width: 100%;
+    height: auto;
+    padding: 40px;
+  }
+
+  .bc-modal-text-inner {
+    width: 100%;
+    gap: 16px;
+  }
+
+  .bc-modal-title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .bc-modal-description {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .bc-modal-cta-btn {
+    width: 100%;
+    height: 48px;
+    font-size: 14px;
+  }
+}

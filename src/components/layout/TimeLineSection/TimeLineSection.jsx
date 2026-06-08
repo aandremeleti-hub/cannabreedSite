@@ -1,7 +1,7 @@
 "use client";
 
 import Image from 'next/image';
-import ufvImg from '@/assets/images/timeline-ufv.png';
+import ufvImg from '@/assets/images/logo_UFV 1.svg';
 import pivoImg from '@/assets/images/timeline-pivo.jpg';
 import beginningImg from '@/assets/images/timeline-beggining.jpg';
 import expansionImg from '@/assets/images/timeline-expansion.png';
@@ -17,7 +17,7 @@ export default function TimeLineSection() {
       year: '2021',
       text: 'Nascimento da Cannabreed Brasil na Universidade Federal de Viçosa (UFV)',
       image: ufvImg,
-      alt: 'Prédio histórico da Universidade Federal de Viçosa (UFV)',
+      alt: 'Logo da Universidade Federal de Viçosa (UFV)',
       type: 'odd',
     },
     {
@@ -104,7 +104,6 @@ export default function TimeLineSection() {
 
             <ul className="timeline-events-list">
               {events.map((event, index) => {
-                const isOdd = event.type === 'odd';
                 return (
                   <CardTimeLine
                     key={event.year}

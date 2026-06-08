@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import './RenatoTechnicalActingModalContent.css';
 
 export default function RenatoTechnicalActingModalContent({ data, iconNode }) {
@@ -31,8 +32,19 @@ export default function RenatoTechnicalActingModalContent({ data, iconNode }) {
 
       {/* Bottom Text Content Section */}
       <div className="renato-modal-bottom-text-container">
-        <div className="renato-modal-text-wrap">
-          {data.text}
+        <div className="renato-modal-bottom-content">
+          <div className="renato-modal-text-wrap">
+            {data.text}
+          </div>
+          {/* CTA Button */}
+          <div className="renato-modal-cta-wrapper">
+            <Link
+              href="/contato?assunto=Reunião Técnica com Renato Tonini"
+              className="renato-modal-cta-btn"
+            >
+              Agendar Reunião Técnica
+            </Link>
+          </div>
         </div>
       </div>
     </div>

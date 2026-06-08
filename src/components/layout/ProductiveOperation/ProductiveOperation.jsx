@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import IconLayout from '../../icons/IconLayout';
 import IconRoutines from '../../icons/IconRoutines';
 import IconMetrics from '../../icons/IconMetrics';
@@ -49,6 +50,16 @@ export default function ProductiveOperation() {
                 iconNode={<card.Icon className="po-card-icon" size={48} />}
               />
             ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="po-cta-wrapper">
+            <Link
+              href="/contato?assunto=Operação Produtiva"
+              className="po-cta-btn"
+            >
+              Implementar Padronização de Cultivo
+            </Link>
           </div>
         </div>
 

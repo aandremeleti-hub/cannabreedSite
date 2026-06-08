@@ -144,11 +144,13 @@
 .structured-projects-bottom-container {
   position: relative;
   width: 100%;
-  height: 352px;
+  height: auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 40px;
+  padding: 80px 40px;
+  gap: 40px;
 }
 
 .structured-projects-bottom-bg-wrapper {
@@ -214,6 +216,47 @@
   text-align: right;
 }
 
+/* CTA Button Styling */
+.structured-projects-cta-wrapper {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.structured-projects-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--btn-primary-padding);
+  border-radius: var(--btn-primary-border-radius);
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.structured-projects-cta-btn:hover {
+  background-color: var(--btn-primary-bg-hover);
+  transform: translateY(-2px);
+}
+
+.structured-projects-cta-btn:active {
+  transform: translateY(0);
+}
+
+.structured-projects-cta-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--btn-primary-focus-ring);
+}
+
 /* ==========================================================================
    RESPONSIVENESS & ACCESSIBILITY
    ========================================================================== */
@@ -274,6 +317,12 @@
   .structured-projects-cards-container {
     flex-direction: column;
     gap: 20px;
+  }
+
+  .structured-projects-cta-btn {
+    width: 100%;
+    height: 48px;
+    font-size: 14px;
   }
 }
 

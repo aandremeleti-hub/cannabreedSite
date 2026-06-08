@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import IconSeeds from '../../icons/IconSeeds';
 import IconProtection from '../../icons/IconProtection';
 import IconResearch from '../../icons/IconResearch';
@@ -55,6 +56,16 @@ export default function ResearchAndDevelopment() {
                 <span className="rd-card-title">{card.title}</span>
               </button>
             ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="rd-cta-wrapper">
+            <Link
+              href="/contato?assunto=Pesquisa e Desenvolvimento"
+              className="rd-cta-btn"
+            >
+              Iniciar Projeto de P&D
+            </Link>
           </div>
         </div>
 

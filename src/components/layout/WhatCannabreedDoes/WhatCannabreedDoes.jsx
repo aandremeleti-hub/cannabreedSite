@@ -2,11 +2,11 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import CardWhatCannabreedDoes from '@/components/cards/CardWhatCannabreedDoes/CardWhatCannabreedDoes';
 import ModalLight from '@/components/layout/Modal/ModalLight';
 import WhatCannabreedDoesModalContent from '@/components/layout/WhatCannabreedDoesModalContent/WhatCannabreedDoesModalContent';
 import { WHAT_CANNABREED_DOES_DATA } from '@/data/whatCannabreedDoesData';
-import bgImage from '@/assets/images/what-cannabreed-does-bg.jpeg';
 
 
 // Import Assets for Cards
@@ -68,18 +68,6 @@ export default function WhatCannabreedDoes() {
 
   return (
     <section className="what-cannabreed-does" id="servicos">
-      {/* Background Decor Layer */}
-      <div className="what-cannabreed-does-bg-container">
-        <Image
-          src={bgImage}
-          alt=""
-          fill
-          priority
-          className="what-cannabreed-does-bg-image"
-        />
-        <div className="what-cannabreed-does-overlay"></div>
-      </div>
-
       {/* Main Content Area */}
       <div className="what-cannabreed-does-content">
         {/* Title Box */}
@@ -105,6 +93,13 @@ export default function WhatCannabreedDoes() {
               onClick={() => handleCardClick(data.onClickValue)}
             />
           ))}
+        </div>
+
+        {/* CTA Wrapper */}
+        <div className="what-cannabreed-does-cta-wrapper">
+          <Link href="/servicos" className="what-cannabreed-does-cta-btn">
+            Conhecer Nossos Serviços
+          </Link>
         </div>
       </div>
 

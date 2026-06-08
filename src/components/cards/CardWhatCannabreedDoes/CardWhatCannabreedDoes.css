@@ -127,27 +127,32 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 48px;
-  border-radius: 16px;
-  background-color: var(--color-primary-green);
-  color: var(--color-primary-navy);
+  padding: var(--btn-primary-padding);
+  border-radius: var(--btn-primary-border-radius);
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
   font-family: var(--font-title);
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
   margin-top: auto;
 }
 
 .card-wcd-btn:hover {
-  background-color: var(--color-primary-green-mid);
+  background-color: var(--btn-primary-bg-hover);
   transform: translateY(-1px);
 }
 
 .card-wcd-btn:active {
   transform: translateY(0);
+}
+
+.card-wcd-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--btn-primary-focus-ring);
 }
 
 /* ==========================================================================

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import imgManufaturaAgricola from '@/assets/images/manufatura-agricola.png';
 import IconProjeto from '@/components/icons/IconProjeto';
 import IconExecucao from '@/components/icons/IconExecucao';
@@ -51,8 +52,8 @@ export default function ContractedManufacturing() {
                         </div>
                       ) : (
                         <card.Icon
-                          className="cdmo-card-icon"
-                          aria-hidden="true"
+                           className="cdmo-card-icon"
+                           aria-hidden="true"
                         />
                       )
                     }
@@ -60,6 +61,16 @@ export default function ContractedManufacturing() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* CTA Button */}
+          <div className="cdmo-cta-wrapper">
+            <Link
+              href="/contato?assunto=Manufatura Contratada"
+              className="cdmo-cta-btn"
+            >
+              Consultar Capacidade de Manufatura
+            </Link>
           </div>
         </div>
 

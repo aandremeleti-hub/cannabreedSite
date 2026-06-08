@@ -171,24 +171,29 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-primary-green);
-  color: var(--color-primary-navy);
+  background-color: var(--btn-secondary-bg);
+  border: var(--btn-secondary-border);
+  color: var(--btn-secondary-text);
   font-family: var(--t3-font-family);
   font-size: 14px;
   font-weight: 800;
   letter-spacing: 0.03em;
-  padding: 14px 32px;
-  border-radius: 4px;
+  padding: var(--btn-secondary-padding);
+  border-radius: var(--btn-secondary-border-radius);
   text-transform: uppercase;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(128, 219, 66, 0.15);
   white-space: nowrap;
 }
 
 .footer-cta-button:hover {
-  background-color: var(--color-primary-green-light);
+  background-color: var(--btn-secondary-bg-hover);
+  color: var(--btn-secondary-text-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(128, 219, 66, 0.25);
+}
+
+.footer-cta-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--btn-secondary-focus-ring);
 }
 
 /* =========================================

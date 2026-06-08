@@ -21,6 +21,12 @@
   --icon-color-secondary: var(--color-primary-navy);
 }
 
+.structured-projects-card:focus-visible {
+  outline: 3px solid var(--color-primary-green);
+  outline-offset: 4px;
+}
+
+
 .structured-projects-card:hover {
   transform: translateY(-8px);
   background-color: var(--color-primary-green);

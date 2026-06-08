@@ -1,0 +1,188 @@
+/* ==========================================================================
+   StructuredWhoWeActForModalContent Component Styles
+   ========================================================================== */
+
+.structured-who-modal-container {
+  /* Local variables matching Figma spec precisely */
+  --local-width: 1121px;
+  --local-height: 637px;
+  --local-img-width: 509px;
+  --local-info-width: 612px;
+  --local-content-padding-top: 52px;
+  --local-content-padding-left: 62px;
+  --local-font-size-title: 32px;
+  --local-font-size-bullet: 16.464px;
+  --local-line-height-bullet: 20.2px;
+  --local-font-size-footnote: 19px;
+  --local-line-height-footnote: 27px;
+  --local-bullet-height: 29.574px;
+  --local-bullet-width: 22px;
+  --local-gap-main: 29px;
+  --local-gap-list: 19px;
+  --local-gap-item: 12px;
+  --local-gap-content: 21px;
+
+  display: flex;
+  width: 100%;
+  max-width: var(--local-width);
+  height: var(--local-height);
+  max-height: 90vh;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--color-white);
+}
+
+/* Left side: Image wrapper */
+.structured-who-modal-image-wrapper {
+  position: relative;
+  width: var(--local-img-width);
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.structured-who-modal-img {
+  object-fit: cover;
+}
+
+/* Right side: Information wrapper */
+.structured-who-modal-info-wrapper {
+  width: var(--local-info-width);
+  height: 100%;
+  background-color: var(--color-primary-green-light); /* #d5f3c0 */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: var(--local-content-padding-top);
+  padding-left: var(--local-content-padding-left);
+  padding-right: var(--local-content-padding-left);
+  padding-bottom: var(--local-content-padding-top);
+  overflow-y: hidden;
+}
+
+.structured-who-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--local-gap-main);
+  max-width: 487px;
+  width: 100%;
+}
+
+.structured-who-modal-title {
+  font-family: var(--font-title), "Titillium Web", sans-serif;
+  font-size: var(--local-font-size-title);
+  font-weight: 700;
+  line-height: 33px;
+  color: var(--color-primary-navy);
+}
+
+.structured-who-modal-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--local-gap-list);
+}
+
+.structured-who-modal-list-item {
+  display: flex;
+  gap: var(--local-gap-item);
+  align-items: flex-start;
+}
+
+.structured-who-modal-icon-box {
+  width: var(--local-bullet-width);
+  height: var(--local-bullet-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-primary-green);
+}
+
+
+.structured-who-modal-bullet-icon {
+  display: block;
+}
+
+.structured-who-modal-list-text {
+  font-family: var(--font-title), "Titillium Web", sans-serif;
+  font-size: var(--local-font-size-bullet);
+  font-weight: 700;
+  line-height: var(--local-line-height-bullet);
+  color: var(--color-primary-navy);
+}
+
+.structured-who-modal-footnote {
+  font-family: var(--font-body), "Lato", sans-serif;
+  font-size: var(--local-font-size-footnote);
+  font-weight: 300;
+  font-style: italic;
+  line-height: var(--local-line-height-footnote);
+  color: var(--color-primary-navy);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .structured-who-modal-container {
+    --local-width: 90vw;
+    --local-height: 80vh;
+  }
+
+  .structured-who-modal-image-wrapper {
+    width: 40%;
+  }
+
+  .structured-who-modal-info-wrapper {
+    width: 60%;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .structured-who-modal-container {
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+  }
+
+  .structured-who-modal-image-wrapper {
+    width: 100%;
+    height: 250px;
+  }
+
+  .structured-who-modal-info-wrapper {
+    width: 100%;
+    height: auto;
+    overflow-y: visible;
+    padding: 30px 24px;
+  }
+  
+  .structured-who-modal-content {
+    max-width: 100%;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .structured-who-modal-image-wrapper {
+    height: 180px;
+  }
+
+  .structured-who-modal-title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .structured-who-modal-list-text {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .structured-who-modal-footnote {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}

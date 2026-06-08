@@ -257,6 +257,26 @@ button {
    --attribution-role-font-weight: 300;
    /* Lato Light  */
 
+   /* ===========================
+     TOKENS DE COMPONENTES — BOTÕES
+     =========================== */
+   --btn-primary-bg: var(--color-primary-green);
+   --btn-primary-bg-hover: var(--color-primary-green-mid);
+   --btn-primary-text: var(--color-primary-navy);
+   --btn-primary-border-radius: 8px;
+   --btn-primary-padding: 16px 24px;
+   --btn-primary-focus-ring: var(--color-primary-navy-mid);
+
+   /* Botões Secundários (Outline) */
+   --btn-secondary-bg: transparent;
+   --btn-secondary-border: 2px solid var(--color-primary-green);
+   --btn-secondary-text: var(--color-primary-green);
+   --btn-secondary-bg-hover: var(--color-primary-green);
+   --btn-secondary-text-hover: var(--color-primary-navy);
+   --btn-secondary-border-radius: 8px;
+   --btn-secondary-padding: 16px 24px;
+   --btn-secondary-focus-ring: var(--color-primary-green);
+
 }
 
 

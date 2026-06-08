@@ -105,23 +105,23 @@
   font-size: var(--t3-font-size);
   font-weight: var(--t3-font-weight);
   letter-spacing: var(--t3-letter-spacing);
-  background-color: var(--color-primary-green);
-  color: var(--color-primary-navy);
-  padding: 16px 24px;
-  border-radius: 8px;
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  padding: var(--btn-primary-padding);
+  border-radius: var(--btn-primary-border-radius);
   transition: background-color 0.3s ease, transform 0.2s ease;
   align-self: flex-start;
   margin-top: 10px;
 }
 
 .contact-form-submit-btn:hover {
-  background-color: var(--color-primary-green-mid);
+  background-color: var(--btn-primary-bg-hover);
   transform: translateY(-2px);
 }
 
 .contact-form-submit-btn:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px var(--color-primary-navy-mid);
+  box-shadow: 0 0 0 3px var(--btn-primary-focus-ring);
 }
 
 /* Informações de Contato */

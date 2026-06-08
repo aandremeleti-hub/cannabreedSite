@@ -5,6 +5,7 @@ import CdmoTransition from '@/components/transitions/CdmoTransition/CdmoTransiti
 import ContractedManufacturing from '@/components/layout/ContractedManufacturing/ContractedManufacturing';
 import PdTransition from '@/components/transitions/PdTransition/PdTransition';
 import RegulatoryCompliance from '@/components/layout/RegulatoryCompliance/RegulatoryCompliance';
+import ExpertReportsSection from '@/components/layout/ExpertReportsSection/ExpertReportsSection';
 
 export const metadata = {
     title: 'Serviços — Cannabreed',
@@ -18,6 +19,7 @@ export default function ServicosPage() {
             <CdmoTransition/>
             <RegulatoryCompliance />
             <PdTransition />
+            <ExpertReportsSection />
             <CdmoTransition />
             <ProductiveOperation />
             <PdTransition />

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import heroBg from '@/assets/images/hero-illustration.webp';
 import rectDecor from '@/assets/icons/rectangle-decor.svg';
 import './Hero.css';
@@ -32,14 +33,14 @@ export default function Hero() {
               PARA O MERCADO DE CANNABIS
             </h1>
             <p className="hero-description">
-              Projetos de genética e P&D em Cannabis e cânhamo, estruturados 
-              conforme ANVISA, com documentação robusta, rastreabilidade 
+              Projetos de genética e P&D em Cannabis e cânhamo, estruturados
+              conforme ANVISA, com documentação robusta, rastreabilidade
               e execução científica comprovável.
             </p>
           </div>
-          <a href="#contato" className="hero-cta">
-            Saiba mais
-          </a>
+          <Link href="/contato" className="hero-cta">
+            Falar com Especialista
+          </Link>
         </div>
       </div>
     </section>

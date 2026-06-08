@@ -1,4 +1,7 @@
+import React from 'react';
 import imgInterfaceModal from '@/assets/images/modal-renato-interface.png';
+import imgTrajetoriaModal from '@/assets/images/modal-renato-trajetoria.png';
+import imgIntegracaoModal from '@/assets/images/modal-renato-integracao.png';
 import imgRenatoFallback from '@/assets/images/renato-image.jpg';
 
 export const RENATO_TECHNICAL_ACTING_DATA = {
@@ -11,16 +14,20 @@ export const RENATO_TECHNICAL_ACTING_DATA = {
   },
   'trajetoria': {
     title: 'Trajetória',
-    text: 'A trajetória científica e profissional de Renato de Traglia Tonini é pautada pelo desenvolvimento acadêmico sólido, pesquisa de ponta e inovação em fitoterápicos. Com doutorado em Genética e Melhoramento pela UFV e especialização pela Fiocruz, atua na liderança de projetos de alta complexidade no setor da Cannabis.',
-    imageSrc: imgRenatoFallback,
-    imageAlt: 'Retrato de Renato de Traglia Tonini, líder científico da Cannabreed',
+    text: (
+      <>
+        Sua trajetória está orientada à adaptação de <em>Cannabis sativa</em> L. às condições tropicais, à estabilidade genética, à previsibilidade produtiva e à consolidação científica da base genética nacional.
+      </>
+    ),
+    imageSrc: imgTrajetoriaModal,
+    imageAlt: 'Renato de Traglia Tonini palestrando com microfone em mãos',
     iconKey: 'trajetoria'
   },
   'integracao': {
     title: 'Integração',
-    text: 'A integração de processos e conhecimentos é fundamental para ligar o campo, o laboratório e os setores regulatórios. Renato Tonini aplica metodologias integradoras para conectar a pesquisa científica pura às rotinas produtivas reais do agronegócio e conformidade institucional.',
-    imageSrc: imgRenatoFallback,
-    imageAlt: 'Retrato de Renato de Traglia Tonini, líder científico da Cannabreed',
+    text: 'Combina formação acadêmica de excelência com atuação prática em projetos estruturantes, integrando ciência, planejamento produtivo e governança técnica.',
+    imageSrc: imgIntegracaoModal,
+    imageAlt: 'Retrato de perfil profissional de Renato de Traglia Tonini, líder científico da Cannabreed',
     iconKey: 'integracao'
   }
 };

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import img1 from '@/assets/images/authority-image-1.webp';
 import img2 from '@/assets/images/authority-image-2.webp';
 import img3 from '@/assets/images/authority-image-3.webp';
@@ -105,6 +106,17 @@ export default function AuthoritySection() {
               </article>
 
             </div>
+
+            {/* CTA Button */}
+            <div className="authority-cta-wrapper">
+              <Link 
+                href="/contato?assunto=Reunião Técnica" 
+                className="authority-cta-btn"
+              >
+                Agendar Reunião Técnica
+              </Link>
+            </div>
+
           </div>
 
         </div>

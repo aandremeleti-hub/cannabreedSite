@@ -1,12 +1,12 @@
 /* ==========================================================================
-   REGULATORY COMPLIANCE SECTION — Estilos de Seção (BEM Adaptado)
+   EXPERT REPORTS SECTION — Estilos de Seção (BEM Adaptado)
    ========================================================================== */
 
-.regulatory-compliance {
+.expert-reports {
   position: relative;
   width: 100%;
-  background-color: var(--color-white);
-  background-image: url('../../../assets/images/logo-background.svg');
+  background-color: var(--color-primary-navy);
+  background-image: url('../../../assets/images/logo-background-white.svg');
   background-size: auto 100%;
   background-repeat: repeat-x;
   background-position: center;
@@ -19,7 +19,7 @@
 }
 
 /* Main Content Wrapper */
-.regulatory-compliance-content {
+.expert-reports-content {
   position: relative;
   z-index: 3;
   display: grid;
@@ -32,29 +32,29 @@
 }
 
 @media (min-width: 1024px) {
-  .regulatory-compliance-content {
+  .expert-reports-content {
     grid-template-columns: 734px 1fr;
     gap: 94px;
   }
 }
 
 /* Left Column: Heading and Grid */
-.regulatory-compliance-left {
+.expert-reports-left {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: clamp(30px, 4vw, 58px);
 }
 
-.regulatory-compliance-title-box {
+.expert-reports-title-box {
   display: flex;
   flex-direction: column;
   gap: 16px;
   max-width: 580px;
 }
 
-.regulatory-compliance-title {
-  color: var(--color-primary-navy);
+.expert-reports-title {
+  color: var(--color-primary-green);
   font-family: var(--font-title);
   font-size: clamp(32px, 4.5vw, 44px);
   font-weight: 700;
@@ -63,32 +63,24 @@
   text-transform: uppercase;
 }
 
-.regulatory-compliance-description {
-  color: var(--color-secondary-gray);
+.expert-reports-description {
+  color: var(--color-white);
   font-family: var(--font-body);
   font-size: clamp(15px, 2vw, 18px);
   font-weight: 400;
   line-height: 1.5;
 }
 
-.regulatory-compliance-description-first-line {
+.expert-reports-description-first-line {
   font-family: var(--font-body);
   font-size: 24px;
   font-weight: 400;
   line-height: 1.35;
-  color: var(--color-secondary-gray);
-}
-
-.regulatory-compliance-description p {
-  margin-bottom: 4px;
-}
-
-.regulatory-compliance-description p:last-child {
-  margin-bottom: 0;
+  color: var(--color-white);
 }
 
 /* Cards Grid */
-.regulatory-compliance-grid {
+.expert-reports-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
@@ -97,13 +89,13 @@
 }
 
 /* CTA Button Styling */
-.regulatory-compliance-cta-wrapper {
+.expert-reports-cta-wrapper {
   display: flex;
   justify-content: flex-start;
   width: 100%;
 }
 
-.regulatory-compliance-cta-btn {
+.expert-reports-cta-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -122,16 +114,16 @@
   text-decoration: none;
 }
 
-.regulatory-compliance-cta-btn:hover {
+.expert-reports-cta-btn:hover {
   background-color: var(--btn-primary-bg-hover);
   transform: translateY(-2px);
 }
 
-.regulatory-compliance-cta-btn:active {
+.expert-reports-cta-btn:active {
   transform: translateY(0);
 }
 
-.regulatory-compliance-cta-btn:focus-visible {
+.expert-reports-cta-btn:focus-visible {
   outline: 2px solid var(--btn-primary-focus-ring);
   outline-offset: 4px;
   border-radius: var(--btn-primary-border-radius);
@@ -139,7 +131,7 @@
 
 
 /* Right Column: Image Container */
-.regulatory-compliance-right {
+.expert-reports-right {
   display: flex;
   justify-content: flex-end;
   align-items: stretch;
@@ -147,17 +139,17 @@
   width: 100%;
 }
 
-.regulatory-compliance-image-wrapper {
+.expert-reports-image-wrapper {
   position: relative;
   width: 100%;
   max-width: 382px;
   height: 100%;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(2, 23, 43, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-.regulatory-compliance-image {
+.expert-reports-image {
   object-fit: cover;
   width: 100% !important;
   height: 100% !important;
@@ -169,25 +161,25 @@
    ========================================================================== */
 
 @media (max-width: 1023px) {
-  .regulatory-compliance-title-box {
+  .expert-reports-title-box {
     max-width: 100%;
     text-align: center;
     align-items: center;
   }
 
-  .regulatory-compliance-left {
+  .expert-reports-left {
     align-items: center;
   }
 
-  .regulatory-compliance-cta-wrapper {
+  .expert-reports-cta-wrapper {
     justify-content: center;
   }
 
-  .regulatory-compliance-right {
+  .expert-reports-right {
     justify-content: center;
   }
 
-  .regulatory-compliance-image-wrapper {
+  .expert-reports-image-wrapper {
     max-width: 450px;
     aspect-ratio: 4 / 3;
     height: auto;
@@ -196,19 +188,19 @@
 
 /* Small Tablets & Large Mobiles (Telas até 768px) */
 @media (max-width: 768px) {
-  .regulatory-compliance {
+  .expert-reports {
     padding: 0;
   }
 
   /* No padding override to keep width: 90% centered */
 
-  .regulatory-compliance-grid {
+  .expert-reports-grid {
     justify-content: center;
     max-width: 100%;
     gap: 20px;
   }
 
-  .regulatory-compliance-cta-btn {
+  .expert-reports-cta-btn {
     width: 100%;
     height: 48px;
     font-size: 14px;
@@ -217,13 +209,13 @@
 
 /* Small Mobiles (Telas até 480px) */
 @media (max-width: 480px) {
-  .regulatory-compliance {
+  .expert-reports {
     padding: 0;
   }
 
   /* No padding override to keep width: 90% centered */
 
-  .regulatory-compliance-grid {
+  .expert-reports-grid {
     justify-content: center;
     gap: 15px;
     max-width: 100%;

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import IconReports from '@/components/icons/IconReports';
 import IconForensics from '@/components/icons/IconForensics';
 import IconOpinions from '@/components/icons/IconOpinions';
@@ -78,6 +79,16 @@ export default function RegulatoryCompliance() {
                 iconNode={<Icon className="regulatory-compliance-card-icon" size={48} />}
               />
             ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="regulatory-compliance-cta-wrapper">
+            <Link
+              href="/contato?assunto=Regulatório e Conformidade"
+              className="regulatory-compliance-cta-btn"
+            >
+              Adequar Minha Operação
+            </Link>
           </div>
         </div>
 

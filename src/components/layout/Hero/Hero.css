@@ -96,29 +96,34 @@
 }
 
 .hero-cta {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 184px;
-  height: 60.438px;
-  border-radius: 20px;
-  background-color: var(--color-primary-green);
-  color: var(--color-primary-navy);
+  padding: var(--btn-primary-padding);
+  border-radius: var(--btn-primary-border-radius);
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
   font-family: var(--font-title);
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  white-space: nowrap;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .hero-cta:hover {
-  background-color: var(--color-primary-green-mid);
+  background-color: var(--btn-primary-bg-hover);
   transform: translateY(-2px);
 }
 
 .hero-cta:active {
   transform: translateY(0);
+}
+
+.hero-cta:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--btn-primary-focus-ring);
 }
 
 

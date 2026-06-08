@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import IconAudit from '@/components/icons/IconAudit';
 import IconExecucao from '@/components/icons/IconExecucao';
 import IconIntegracao from '@/components/icons/IconIntegracao';
@@ -59,6 +60,20 @@ export default function DiferencialTecnico() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="dt-cta-banner">
+          <div className="dt-cta-banner-content">
+            <p className="dt-cta-banner-text">
+              Transforme sua operação com uma consultoria técnica especializada em Cannabis.
+            </p>
+            <Link
+              href="/contato?assunto=Diferencial Técnico e Viabilidade"
+              className="dt-cta-banner-btn"
+            >
+              Agendar Consultoria de Viabilidade
+            </Link>
+          </div>
         </div>
       </div>
     </section>
