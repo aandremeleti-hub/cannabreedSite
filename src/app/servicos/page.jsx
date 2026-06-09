@@ -6,6 +6,7 @@ import ContractedManufacturing from '@/components/layout/ContractedManufacturing
 import PdTransition from '@/components/transitions/PdTransition/PdTransition';
 import RegulatoryCompliance from '@/components/layout/RegulatoryCompliance/RegulatoryCompliance';
 import ExpertReportsSection from '@/components/layout/ExpertReportsSection/ExpertReportsSection';
+import PDSection from '@/components/layout/PDSection/PDSection';
 
 export const metadata = {
     title: 'Serviços — Cannabreed',
@@ -16,7 +17,7 @@ export default function ServicosPage() {
     return (
         <main className="services-page-main">
             <Header />
-            <CdmoTransition/>
+            <PDSection title="Serviços" />
             <RegulatoryCompliance />
             <PdTransition />
             <ExpertReportsSection />

@@ -82,7 +82,6 @@
   box-shadow: 0 8px 24px rgba(2, 23, 43, 0.12);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   flex-shrink: 0;
-  cursor: pointer;
   
   /* Color tokens for SVGs */
   --icon-color-primary: var(--color-primary-green);

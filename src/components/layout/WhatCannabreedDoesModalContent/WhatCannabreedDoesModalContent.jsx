@@ -38,7 +38,9 @@ export default function WhatCannabreedDoesModalContent({ data }) {
   if (!data) return null;
 
   return (
-    <div className="what-cannabreed-does-modal-content-container">
+    <div 
+      className="what-cannabreed-does-modal-content-container"
+    >
       {/* Left Column: Image wrapper */}
       <div className="what-cannabreed-does-modal-left">
         <div className="what-cannabreed-does-modal-image-wrapper">
@@ -55,12 +57,12 @@ export default function WhatCannabreedDoesModalContent({ data }) {
 
       {/* Right Column: Text Information */}
       <div className="what-cannabreed-does-modal-right">
-        <div 
-          className="what-cannabreed-does-modal-scroll-area"
-          ref={scrollContainerRef}
-          onScroll={handleScroll}
-        >
-          <div className="what-cannabreed-does-modal-right-body">
+        <div className="what-cannabreed-does-modal-scroll-area">
+          <div 
+            className="what-cannabreed-does-modal-right-body"
+            ref={scrollContainerRef}
+            onScroll={handleScroll}
+          >
             {/* Header */}
             <div className="what-cannabreed-does-modal-header">
               <h2 className="what-cannabreed-does-modal-title">

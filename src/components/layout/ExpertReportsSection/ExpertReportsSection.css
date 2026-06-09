@@ -16,6 +16,8 @@
   align-items: center;
   padding: 0;
   z-index: 2;
+  margin-top: 100px;
+  margin-bottom: 50px;
 }
 
 /* Main Content Wrapper */

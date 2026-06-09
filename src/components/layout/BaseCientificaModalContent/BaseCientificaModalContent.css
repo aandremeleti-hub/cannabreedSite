@@ -108,6 +108,7 @@
   line-height: var(--bc-modal-title-lh);
   color: var(--color-primary-navy); /* Preto / Azul escuro */
   margin: 0;
+  max-width: 82%; /* Evita colisão com o botão de fechar no canto superior direito */
 }
 
 .bc-modal-description {

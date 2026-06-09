@@ -14,7 +14,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0;
+  padding-top: 100px;
+  padding-bottom: 50px;
   z-index: 2;
 }
 
@@ -197,7 +198,8 @@
 /* Small Tablets & Large Mobiles (Telas até 768px) */
 @media (max-width: 768px) {
   .regulatory-compliance {
-    padding: 0;
+    padding-top: 100px;
+    padding-bottom: 50px;
   }
 
   /* No padding override to keep width: 90% centered */
@@ -218,7 +220,8 @@
 /* Small Mobiles (Telas até 480px) */
 @media (max-width: 480px) {
   .regulatory-compliance {
-    padding: 0;
+    padding-top: 100px;
+    padding-bottom: 50px;
   }
 
   /* No padding override to keep width: 90% centered */

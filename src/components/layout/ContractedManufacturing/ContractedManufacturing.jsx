@@ -52,8 +52,8 @@ export default function ContractedManufacturing() {
                         </div>
                       ) : (
                         <card.Icon
-                           className="cdmo-card-icon"
-                           aria-hidden="true"
+                          className="cdmo-card-icon"
+                          aria-hidden="true"
                         />
                       )
                     }

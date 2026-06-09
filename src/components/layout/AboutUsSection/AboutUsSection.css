@@ -172,6 +172,10 @@
     min-height: auto;
   }
 
+  .about-us-card.card-acting .about-us-card-image {
+    object-position: 85% center;
+  }
+
   /* Garantir que em mobile a imagem sempre apareça em cima */
   .about-us-card.card-foundation,
   .about-us-card.card-structuration {

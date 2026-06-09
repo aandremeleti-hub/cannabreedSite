@@ -11,7 +11,8 @@
   background-repeat: repeat-x;
   background-position: center;
   color: var(--color-primary-navy);
-  padding: 0;
+  padding-top: 100px;
+  padding-bottom: 50px;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -189,7 +190,8 @@
 
 @media (max-width: 768px) {
   .po-section {
-    padding: 0;
+    padding-top: 100px;
+    padding-bottom: 50px;
   }
 
   /* No padding override to keep width: 90% centered */

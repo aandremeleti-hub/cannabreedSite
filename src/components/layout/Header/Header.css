@@ -239,3 +239,11 @@
     backdrop-filter: none !important;
   }
 }
+
+@media (max-width: 350px) {
+  .header-logo-image {
+    width: 175px;
+    height: auto;
+  }
+}
+

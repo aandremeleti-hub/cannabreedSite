@@ -12,7 +12,6 @@
   background-color: var(--color-primary-navy);
   border-radius: 21px;
   box-shadow: 0 8px 16px rgba(2, 23, 43, 0.15);
-  cursor: pointer;
   outline: 2px solid transparent;
   outline-offset: 4px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);

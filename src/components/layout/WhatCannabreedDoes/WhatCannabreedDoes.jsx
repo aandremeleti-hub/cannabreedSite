@@ -7,6 +7,7 @@ import CardWhatCannabreedDoes from '@/components/cards/CardWhatCannabreedDoes/Ca
 import ModalLight from '@/components/layout/Modal/ModalLight';
 import WhatCannabreedDoesModalContent from '@/components/layout/WhatCannabreedDoesModalContent/WhatCannabreedDoesModalContent';
 import { WHAT_CANNABREED_DOES_DATA } from '@/data/whatCannabreedDoesData';
+import bgImage from '@/assets/images/what-cannabreed-does-bg.jpeg';
 
 
 // Import Assets for Cards
@@ -68,6 +69,18 @@ export default function WhatCannabreedDoes() {
 
   return (
     <section className="what-cannabreed-does" id="servicos">
+      {/* Background Decor Layer */}
+      <div className="what-cannabreed-does-bg-container">
+        <Image
+          src={bgImage}
+          alt=""
+          fill
+          priority
+          className="what-cannabreed-does-bg-image"
+        />
+        <div className="what-cannabreed-does-overlay"></div>
+      </div>
+
       {/* Main Content Area */}
       <div className="what-cannabreed-does-content">
         {/* Title Box */}
