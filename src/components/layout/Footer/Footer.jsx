@@ -56,7 +56,7 @@ export default function Footer() {
               </li>
               <li className="footer-contact-item">
                 <span className="footer-contact-label">Sede:</span>
-                <span className="footer-contact-text">São Paulo, SP - Brasil</span>
+                <span className="footer-contact-text">Viçosa, MG - Brasil</span>
               </li>
             </ul>
           </div>
@@ -72,7 +72,7 @@ export default function Footer() {
               Nossa equipe de especialistas está pronta para analisar <br className="hidden-mobile" /> seu projeto e fornecer genéticas de alta performance.
             </p>
           </div>
-          <Link href="/#contato" className="footer-cta-button" aria-label="Fale com nossos especialistas">
+          <Link href="/contato" className="footer-cta-button" aria-label="Fale com nossos especialistas">
             Falar com Especialista
           </Link>
         </div>
